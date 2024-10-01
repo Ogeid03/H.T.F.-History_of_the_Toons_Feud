@@ -8,14 +8,14 @@ public class Enemy : MonoBehaviour
     public Transform target;  // Riferimento al giocatore
     public int health = 100;  // Punti vita del nemico
     public float hitPauseDuration = 1f;
-    public float deathFallSpeed = 2f;
-    public float deathFallLimitY = -20f;
+    public float deathAnimationDuration = 1f; // Durata dell'animazione di morte
     public float attackRadius = 3f; // Raggio d'azione per infliggere danno al giocatore
     public int damageToPlayer = 10; // Danno inflitto al giocatore
 
     private bool isDying = false;
     private bool isHit = false;
     private NavMeshAgent agent;
+    private Animator animator; // Nuova variabile per l'animatore
     private float attackCooldown = 1.5f;
     private float lastAttackTime;
 
@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     {
         target = GameObject.FindWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>(); // Ottieni il componente Animator
 
         if (target != null)
         {
@@ -92,14 +93,15 @@ public class Enemy : MonoBehaviour
         agent.isStopped = true;
         agent.enabled = false;
 
-        while (transform.position.y > deathFallLimitY)
-        {
-            transform.position += Vector3.down * deathFallSpeed * Time.deltaTime;
-            yield return null;
-        }
+        // Riproduci l'animazione di morte
+        animator.SetTrigger("Die"); // Assumiamo che ci sia un trigger chiamato "Die" nell'Animator
 
-        Debug.Log("Nemico distrutto sotto la mappa.");
-        Destroy(gameObject);
+        // Attendi la fine dell'animazione di morte
+        yield return new WaitForSeconds(deathAnimationDuration);
+
+        // Distruggi il corpo del nemico dopo 1 secondo
+        Debug.Log("Distruzione del nemico dopo l'animazione di morte.");
+        Destroy(gameObject, 1f);
     }
 
     void OnTriggerEnter(Collider other)
