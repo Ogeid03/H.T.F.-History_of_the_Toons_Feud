@@ -478,7 +478,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &988698385
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -680,6 +680,7 @@ GameObject:
   - component: {fileID: 1731335600}
   - component: {fileID: 1731335599}
   - component: {fileID: 1731335603}
+  - component: {fileID: 1731335604}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Enemy
@@ -737,11 +738,7 @@ MonoBehaviour:
   moveSpeed: 3
   attackRange: 1.5
   attackInterval: 1
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  health: 50
-  damageToPlayer: 10
+  knockbackForce: 5
 --- !u!212 &1731335601
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -835,7 +832,20 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &1731335604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731335598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7038c9e56485189469d12f42454b0cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
 --- !u!1001 &566728200472817356
 PrefabInstance:
   m_ObjectHideFlags: 0

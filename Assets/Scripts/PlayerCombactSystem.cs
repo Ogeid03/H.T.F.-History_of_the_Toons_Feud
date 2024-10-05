@@ -56,8 +56,13 @@ public class PlayerCombat : MonoBehaviour
         {
             // Gestisci il danno o altre interazioni
             Debug.Log("Colpito: " + enemy.name);
-            // Supponiamo che i nemici abbiano un metodo TakeDamage(int damage)
-            enemy.GetComponent<EnemyAI>().TakeDamage(damageAmount);
+
+            // Ottieni il componente EnemyHealth per infliggere danno
+            EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(damageAmount); // Infliggi danno al nemico
+            }
         }
 
         isAttacking = false;
