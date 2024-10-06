@@ -3,16 +3,17 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float moveSpeed = 3f;        // Velocità di movimento del nemico
-    public float attackRange = 1.5f;    // Distanza alla quale il nemico può attaccare
-    public float attackInterval = 1f;   // Intervallo tra un attacco e l'altro
-    public float knockbackForce = 5f;   // Forza del knockback
+    public float moveSpeed = 3f;           // Velocità di movimento del nemico
+    public float attackRange = 2.5f;       // Distanza alla quale il nemico può attaccare
+    public float attackInterval = 1f;      // Intervallo tra un attacco e l'altro
+    public float knockbackForce = 5f;      // Forza del knockback
+    public int attackDamage = 10;          // Danno inflitto al giocatore
 
-    private Transform player;           // Riferimento al giocatore
-    private bool isAttacking = false;   // Controlla se il nemico sta già attaccando
+    private Transform player;               // Riferimento al giocatore
+    private bool isAttacking = false;       // Controlla se il nemico sta già attaccando
 
-    private PlayerHealth playerHealth;  // Riferimento alla salute del giocatore
-    private Rigidbody2D playerRb;       // Riferimento al Rigidbody2D del giocatore
+    private PlayerHealth playerHealth;      // Riferimento alla salute del giocatore
+    private Rigidbody2D playerRb;           // Riferimento al Rigidbody2D del giocatore
 
     void Start()
     {
@@ -59,7 +60,7 @@ public class EnemyAI : MonoBehaviour
         // Infliggi danno al giocatore e applica il knockback
         if (playerHealth != null && playerRb != null)
         {
-            playerHealth.TakeDamage(10);  // Infliggi danno al giocatore
+            playerHealth.TakeDamage(attackDamage);  // Infliggi danno al giocatore
 
             // Calcola la direzione del knockback (dall'attaccante verso il giocatore)
             Vector2 knockbackDirection = (player.position - transform.position).normalized;
