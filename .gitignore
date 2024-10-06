@@ -1,40 +1,74 @@
-# This .gitignore file should be placed at the root of your Unity project directory
 
-# Ignore the following directories and files
+Skip to content
+GitLab
 
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
-[Mm]emoryCaptures/
+    Why GitLab
+    Pricing
+    Explore
 
+    Sign in
 
-# Auto-generated VS/MD/Consulo solution and project files
-*.csproj
-*.unityproj
-*.sln
-*.suo
-*.tmp
-*.user
-*.userprefs
-*.pidb
-*.booproj
+Primary navigation
+Project
+
+    G
+    GitWithUnityExample
+
+    Paolo Abela
+    GitWithUnityExample
+
+    GitWithUnityExample
+    .gitignore
+
+RikuTheFuffs's avatar
+Primo push
+Paolo Abela authored 6 years ago
+eaf4ab31
+.gitignore
+1.07 KiB
+
+# =============== #
+# Unity generated #
+# =============== #
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/Assets/AssetStoreTools*
+UnityGenerated/
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
 *.svd
-*.pdb
-*.mdb
-*.opendb
-*.VC.db
-#*.pidb.meta
-
-# Unity3D generated file on crash reports
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+*.tmp
+# ===================================== #
+# Unity3D generated meta files #
+# ===================================== #
+*.pidb.meta
+# ======================================= #
+# Unity3D Generated File On Crash Reports #
+# ======================================= #
 sysinfo.txt
+# ======================================= #
+# Unity3D Libraries and packages		  #
+# ======================================= #
+/Assets/UnityTestTools*
+# ===================================== #
+# StarworkGC generated #
+# ===================================== #
+/Assets/Tests*
+/Changelogs/*.txt
+Assets/StreamingAssets/Configuration/*
+!Assets/StreamingAssets/Configuration/*.txt.example
+!Assets/StreamingAssets/Configuration/*.txt.example.meta
 
-# Builds
-*.apk
-*.aab
-*.unitypackage
-
-# Crashlytics generated file
-crashlytics-build.properties
