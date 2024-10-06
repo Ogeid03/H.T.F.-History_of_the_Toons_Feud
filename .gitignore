@@ -1,31 +1,4 @@
 
-Skip to content
-GitLab
-
-    Why GitLab
-    Pricing
-    Explore
-
-    Sign in
-
-Primary navigation
-Project
-
-    G
-    GitWithUnityExample
-
-    Paolo Abela
-    GitWithUnityExample
-
-    GitWithUnityExample
-    .gitignore
-
-RikuTheFuffs's avatar
-Primo push
-Paolo Abela authored 6 years ago
-eaf4ab31
-.gitignore
-1.07 KiB
 
 # =============== #
 # Unity generated #
@@ -63,12 +36,5 @@ sysinfo.txt
 # Unity3D Libraries and packages		  #
 # ======================================= #
 /Assets/UnityTestTools*
-# ===================================== #
-# StarworkGC generated #
-# ===================================== #
-/Assets/Tests*
-/Changelogs/*.txt
-Assets/StreamingAssets/Configuration/*
-!Assets/StreamingAssets/Configuration/*.txt.example
-!Assets/StreamingAssets/Configuration/*.txt.example.meta
+
 
