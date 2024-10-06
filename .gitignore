@@ -10,9 +10,6 @@
 [Ll]ogs/
 [Mm]emoryCaptures/
 
-# Asset meta files
-# Comment out if you are tracking meta files
-#*.meta
 
 # Auto-generated VS/MD/Consulo solution and project files
 *.csproj
@@ -29,7 +26,7 @@
 *.mdb
 *.opendb
 *.VC.db
-*.pidb.meta
+#*.pidb.meta
 
 # Unity3D generated file on crash reports
 sysinfo.txt
