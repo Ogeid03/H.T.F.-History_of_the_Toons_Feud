@@ -8,12 +8,14 @@ public class EnemyAI : MonoBehaviour
     public float attackInterval = 1f;      // Intervallo tra un attacco e l'altro
     public float knockbackForce = 5f;      // Forza del knockback
     public int attackDamage = 10;          // Danno inflitto al giocatore
+    public float startDelay = 7f;          // Ritardo prima che il nemico possa muoversi
 
-    private Transform player;               // Riferimento al giocatore
-    private bool isAttacking = false;       // Controlla se il nemico sta già attaccando
+    private Transform player;              // Riferimento al giocatore
+    private bool isAttacking = false;      // Controlla se il nemico sta già attaccando
+    private bool canMove = false;          // Controlla se il nemico può muoversi
 
-    private PlayerHealth playerHealth;      // Riferimento alla salute del giocatore
-    private Rigidbody2D playerRb;           // Riferimento al Rigidbody2D del giocatore
+    private PlayerHealth playerHealth;     // Riferimento alla salute del giocatore
+    private Rigidbody2D playerRb;          // Riferimento al Rigidbody2D del giocatore
 
     void Start()
     {
@@ -21,11 +23,23 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealth = player.GetComponent<PlayerHealth>();  // Ottieni il componente PlayerHealth
         playerRb = player.GetComponent<Rigidbody2D>();       // Ottieni il componente Rigidbody2D del giocatore
+
+        // Avvia la coroutine che aspetta il ritardo iniziale
+        //StartCoroutine(StartDelay());
+    }
+
+    IEnumerator StartDelay()
+    {
+        // Aspetta per i secondi specificati (startDelay)
+        yield return new WaitForSeconds(startDelay);
+
+        // Dopo il ritardo, permetti al nemico di muoversi
+        canMove = true;
     }
 
     void Update()
     {
-        if (player != null)
+        if (player != null && canMove)  // Controlla se il nemico può muoversi
         {
             // Calcola la distanza tra il nemico e il giocatore
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
