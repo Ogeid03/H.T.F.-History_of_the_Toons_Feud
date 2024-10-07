@@ -1,85 +1,61 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PrefabSpawner : MonoBehaviour
+public class RoomGenerator : MonoBehaviour
 {
-    // Lista di prefab
-    public List<GameObject> prefabs;
-
-    // Riferimento al prefab iniziale
-    public GameObject initialPrefab;
-
-    // Distanza di spawn per il prossimo prefab (23.31 lungo l'asse X)
-    public Vector3 spawnOffset = new Vector3(23.31f, 0f, 0f);
-
-    // Posizione del primo spawn
-    private Transform initialPrefabChild;
+    [SerializeField] private List<GameObject> prefabList; // Lista dei prefab da generare
+    [SerializeField] private int numberOfSpawns = 5; // Numero di prefab da generare
+    [SerializeField] private float spacing = 23.31f; // Spaziatura tra i prefab
+    [SerializeField] private Transform initialSpawnPoint; // Punto di riferimento per lo spawn del primo prefab
 
     void Start()
     {
-        // Assicurati che ci sia almeno un prefab nella lista e che il prefab iniziale sia assegnato
-        if (prefabs.Count > 0 && initialPrefab != null)
-        {
-            // Trova un figlio del prefab iniziale da cui calcolare la posizione (esempio: il primo figlio)
-            initialPrefabChild = initialPrefab.transform.GetChild(0);
+        GeneratePrefabs();
+    }
 
-            // Spawna il primo prefab alla distanza specificata rispetto al figlio
-            SpawnPrefabAtOffset();
-        }
-        else
+    void GeneratePrefabs()
+    {
+        // Usa la posizione di initialSpawnPoint come punto di partenza
+        Vector3 lastPosition = initialSpawnPoint != null ? initialSpawnPoint.position : Vector3.zero;
+
+        for (int i = 0; i < numberOfSpawns; i++)
         {
-            Debug.LogError("Prefab o lista di prefabs non assegnati.");
+            // Scegli un prefab casuale dalla lista
+            GameObject prefabToSpawn = prefabList[Random.Range(0, prefabList.Count)];
+
+            // Crea un'istanza del prefab
+            GameObject spawnedPrefab = Instantiate(prefabToSpawn, lastPosition, Quaternion.identity);
+
+            // Cerca il figlio LinkToOthers nel prefab appena generato
+            Transform linkToOthers = spawnedPrefab.transform.Find("LinkToOthers");
+
+            if (linkToOthers != null)
+            {
+                // Posiziona il prossimo prefab a 23.31 unità a destra, mantenendo le coordinate y e z
+                lastPosition = new Vector3(linkToOthers.position.x + spacing, linkToOthers.position.y, linkToOthers.position.z);
+            }
+            else
+            {
+                Debug.LogWarning("Il figlio 'LinkToOthers' non è stato trovato nel prefab " + spawnedPrefab.name);
+                // Se non troviamo LinkToOthers, manteniamo l'ultima posizione
+                lastPosition += new Vector3(spacing, 0, 0);
+            }
+
+            // Imposta il livello da passare ai figli
+            int livello = i + 1; // O qualsiasi logica tu voglia usare per il livello
+            SetLevelToChildren(spawnedPrefab, livello);
         }
     }
 
-    // Metodo per spawnare il prefab alla distanza desiderata
-    void SpawnPrefabAtOffset()
+    void SetLevelToChildren(GameObject parent, int level)
     {
-        // Scegli un prefab random dalla lista
-        GameObject prefabToSpawn = prefabs[Random.Range(0, prefabs.Count)];
-
-        // Calcola la posizione del nuovo prefab rispetto al figlio del prefab iniziale
-        Vector3 spawnPosition = initialPrefabChild.position + spawnOffset;
-
-        // Istanzia il nuovo prefab nella posizione calcolata
-        GameObject newPrefab = Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
-
-        // Aggiungi un trigger per rilevare il contatto con il player
-        Collider newPrefabCollider = newPrefab.GetComponent<Collider>();
-        if (newPrefabCollider != null)
+        foreach (Transform child in parent.transform)
         {
-            newPrefabCollider.isTrigger = true;
-        }
-        else
-        {
-            Debug.LogError("Il prefab non ha un collider.");
-        }
-
-        // Associa lo script di rilevazione collisione
-        newPrefab.AddComponent<PrefabCollisionHandler>().spawner = this;
-    }
-
-    // Funzione per gestire lo spawn quando il player collide con un prefab
-    public void OnPrefabCollision()
-    {
-        // Spawna un nuovo prefab alla distanza specificata quando il player collide
-        SpawnPrefabAtOffset();
-    }
-}
-
-public class PrefabCollisionHandler : MonoBehaviour
-{
-    public PrefabSpawner spawner;
-
-    // Metodo per rilevare l'ingresso nel trigger
-    void OnTriggerEnter(Collider other)
-    {
-        // Se l'oggetto che entra in contatto ha il tag "Player"
-        if (other.CompareTag("Player"))
-        {
-            // Chiama il metodo nel PrefabSpawner per spawnare un altro prefab
-            spawner.OnPrefabCollision();
+            ChildComponent childComponent = child.GetComponent<ChildComponent>();
+            if (childComponent != null)
+            {
+                childComponent.SetLevel(level);
+            }
         }
     }
 }
