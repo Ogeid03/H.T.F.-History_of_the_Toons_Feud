@@ -2,68 +2,84 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProgressivePrefabSpawner : MonoBehaviour
+public class PrefabSpawner : MonoBehaviour
 {
-    // Lista di prefab da cui scegliere
-    public GameObject[] prefabs;
+    // Lista di prefab
+    public List<GameObject> prefabs;
 
-    // Il giocatore
-    public Transform player;
+    // Riferimento al prefab iniziale
+    public GameObject initialPrefab;
 
-    // Distanza fissa tra i prefab generati
-    public float spawnDistance = 10f;
+    // Distanza di spawn per il prossimo prefab (23.31 lungo l'asse X)
+    public Vector3 spawnOffset = new Vector3(23.31f, 0f, 0f);
 
-    // Valore che incrementa la difficoltà
-    private int difficultyLevel = 1;
-
-    // Posizione sull'asse X dove verrà spawnato il prossimo prefab
-    private float nextSpawnX;
-
-    // Il prefab attualmente generato
-    private GameObject currentPrefab;
+    // Posizione del primo spawn
+    private Transform initialPrefabChild;
 
     void Start()
     {
-        // Imposta la posizione iniziale del primo prefab
-        nextSpawnX = player.position.x + spawnDistance;
-
-        // Spawna il primo prefab
-        SpawnNextPrefab();
-    }
-
-    void Update()
-    {
-        // Controlla se il giocatore ha raggiunto o superato il prefab attuale
-        if (player.position.x >= currentPrefab.transform.position.x)
+        // Assicurati che ci sia almeno un prefab nella lista e che il prefab iniziale sia assegnato
+        if (prefabs.Count > 0 && initialPrefab != null)
         {
-            SpawnNextPrefab(); // Spawna il prossimo prefab
-            IncreaseDifficulty(); // Incrementa la difficoltà
+            // Trova un figlio del prefab iniziale da cui calcolare la posizione (esempio: il primo figlio)
+            initialPrefabChild = initialPrefab.transform.GetChild(0);
+
+            // Spawna il primo prefab alla distanza specificata rispetto al figlio
+            SpawnPrefabAtOffset();
+        }
+        else
+        {
+            Debug.LogError("Prefab o lista di prefabs non assegnati.");
         }
     }
 
-    // Metodo che spawna un prefab alla distanza prefissata
-    void SpawnNextPrefab()
+    // Metodo per spawnare il prefab alla distanza desiderata
+    void SpawnPrefabAtOffset()
     {
-        // Genera un prefab randomico dalla lista
-        int randomIndex = Random.Range(0, prefabs.Length);
+        // Scegli un prefab random dalla lista
+        GameObject prefabToSpawn = prefabs[Random.Range(0, prefabs.Count)];
 
-        // Definisci la posizione di spawn sull'asse X mantenendo Z costante
-        Vector3 spawnPosition = new Vector3(nextSpawnX, player.position.y, player.position.z);
+        // Calcola la posizione del nuovo prefab rispetto al figlio del prefab iniziale
+        Vector3 spawnPosition = initialPrefabChild.position + spawnOffset;
 
-        // Spawna il prefab
-        currentPrefab = Instantiate(prefabs[randomIndex], spawnPosition, Quaternion.identity);
+        // Istanzia il nuovo prefab nella posizione calcolata
+        GameObject newPrefab = Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
 
-        // Aggiorna la posizione per il prossimo spawn
-        nextSpawnX += spawnDistance;
+        // Aggiungi un trigger per rilevare il contatto con il player
+        Collider newPrefabCollider = newPrefab.GetComponent<Collider>();
+        if (newPrefabCollider != null)
+        {
+            newPrefabCollider.isTrigger = true;
+        }
+        else
+        {
+            Debug.LogError("Il prefab non ha un collider.");
+        }
+
+        // Associa lo script di rilevazione collisione
+        newPrefab.AddComponent<PrefabCollisionHandler>().spawner = this;
     }
 
-    // Metodo che incrementa la difficoltà
-    void IncreaseDifficulty()
+    // Funzione per gestire lo spawn quando il player collide con un prefab
+    public void OnPrefabCollision()
     {
-        // Incrementa il livello di difficoltà
-        difficultyLevel++;
+        // Spawna un nuovo prefab alla distanza specificata quando il player collide
+        SpawnPrefabAtOffset();
+    }
+}
 
-        // Puoi usare "difficultyLevel" per regolare diversi parametri nel gioco,
-        // come la velocità del player, il numero di ostacoli, etc.
+public class PrefabCollisionHandler : MonoBehaviour
+{
+    public PrefabSpawner spawner;
+
+    // Metodo per rilevare l'ingresso nel trigger
+    void OnTriggerEnter(Collider other)
+    {
+        // Se l'oggetto che entra in contatto ha il tag "Player"
+        if (other.CompareTag("Player"))
+        {
+            // Chiama il metodo nel PrefabSpawner per spawnare un altro prefab
+            spawner.OnPrefabCollision();
+        }
     }
 }
