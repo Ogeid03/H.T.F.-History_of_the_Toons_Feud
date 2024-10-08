@@ -10,4 +10,6 @@ Update da fare:
     - gestione dei due livelli
     - gestione dei caricamenti
     - gestione del medikit
+    - aggiungere dei veri ascensori
+    - aggiungere un ambiente esterno
 */
