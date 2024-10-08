@@ -4,17 +4,19 @@ using UnityEngine;
 public class EnemyLauncherAI : MonoBehaviour
 {
     public float moveSpeed = 3f;              // Velocità di movimento del nemico
+    public float retreatSpeed = 6f;           // Velocità di allontanamento rapido
     public float attackRange = 5f;            // Distanza alla quale il nemico può lanciare
     public float minDistanceToPlayer = 2f;    // Distanza minima per l'allontanamento
     public float attackInterval = 2f;         // Intervallo tra i lanci
-    public GameObject projectilePrefab;        // Prefab del proiettile
-    public float projectileSpeed = 10f;        // Velocità del proiettile
+    public GameObject projectilePrefab;       // Prefab del proiettile
+    public float projectileSpeed = 10f;       // Velocità del proiettile
 
-    public Transform launchPoint;              // Punto di lancio per il proiettile
+    public Transform launchPoint;             // Punto di lancio per il proiettile
 
-    private Transform player;                  // Riferimento al giocatore
-
-    private bool facingRight = true;           // Controlla la direzione in cui il nemico sta affrontando
+    private Transform player;                 // Riferimento al giocatore
+    private bool facingRight = true;          // Controlla la direzione in cui il nemico sta affrontando
+    private bool isRetreating = false;        // Flag per controllare se il nemico si sta ritirando
+    public float retreatDuration = 1f;        // Durata della ritirata rapida
 
     void Start()
     {
@@ -25,14 +27,14 @@ public class EnemyLauncherAI : MonoBehaviour
 
     void Update()
     {
-        if (player != null)
+        if (player != null && !isRetreating)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-            // Se il nemico è troppo vicino, allontanati dal giocatore
+            // Se il nemico è troppo vicino, inizia la ritirata
             if (distanceToPlayer < minDistanceToPlayer)
             {
-                MoveAwayFromPlayer();
+                StartCoroutine(RetreatAndAttack());
             }
             // Se il nemico è troppo lontano, avvicinati al giocatore
             else if (distanceToPlayer > attackRange)
@@ -66,18 +68,28 @@ public class EnemyLauncherAI : MonoBehaviour
         Vector2 direction = (player.position - transform.position).normalized;
         transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
 
-        // Flip the enemy based on the player's position
+        // Flip del nemico in base alla posizione del giocatore
         Flip(direction.x);
     }
 
-    void MoveAwayFromPlayer()
+    private IEnumerator RetreatAndAttack()
     {
-        // Muovi il nemico nella direzione opposta al giocatore
-        Vector2 direction = (transform.position - player.position).normalized;
-        transform.position = Vector2.MoveTowards(transform.position, transform.position + (Vector3)direction, moveSpeed * Time.deltaTime);
+        isRetreating = true;
 
-        // Flip the enemy based on the direction it is moving away
-        Flip(direction.x);
+        // Muovi il nemico rapidamente nella direzione opposta al giocatore
+        Vector2 direction = (transform.position - player.position).normalized;
+        float retreatStartTime = Time.time;
+
+        while (Time.time < retreatStartTime + retreatDuration)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, transform.position + (Vector3)direction, retreatSpeed * Time.deltaTime);
+            Flip(direction.x);
+            yield return null;
+        }
+
+        // Dopo la ritirata, lancia il proiettile
+        Launch();
+        isRetreating = false;
     }
 
     private void Launch()
@@ -87,7 +99,6 @@ public class EnemyLauncherAI : MonoBehaviour
         // Crea un nuovo proiettile alla posizione del punto di lancio
         GameObject projectile = Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
 
-        // Controlla se il proiettile è stato creato
         if (projectile != null)
         {
             Debug.Log("Proiettile creato!"); // Log di successo
@@ -105,14 +116,13 @@ public class EnemyLauncherAI : MonoBehaviour
         if (rb != null)
         {
             rb.velocity = new Vector2(direction.x * projectileSpeed, direction.y * projectileSpeed);
-            rb.AddForce(Vector2.up * 5f, ForceMode2D.Impulse); // Modifica il valore a seconda di quanto alto vuoi che vada
         }
         else
         {
             Debug.LogError("Errore: Rigidbody2D mancante nel proiettile!");
         }
 
-        // Flip the enemy based on the direction towards the player
+        // Flip del nemico in base alla direzione verso il giocatore
         Flip(direction.x);
     }
 

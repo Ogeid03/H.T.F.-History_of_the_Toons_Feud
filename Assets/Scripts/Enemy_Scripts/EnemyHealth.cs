@@ -5,9 +5,15 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 50;              // Salute massima del nemico
     private int currentHealth;              // Salute attuale del nemico
 
+    public int scoreValue = 10;
+    private EnemyScoreManager scoreManager; // Riferimento al gestore del punteggio
+
+
     void Start()
     {
         currentHealth = maxHealth;          // Inizializza la salute corrente a quella massima
+        scoreManager = FindObjectOfType<EnemyScoreManager>(); // Trova il gestore del punteggio
+
     }
 
     public void TakeDamage(int damage)
@@ -21,10 +27,22 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    public string GetPrefabName()
+    {
+        return gameObject.name; // Restituisce il nome dell'oggetto
+    }
+
     private void Die()
     {
         // Logica per la morte del nemico (es. distruzione, animazione, ecc.)
-        Debug.Log("Enemy died!");
+        Debug.Log("Enemy: " + GetPrefabName() + " died!");
+
+        if (scoreManager != null)
+        {
+            if(GetPrefabName() == "Enemy_Pitcher" || GetPrefabName() == "Enemy_Pitcher(Clone)") scoreManager.AddScore(scoreValue+5);
+            else scoreManager.AddScore(scoreValue);
+        }
+
         Destroy(gameObject);  // Distruggi l'oggetto nemico
     }
 
