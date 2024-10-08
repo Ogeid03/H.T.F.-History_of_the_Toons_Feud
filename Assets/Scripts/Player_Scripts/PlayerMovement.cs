@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;       // Oggetto per verificare se il giocatore è a terra
     public float groundCheckRadius = 0.2f; // Raggio per il controllo del terreno
     public int maxJumps = 2;            // Numero massimo di salti (doppio salto)
+    public float stairHeight = 1f;    // Altezza dello scalino che il giocatore può superare
+    public float stairCheckDistance = 0.1f; // Distanza per controllare se ci sono scalini
 
     private Rigidbody2D rb;             // Riferimento al rigidbody del giocatore
     private Animator animator;          // Riferimento all'animator
@@ -25,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // Movimento laterale solo se non stiamo attaccando
+        // Movimento laterale
         float moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
@@ -51,6 +53,12 @@ public class PlayerMovement : MonoBehaviour
             jumpCount = 0; // Resetta il numero di salti quando il giocatore è a terra
         }
 
+        // Controllo della salita sulle scale
+        if (moveInput != 0 && IsNearStairs())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, stairHeight); // Salta sopra lo scalino
+        }
+
         // Salto o doppio salto
         if ((isGrounded || jumpCount < maxJumps) && Input.GetButtonDown("Jump"))
         {
@@ -60,10 +68,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private bool IsNearStairs()
+    {
+        // Controlla se ci sono scalini di fronte al giocatore
+        Vector2 position = transform.position;
+        Vector2 direction = new Vector2(transform.localScale.x, 0); // Direzione orizzontale
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, stairCheckDistance, groundLayer);
+        return hit.collider != null && hit.collider.transform.position.y <= position.y + stairHeight;
+    }
+
     // Visualizza il raggio di controllo a terra (opzionale, utile per debug)
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        Gizmos.DrawLine(transform.position, transform.position + new Vector3(transform.localScale.x * stairCheckDistance, 0, 0));
     }
 }

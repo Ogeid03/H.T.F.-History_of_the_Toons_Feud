@@ -14,6 +14,8 @@ public class EnemyLauncherAI : MonoBehaviour
 
     private Transform player;                  // Riferimento al giocatore
 
+    private bool facingRight = true;           // Controlla la direzione in cui il nemico sta affrontando
+
     void Start()
     {
         // Trova l'oggetto con il tag "Player"
@@ -63,6 +65,9 @@ public class EnemyLauncherAI : MonoBehaviour
         // Muovi il nemico verso il giocatore
         Vector2 direction = (player.position - transform.position).normalized;
         transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+
+        // Flip the enemy based on the player's position
+        Flip(direction.x);
     }
 
     void MoveAwayFromPlayer()
@@ -70,6 +75,9 @@ public class EnemyLauncherAI : MonoBehaviour
         // Muovi il nemico nella direzione opposta al giocatore
         Vector2 direction = (transform.position - player.position).normalized;
         transform.position = Vector2.MoveTowards(transform.position, transform.position + (Vector3)direction, moveSpeed * Time.deltaTime);
+
+        // Flip the enemy based on the direction it is moving away
+        Flip(direction.x);
     }
 
     private void Launch()
@@ -102,6 +110,26 @@ public class EnemyLauncherAI : MonoBehaviour
         else
         {
             Debug.LogError("Errore: Rigidbody2D mancante nel proiettile!");
+        }
+
+        // Flip the enemy based on the direction towards the player
+        Flip(direction.x);
+    }
+
+    private void Flip(float direction)
+    {
+        // Flip del nemico in base alla direzione
+        if (direction > 0 && !facingRight)
+        {
+            // Ruota di 180 gradi sull'asse Z
+            transform.Rotate(0f, 180f, 0f);
+            facingRight = true;
+        }
+        else if (direction < 0 && facingRight)
+        {
+            // Ruota di 180 gradi sull'asse Z
+            transform.Rotate(0f, 180f, 0f);
+            facingRight = false;
         }
     }
 }
