@@ -30,8 +30,17 @@ public class EnemyAttack : MonoBehaviour
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            // Lancia il proiettile nella direzione in avanti del nemico
-            rb.AddForce(launchPoint.right * launchForce, ForceMode2D.Impulse);
+            // Verifica l'orientamento del nemico e lancia il proiettile nella direzione corretta
+            if (transform.localScale.x < 0)
+            {
+                // Se il nemico è rivolto a sinistra
+                rb.AddForce(-launchPoint.right * launchForce, ForceMode2D.Impulse);
+            }
+            else
+            {
+                // Se il nemico è rivolto a destra
+                rb.AddForce(launchPoint.right * launchForce, ForceMode2D.Impulse);
+            }
         }
     }
 
