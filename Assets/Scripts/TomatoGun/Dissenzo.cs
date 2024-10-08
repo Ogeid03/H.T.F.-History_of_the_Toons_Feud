@@ -51,7 +51,6 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
-
     private IEnumerator AttackCooldown()
     {
         canAttack = false; // Disabilita la possibilità di attaccare
