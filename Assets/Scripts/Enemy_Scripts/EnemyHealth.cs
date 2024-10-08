@@ -39,8 +39,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (scoreManager != null)
         {
-            if(GetPrefabName() == "Enemy_Pitcher" || GetPrefabName() == "Enemy_Pitcher(Clone)") scoreManager.AddScore(scoreValue+5);
-            else scoreManager.AddScore(scoreValue);
+            scoreManager.AddScore(scoreValue);
         }
 
         Destroy(gameObject);  // Distruggi l'oggetto nemico
