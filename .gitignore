@@ -38,3 +38,5 @@ sysinfo.txt
 /Assets/UnityTestTools*
 
 
+Logs/AssetImportWorker0.log
+Logs/AssetImportWorker1.log
