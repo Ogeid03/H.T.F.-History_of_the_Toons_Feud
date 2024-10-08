@@ -25,16 +25,14 @@ public class EnemyAI : MonoBehaviour
         playerRb = player.GetComponent<Rigidbody2D>();       // Ottieni il componente Rigidbody2D del giocatore
 
         // Avvia la coroutine che aspetta il ritardo iniziale
-        //StartCoroutine(StartDelay());
+        StartCoroutine(StartDelay());
     }
 
     IEnumerator StartDelay()
     {
         // Aspetta per i secondi specificati (startDelay)
         yield return new WaitForSeconds(startDelay);
-
-        // Dopo il ritardo, permetti al nemico di muoversi
-        canMove = true;
+        canMove = true; // Dopo il ritardo, permetti al nemico di muoversi
     }
 
     void Update()
@@ -72,7 +70,7 @@ public class EnemyAI : MonoBehaviour
         Debug.Log("Attacco al giocatore!");
 
         // Infliggi danno al giocatore e applica il knockback
-        if (playerHealth != null && playerRb != null)
+        if (playerHealth != null)
         {
             playerHealth.TakeDamage(attackDamage);  // Infliggi danno al giocatore
 
@@ -80,12 +78,34 @@ public class EnemyAI : MonoBehaviour
             Vector2 knockbackDirection = (player.position - transform.position).normalized;
 
             // Applica il knockback al giocatore
-            playerRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+            playerRb.AddForce(-knockbackDirection * knockbackForce, ForceMode2D.Impulse); // Usare il segno negativo per applicare il knockback nella direzione opposta
         }
 
         // Attende l'intervallo di attacco prima di poter attaccare di nuovo
         yield return new WaitForSeconds(attackInterval);
 
         isAttacking = false;
+    }
+
+    // Gestione della collisione con il collider di attacco
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player")) // Se il nemico entra in contatto con il giocatore
+        {
+            // Solo se non stai già attaccando, chiama AttackPlayer
+            if (!isAttacking)
+            {
+                StartCoroutine(AttackPlayer());
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player")) // Se il giocatore esce dall'area di attacco
+        {
+            StopAllCoroutines(); // Ferma gli attacchi
+            isAttacking = false; // Ripristina lo stato di attacco
+        }
     }
 }

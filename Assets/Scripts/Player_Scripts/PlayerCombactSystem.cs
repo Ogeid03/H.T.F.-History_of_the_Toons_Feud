@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public float attackDuration = 1.5f; // Durata dell'attacco (tempo di animazione)
-    public float attackRange = 0.5f;     // Raggio dell'attacco
-    public LayerMask enemyLayer;         // Layer per i nemici
-    public int damageAmount = 10;        // Danno inflitto ai nemici
+    public float attackDuration = 1.5f;    // Durata dell'attacco (tempo di animazione)
+    public float attackRange = 0.5f;       // Raggio dell'attacco
+    public LayerMask enemyLayer;           // Layer per i nemici
+    public int damageAmount = 10;          // Danno inflitto ai nemici
 
-    private Animator animator;            // Riferimento all'animator
-    private bool isAttacking = false;     // Controlla se il giocatore sta attaccando
+    // Aggiunte per il proiettile
+    public GameObject projectilePrefab;    // Prefab del proiettile del giocatore
+    public Transform launchPoint;          // Punto di lancio del proiettile
+    public float projectileForce = 10f;    // Forza con cui il proiettile viene lanciato
+
+    private Animator animator;             // Riferimento all'animator
+    private bool isAttacking = false;      // Controlla se il giocatore sta attaccando
     private Queue<IEnumerator> attackQueue = new Queue<IEnumerator>(); // Coda per gestire gli attacchi
 
     void Start()
@@ -21,16 +26,20 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        // Attacco
-        if (Input.GetButtonDown("Fire1")) // Il pulsante "Fire1" è predefinito per gli attacchi
+        // Attacco corpo a corpo
+        if (Input.GetButtonDown("Fire1")) // Il pulsante "Fire1" è predefinito per gli attacchi corpo a corpo
         {
-            // Aggiungi un attacco alla coda
             attackQueue.Enqueue(PerformAttack());
-            // Se non stiamo già attaccando, inizia ad attaccare
             if (!isAttacking)
             {
                 StartCoroutine(ExecuteNextAttack());
             }
+        }
+
+        // Attacco con proiettili
+        if (Input.GetButtonDown("Fire2")) // "Fire2" è predefinito per l'attacco a distanza (mouse destro)
+        {
+            LaunchProjectile();
         }
     }
 
@@ -38,12 +47,11 @@ public class PlayerCombat : MonoBehaviour
     {
         while (attackQueue.Count > 0)
         {
-            // Prendi l'attacco dalla coda
             yield return StartCoroutine(attackQueue.Dequeue());
         }
     }
 
-    // Coroutine per eseguire l'attacco
+    // Coroutine per eseguire l'attacco corpo a corpo
     IEnumerator PerformAttack()
     {
         isAttacking = true;
@@ -54,19 +62,40 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, attackRange, enemyLayer);
         foreach (Collider2D enemy in hitEnemies)
         {
-            // Gestisci il danno o altre interazioni
             Debug.Log("Colpito: " + enemy.name);
 
-            // Ottieni il componente EnemyHealth per infliggere danno
+            // Infliggi danno al nemico
             EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(damageAmount); // Infliggi danno al nemico
+                enemyHealth.TakeDamage(damageAmount);
             }
         }
 
         isAttacking = false;
     }
+
+    // Metodo per lanciare un proiettile
+    void LaunchProjectile()
+    {
+        // Crea un'istanza del prefab nel punto di lancio
+        GameObject projectile = Instantiate(projectilePrefab, launchPoint.position, launchPoint.rotation);
+
+        // Configura il proiettile come un proiettile del giocatore
+        Projectile projectileScript = projectile.GetComponent<Projectile>();
+        if (projectileScript != null)
+        {
+            projectileScript.SetLauncher(gameObject); // Imposta il lanciatore (giocatore)
+        }
+
+        // Aggiungi una forza al rigidbody del proiettile
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.AddForce(launchPoint.right * projectileForce, ForceMode2D.Impulse); // Lancia il proiettile
+        }
+    }
+
 
     private void OnDrawGizmosSelected()
     {

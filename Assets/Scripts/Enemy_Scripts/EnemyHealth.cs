@@ -28,23 +28,5 @@ public class EnemyHealth : MonoBehaviour
         Destroy(gameObject);  // Distruggi l'oggetto nemico
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        // Verifica se l'oggetto che ha colpito il nemico ha il tag "Bullet"
-        if (other.CompareTag("Bullet"))
-        {
-            // Ottieni il componente "Projectile" dall'oggetto colpito
-            Projectile projectile = other.GetComponent<Projectile>();
-
-            // Se esiste il componente "Projectile", ottieni il danno e applicalo
-            if (projectile != null)
-            {
-                // Applica il danno predefinito del proiettile
-                TakeDamage(projectile.GetDamageAmount());
-
-                // Distruggi il proiettile dopo l'impatto
-                Destroy(other.gameObject);
-            }
-        }
-    }
+   
 }

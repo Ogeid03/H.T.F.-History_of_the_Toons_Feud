@@ -31,10 +31,25 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Il giocatore è morto!");
         gameObject.SetActive(false);      // Disattiva il giocatore per il test
+        // Qui potresti aggiungere altre logiche come la gestione della scena o la visualizzazione di un menu di morte
     }
 
     private void UpdateHealthUI()
     {
         healthText.text = currentHealth.ToString(); // Aggiorna il testo con la salute attuale
+    }
+
+    // Questa funzione gestisce la collisione con i proiettili nemici
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("EnemyBullet")) // Controlla se il proiettile è di un nemico
+        {
+            Projectile projectile = other.GetComponent<Projectile>();
+            if (projectile != null)
+            {
+                TakeDamage(projectile.GetDamageAmount()); // Infliggi danno al giocatore
+                Destroy(other.gameObject); // Distruggi il proiettile dopo l'impatto
+            }
+        }
     }
 }

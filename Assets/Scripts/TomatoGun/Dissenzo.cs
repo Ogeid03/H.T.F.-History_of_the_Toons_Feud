@@ -26,6 +26,13 @@ public class EnemyAttack : MonoBehaviour
         // Crea un'istanza del prefab nel punto di lancio
         GameObject projectile = Instantiate(projectilePrefab, launchPoint.position, launchPoint.rotation);
 
+        // Imposta il proiettile come un proiettile nemico
+        Projectile projectileScript = projectile.GetComponent<Projectile>();
+        if (projectileScript != null)
+        {
+            projectileScript.SetLauncher(gameObject); // Imposta il lanciatore (nemico)
+        }
+
         // Aggiungi una forza al rigidbody del proiettile
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         if (rb != null)
@@ -43,6 +50,7 @@ public class EnemyAttack : MonoBehaviour
             }
         }
     }
+
 
     private IEnumerator AttackCooldown()
     {
