@@ -8,18 +8,37 @@ public class EnemyHealth : MonoBehaviour
     public int scoreValue = 10;
     private EnemyScoreManager scoreManager; // Riferimento al gestore del punteggio
 
+    private Transform pomodoroSpiaccicato;  // Riferimento al figlio "pomodoro_spappolato"
+    private bool isPomodoroVisible = false; // Verifica se il pomodoro è già visibile
+
+
 
     void Start()
     {
         currentHealth = maxHealth;          // Inizializza la salute corrente a quella massima
         scoreManager = FindObjectOfType<EnemyScoreManager>(); // Trova il gestore del punteggio
 
+        // Trova il figlio "Pomodoro Spiaccicato"
+        pomodoroSpiaccicato = transform.Find("pomodoro_spappolato");
+
+        // Se esiste, lo nascondi all'inizio
+        if (pomodoroSpiaccicato != null)
+        {
+            pomodoroSpiaccicato.gameObject.SetActive(false);
+        }
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         Debug.Log("Enemy health: " + currentHealth);
+
+        // Se è presente il pomodoro e non è già stato reso visibile
+        if (pomodoroSpiaccicato != null && !isPomodoroVisible)
+        {
+            pomodoroSpiaccicato.gameObject.SetActive(true);  // Rendi visibile il pomodoro
+            isPomodoroVisible = true;
+        }
 
         if (currentHealth <= 0)
         {
@@ -42,8 +61,15 @@ public class EnemyHealth : MonoBehaviour
             scoreManager.AddScore(scoreValue);
         }
 
-        Destroy(gameObject);  // Distruggi l'oggetto nemico
+        // Inizia la coroutine per ritardare la distruzione di 0.5 secondi
+        StartCoroutine(DelayedDeath());
     }
 
-   
+    private System.Collections.IEnumerator DelayedDeath()
+    {
+        // Attendi 0.5 secondi prima di distruggere il nemico
+        yield return new WaitForSeconds(0.5f);
+
+        Destroy(gameObject);  // Distruggi l'oggetto nemico
+    }
 }
