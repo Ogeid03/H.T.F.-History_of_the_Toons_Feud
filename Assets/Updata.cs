@@ -20,6 +20,7 @@ Fixes:
     - intro
     - hitted by tomatoes
     - cambiare il player con la texture HD di Martina
+    - far ittare l'inchiostro sulla testa
 
 Extras:
     - Schermata iniziale
