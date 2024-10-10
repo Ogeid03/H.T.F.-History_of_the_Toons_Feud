@@ -19,6 +19,7 @@ Fixes:
     - morte
     - intro
     - hitted by tomatoes
+    - cambiare il player con la texture HD di Martina
 
 Extras:
     - Schermata iniziale
