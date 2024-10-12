@@ -38,7 +38,7 @@ public class EnemyAttack : MonoBehaviour
         if (rb != null)
         {
             // Verifica l'orientamento del nemico e lancia il proiettile nella direzione corretta
-            if (transform.localScale.x > 0)
+            if (transform.localScale.x < 0)
             {
                 // Se il nemico è rivolto a sinistra
                 rb.AddForce(-launchPoint.right * launchForce, ForceMode2D.Impulse);
