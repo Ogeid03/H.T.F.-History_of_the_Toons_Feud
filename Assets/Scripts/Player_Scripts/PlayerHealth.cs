@@ -39,6 +39,15 @@ public class PlayerHealth : MonoBehaviour
         healthText.text = currentHealth.ToString(); // Aggiorna il testo con la salute attuale
     }
 
+    public void Heal(int amount)          // Nuova funzione per guarire il giocatore
+    {
+        currentHealth += amount;          // Aumenta la salute
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Limita la salute al massimo
+        Debug.Log("Giocatore ha raccolto un medikit! Salute attuale: " + currentHealth);
+
+        UpdateHealthUI();                 // Aggiorna il testo UI dopo la guarigione
+    }
+
     // Questa funzione gestisce la collisione con i proiettili nemici
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -49,6 +58,20 @@ public class PlayerHealth : MonoBehaviour
             {
                 TakeDamage(projectile.GetDamageAmount()); // Infliggi danno al giocatore
                 Destroy(other.gameObject); // Distruggi il proiettile dopo l'impatto
+            }
+        }
+    }
+
+    // Gestione del medikit
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Medikit"))  // Controlla se l'oggetto ha il tag Medikit
+        {
+            Medikit medikit = other.GetComponent<Medikit>();
+            if (medikit != null)
+            {
+                Heal(medikit.healAmount);  // Guarisci il giocatore con la quantità del medikit
+                Destroy(other.gameObject); // Distruggi il medikit dopo averlo raccolto
             }
         }
     }
