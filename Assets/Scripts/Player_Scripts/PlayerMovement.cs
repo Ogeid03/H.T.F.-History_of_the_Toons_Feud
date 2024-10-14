@@ -78,63 +78,31 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger("Jump");
             isJumping = false;  // Reset il flag di salto
         }
-
-        // Controllo della salita sulle scale
-        if (moveInput != 0 && IsNearStairs() && isGrounded)
-        {
-            // Salta sopra lo scalino
-            rb.velocity = new Vector2(rb.velocity.x, stairHeight);
-        }
-    }
-
-
-    private bool IsNearStairs()
-    {
-        // Controlla se ci sono scalini di fronte al giocatore
-        Vector2 position = transform.position;
-        Vector2 direction = new Vector2(transform.localScale.x, 0); // Direzione orizzontale
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, stairCheckDistance, groundLayer);
-        return hit.collider != null && hit.collider.transform.position.y <= position.y + stairHeight;
     }
 
     // Metodi per i tasti mobili
     public void OnMoveLeft()
     {
-        Debug.Log("Moving Left");
         moveLeft = true;
     }
 
     public void StopMoveLeft()
     {
-        Debug.Log("Stopped Moving Left");
         moveLeft = false;
     }
 
-
-    public void OnMoveRight() // Se necessario per il movimento a destra
+    public void OnMoveRight()
     {
         moveRight = true;
     }
 
-    public void StopMoveRight() // Se necessario per fermare il movimento a destra
+    public void StopMoveRight()
     {
         moveRight = false;
     }
 
     public void OnJump()
     {
-        Debug.Log("Jump Button Pressed");
         isJumping = true;
-    }
-
-
-
-
-    // Visualizza il raggio di controllo a terra (opzionale, utile per debug)
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-        Gizmos.DrawLine(transform.position, transform.position + new Vector3(transform.localScale.x * stairCheckDistance, 0, 0));
     }
 }
