@@ -74,11 +74,19 @@ public class PlayerHealth : MonoBehaviour
 
     public void Heal(int amount)          // Nuova funzione per guarire il giocatore
     {
-        currentHealth += amount;          // Aumenta la salute
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Limita la salute al massimo
-        Debug.Log("Giocatore ha raccolto un medikit! Salute attuale: " + currentHealth);
+        // Controlla se la salute è già al massimo prima di guarire
+        if (currentHealth < maxHealth)
+        {
+            currentHealth += amount;          // Aumenta la salute
+            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Limita la salute al massimo
+            Debug.Log("Giocatore ha raccolto un medikit! Salute attuale: " + currentHealth);
 
-        UpdateHealthUI();                 // Aggiorna il testo UI dopo la guarigione
+            UpdateHealthUI();                 // Aggiorna il testo UI dopo la guarigione
+        }
+        else
+        {
+            Debug.Log("Giocatore ha già tutta la vita, non può raccogliere il medikit.");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -92,11 +100,7 @@ public class PlayerHealth : MonoBehaviour
                 Destroy(other.gameObject); // Distruggi il proiettile dopo l'impatto
             }
         }
-    }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.CompareTag("Medikit"))  // Controlla se l'oggetto ha il tag Medikit
+        else if (other.CompareTag("Medikit"))  // Controlla se l'oggetto ha il tag Medikit
         {
             Medikit medikit = other.GetComponent<Medikit>();
             if (medikit != null)

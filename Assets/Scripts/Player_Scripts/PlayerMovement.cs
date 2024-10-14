@@ -20,8 +20,6 @@ public class PlayerMovement : MonoBehaviour
     private bool moveLeft = false;
     private bool moveRight = false;
     private bool isJumping = false;
-    private bool isAttacking = false;
-    private bool isThrowing = false;
 
     void Start()
     {
@@ -34,9 +32,18 @@ public class PlayerMovement : MonoBehaviour
     {
         // Movimento laterale
         float moveInput = 0f;
-        if (moveLeft) moveInput = -1f; // Solo movimento a sinistra
-        if (moveRight) moveInput = 1f; // Potresti mantenere il movimento a destra se necessario
 
+        // Controlla il movimento a sinistra e a destra
+        if (moveLeft)
+        {
+            moveInput = -1f; // Movimento a sinistra
+        }
+        else if (moveRight)
+        {
+            moveInput = 1f; // Movimento a destra
+        }
+
+        // Aggiorna la velocità del rigidbody
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
         // Imposta l'animazione di corsa
@@ -45,17 +52,18 @@ public class PlayerMovement : MonoBehaviour
         // Flip del personaggio in base alla direzione
         if (moveInput < 0)
         {
-            transform.localScale = new Vector3(1, 1, 1); // Personaggio rivolto a destra
+            transform.localScale = new Vector3(-1, 1, 1); // Personaggio rivolto a sinistra
         }
         else if (moveInput > 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1); // Personaggio rivolto a sinistra
+            transform.localScale = new Vector3(1, 1, 1); // Personaggio rivolto a destra
         }
 
         // Controlla se il giocatore è a terra
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         animator.SetBool("IsGrounded", isGrounded);
 
+        // Resetta il numero di salti se il giocatore è a terra
         if (isGrounded)
         {
             jumpCount = 0; // Resetta il numero di salti quando il giocatore è a terra
@@ -64,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
         // Salto o doppio salto
         if (isJumping && (isGrounded || jumpCount < maxJumps))
         {
+            // Salta
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpCount++; // Incrementa il contatore di salti
             animator.SetTrigger("Jump");
@@ -71,25 +80,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Controllo della salita sulle scale
-        if (moveInput != 0 && IsNearStairs())
+        if (moveInput != 0 && IsNearStairs() && isGrounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, stairHeight); // Salta sopra lo scalino
-        }
-
-        // Azione attacco corpo a corpo (da implementare)
-        if (isAttacking)
-        {
-            Debug.Log("Attacco corpo a corpo eseguito!");
-            isAttacking = false;
-        }
-
-        // Azione lancio proiettile (da implementare)
-        if (isThrowing)
-        {
-            Debug.Log("Proiettile lanciato!");
-            isThrowing = false;
+            // Salta sopra lo scalino
+            rb.velocity = new Vector2(rb.velocity.x, stairHeight);
         }
     }
+
 
     private bool IsNearStairs()
     {
@@ -126,18 +123,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnJump()
     {
+        Debug.Log("Jump Button Pressed");
         isJumping = true;
     }
 
-    public void OnAttack()
-    {
-        isAttacking = true;
-    }
 
-    public void OnThrow()
-    {
-        isThrowing = true;
-    }
+
 
     // Visualizza il raggio di controllo a terra (opzionale, utile per debug)
     void OnDrawGizmos()

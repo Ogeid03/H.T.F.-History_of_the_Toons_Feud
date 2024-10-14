@@ -19,12 +19,30 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        // Attacco corpo a corpo
+        // Disabilitiamo l'input da tastiera per l'attacco, poiché useremo i pulsanti UI
+        // Se vuoi mantenere anche l'input da tastiera puoi tenerlo:
+        /*
         if (Input.GetButtonDown("Fire1") && !isAttacking) // Il pulsante "Fire1" è predefinito per gli attacchi corpo a corpo
         {
-            // Avvia l'attacco e continua a muoverti
             StartCoroutine(PerformAttack());
         }
+        */
+    }
+
+    // Metodo da collegare al bottone di attacco
+    public void OnAttackButtonPressed()
+    {
+        if (!isAttacking)
+        {
+            StartCoroutine(PerformAttack());
+        }
+    }
+
+    // Se hai un'azione di lancio (esempio per un attacco a distanza o una magia)
+    public void OnLaunchButtonPressed()
+    {
+        // Logica per il lancio di un attacco a distanza o una magia
+        Debug.Log("Azione di lancio eseguita!");
     }
 
     private IEnumerator PerformAttack()
