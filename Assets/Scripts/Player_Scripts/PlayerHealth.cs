@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;  // Importa il namespace per usare gli elementi UI come Text e Image
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -17,28 +17,29 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;        // Imposta la salute attuale al valore massimo
-        UpdateHealthUI();                 // Aggiorna il testo UI alla partenza
+        currentHealth = maxHealth;        // Inizializza la salute attuale al valore massimo all'inizio
+        UpdateHealthUI();                 // Aggiorna il testo UI e l'immagine all'inizio
     }
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;          // Riduci la salute
+        currentHealth -= damage;          // Riduci la salute del danno subito
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Assicurati che la salute non scenda sotto 0
+
         Debug.Log("Giocatore ha subito danno! Salute attuale: " + currentHealth);
 
-        UpdateHealthUI();                 // Aggiorna il testo UI quando si subisce danno
+        UpdateHealthUI();                 // Aggiorna la UI quando si subisce danno
 
         if (currentHealth <= 0)
         {
-            Die();                        // Gestisci la morte del giocatore.
+            Die();                        // Gestisci la morte del giocatore
         }
     }
 
     private void Die()
     {
         Debug.Log("Il giocatore è morto!");
-        gameObject.SetActive(false);      // Disattiva il giocatore per il test
-        // Qui potresti aggiungere altre logiche come la gestione della scena o la visualizzazione di un menu di morte
+        gameObject.SetActive(false);      // Disattiva il giocatore
     }
 
     private void UpdateHealthUI()
@@ -72,21 +73,28 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void Heal(int amount)          // Nuova funzione per guarire il giocatore
+    public void Heal(int amount)
     {
-        // Controlla se la salute è già al massimo prima di guarire
+        // Controlla se la salute è inferiore a quella massima
         if (currentHealth < maxHealth)
         {
-            currentHealth += amount;          // Aumenta la salute
-            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Limita la salute al massimo
+            // Incrementa la salute, ma assicurati che non superi il massimo
+            currentHealth += amount;
+            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Impedisci che superi il massimo
+
             Debug.Log("Giocatore ha raccolto un medikit! Salute attuale: " + currentHealth);
 
-            UpdateHealthUI();                 // Aggiorna il testo UI dopo la guarigione
+            UpdateHealthUI();  // Aggiorna la UI dopo la guarigione
         }
         else
         {
             Debug.Log("Giocatore ha già tutta la vita, non può raccogliere il medikit.");
         }
+    }
+
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -103,7 +111,7 @@ public class PlayerHealth : MonoBehaviour
         else if (other.CompareTag("Medikit"))  // Controlla se l'oggetto ha il tag Medikit
         {
             Medikit medikit = other.GetComponent<Medikit>();
-            if (medikit != null)
+            if (medikit != null && currentHealth!=100)
             {
                 Heal(medikit.healAmount);  // Guarisci il giocatore con la quantità del medikit
                 Destroy(other.gameObject); // Distruggi il medikit dopo averlo raccolto

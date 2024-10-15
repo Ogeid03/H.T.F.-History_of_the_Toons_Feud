@@ -10,7 +10,7 @@ public class Medikit : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
+            if (playerHealth != null && playerHealth.GetCurrentHealth() != 100)
             {
                 playerHealth.Heal(healAmount); // Guarisce il giocatore
                 Destroy(gameObject); // Distrugge il medikit dopo l'uso
