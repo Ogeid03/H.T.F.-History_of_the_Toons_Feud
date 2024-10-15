@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float moveSpeed = 3f;           // Velocità di movimento del nemico
-    public float attackRange = 2.5f;       // Distanza alla quale il nemico può attaccare
+    public float moveSpeed = 5f;           // Velocità di movimento del nemico
+    public float attackRange = 3f;       // Distanza alla quale il nemico può attaccare
     public float attackInterval = 1f;      // Intervallo tra un attacco e l'altro
     public float knockbackForce = 5f;      // Forza del knockback
     public int attackDamage = 10;          // Danno inflitto al giocatore
-    public float startDelay = 7f;          // Ritardo prima che il nemico possa muoversi
+    public float startDelay = 0f;          // Ritardo prima che il nemico possa muoversi
 
     private Transform player;              // Riferimento al giocatore
     private bool isAttacking = false;      // Controlla se il nemico sta già attaccando

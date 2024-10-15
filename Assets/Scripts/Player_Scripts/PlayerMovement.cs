@@ -33,7 +33,10 @@ public class PlayerMovement : MonoBehaviour
         // Movimento laterale
         float moveInput = 0f;
 
-        // Controlla il movimento a sinistra e a destra
+        // Controllo del movimento da tastiera (WASD o frecce)
+        moveInput = Input.GetAxisRaw("Horizontal");  // Questo rileva i tasti A/D o le frecce sinistra/destra
+
+        // Aggiunta del movimento da tasti GUI
         if (moveLeft)
         {
             moveInput = -1f; // Movimento a sinistra
@@ -52,11 +55,11 @@ public class PlayerMovement : MonoBehaviour
         // Flip del personaggio in base alla direzione
         if (moveInput < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1); // Personaggio rivolto a sinistra
+            transform.localScale = new Vector3(1, 1, 1); // Personaggio rivolto a destra
         }
         else if (moveInput > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1); // Personaggio rivolto a destra
+            transform.localScale = new Vector3(-1, 1, 1); // Personaggio rivolto a sinistra
         }
 
         // Controlla se il giocatore è a terra
@@ -70,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Salto o doppio salto
-        if (isJumping && (isGrounded || jumpCount < maxJumps))
+        if ((isJumping || Input.GetButtonDown("Jump")) && (isGrounded || jumpCount < maxJumps))
         {
             // Salta
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
@@ -79,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;  // Reset il flag di salto
         }
     }
+
 
     // Metodi per i tasti mobili
     public void OnMoveLeft()
