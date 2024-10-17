@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Controlla se il giocatore è a terra
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        animator.SetBool("IsGrounded", isGrounded);
+        animator.SetBool("IsGrounded", isGrounded);  // Imposta la bool per verificare se è a terra
 
         // Resetta il numero di salti se il giocatore è a terra
         if (isGrounded)
@@ -78,11 +78,20 @@ public class PlayerMovement : MonoBehaviour
             // Salta
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpCount++; // Incrementa il contatore di salti
-            animator.SetTrigger("Jump");
-            isJumping = false;  // Reset il flag di salto
+            animator.SetTrigger("Jump"); // Avvia l'animazione di salto
+            isJumping = false;  // Resetta il flag di salto
+        }
+
+        // Aggiungi un controllo per vedere se è in aria e non a terra
+        if (!isGrounded && rb.velocity.y > 0)
+        {
+            animator.SetBool("IsJumpingUp", true); // Imposta una bool per indicare che sta saltando
+        }
+        else
+        {
+            animator.SetBool("IsJumpingUp", false); // Disattiva la bool quando non è più in aria o sta cadendo
         }
     }
-
 
     // Metodi per i tasti mobili
     public void OnMoveLeft()
