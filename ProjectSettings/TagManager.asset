@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - EnemyBullet
   - Medikit
+  - F
   layers:
   - Default
   - TransparentFX
