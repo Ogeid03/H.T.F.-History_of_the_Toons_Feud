@@ -38,37 +38,34 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    // Se hai un'azione di lancio (esempio per un attacco a distanza o una magia)
-    public void OnLaunchButtonPressed()
-    {
-        // Logica per il lancio di un attacco a distanza o una magia
-        Debug.Log("Azione di lancio eseguita!");
-    }
-
     private IEnumerator PerformAttack()
     {
         isAttacking = true;                      // Imposta lo stato di attacco a true
         animator.SetTrigger("Attack");           // Attiva l'animazione di attacco
 
-        // Rilevamento dei nemici colpiti
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, attackRange, enemyLayer);
+        // Rilevamento degli oggetti colpiti nel raggio d'attacco
+        Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, attackRange);
 
-        // Controllo dei nemici colpiti
-        if (hitEnemies.Length > 0)
+        // Controllo degli oggetti colpiti
+        if (hitObjects.Length > 0)
         {
-            foreach (Collider2D enemy in hitEnemies)
+            foreach (Collider2D hitObject in hitObjects)
             {
-                Debug.Log("Colpito: " + enemy.name);
+                // Verifica se l'oggetto colpito ha il tag "Enemy"
+                if (hitObject.CompareTag("Enemy"))
+                {
+                    Debug.Log("Colpito nemico: " + hitObject.name);
 
-                // Infliggi danno al nemico
-                EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
-                if (enemyHealth != null)
-                {
-                    enemyHealth.TakeDamage(damageAmount);
-                }
-                else
-                {
-                    Debug.LogWarning("Il nemico non ha il componente EnemyHealth!");
+                    // Infliggi danno al nemico
+                    EnemyHealth enemyHealth = hitObject.GetComponent<EnemyHealth>();
+                    if (enemyHealth != null)
+                    {
+                        enemyHealth.TakeDamage(damageAmount);
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Il nemico non ha il componente EnemyHealth!");
+                    }
                 }
             }
         }
@@ -81,6 +78,7 @@ public class PlayerCombat : MonoBehaviour
 
         isAttacking = false;                     // Ripristina lo stato di attacco
     }
+
 
     private void OnDrawGizmosSelected()
     {
