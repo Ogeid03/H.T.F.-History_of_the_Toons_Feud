@@ -8,6 +8,9 @@ public class Projectile : MonoBehaviour
     // Riferimento al lanciatore (Player o Enemy)
     private GameObject launcher;
 
+    // Riferimento all'AudioSource
+    private AudioSource audioSource;
+
     // Funzione per impostare il lanciatore
     public void SetLauncher(GameObject launcher)
     {
@@ -18,6 +21,16 @@ public class Projectile : MonoBehaviour
     public int GetDamageAmount()
     {
         return damageAmount; // Restituisce la quantità di danno
+    }
+
+    private void Start()
+    {
+        // Ottieni il componente AudioSource
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogWarning("AudioSource non trovato sul proiettile!");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -43,6 +56,7 @@ public class Projectile : MonoBehaviour
             {
                 enemyHealth.TakeDamage(damageAmount); // Infliggi danno al nemico
             }
+            PlaySound(); // Riproduci suono prima di distruggere
             Destroy(gameObject); // Distruggi il proiettile dopo l'impatto
         }
 
@@ -54,10 +68,23 @@ public class Projectile : MonoBehaviour
             {
                 playerHealth.TakeDamage(damageAmount); // Infliggi danno al giocatore
             }
+            PlaySound(); // Riproduci suono prima di distruggere
             Destroy(gameObject); // Distruggi il proiettile dopo l'impatto
         }
 
-        // Distruggi il proiettile se colpisce altro
+        // Se colpisce altro, riproduci suono e distruggi
+        PlaySound(); // Riproduci suono prima di distruggere
         Destroy(gameObject);
+    }
+
+    // Funzione per riprodurre il suono
+    private void PlaySound()
+    {
+        if (audioSource != null)
+        {
+            audioSource.enabled = true; // Assicurati che l'AudioSource sia abilitato
+            audioSource.Play(); // Riproduci il suono
+            Destroy(gameObject, audioSource.clip.length); // Distruggi dopo la durata del clip
+        }
     }
 }

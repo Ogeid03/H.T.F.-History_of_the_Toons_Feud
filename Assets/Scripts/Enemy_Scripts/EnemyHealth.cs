@@ -11,22 +11,25 @@ public class EnemyHealth : MonoBehaviour
     private Transform pomodoroSpiaccicato;  // Riferimento al figlio "pomodoro_spappolato"
     private bool isPomodoroVisible = false; // Verifica se il pomodoro è già visibile
 
-
-
     void Start()
     {
-        currentHealth = maxHealth;          // Inizializza la salute corrente a quella massima
+        currentHealth = maxHealth; // Inizializza la salute corrente a quella massima
         scoreManager = FindObjectOfType<EnemyScoreManager>(); // Trova il gestore del punteggio
 
-        // Trova il figlio "Pomodoro Spiaccicato"
+        // Trova "pomodoro_spappolato" direttamente come figlio del GameObject corrente
         pomodoroSpiaccicato = transform.Find("pomodoro_spappolato");
 
         // Se esiste, lo nascondi all'inizio
         if (pomodoroSpiaccicato != null)
         {
-            pomodoroSpiaccicato.gameObject.SetActive(false);
+            pomodoroSpiaccicato.gameObject.SetActive(false); // Nascondi il pomodoro all'inizio
+        }
+        else
+        {
+            Debug.LogWarning("pomodoro_spappolato non trovato come figlio del GameObject con EnemyHealth!");
         }
     }
+
 
     public void TakeDamage(int damage)
     {
@@ -36,8 +39,8 @@ public class EnemyHealth : MonoBehaviour
         // Se è presente il pomodoro e non è già stato reso visibile
         if (pomodoroSpiaccicato != null && !isPomodoroVisible)
         {
-            pomodoroSpiaccicato.gameObject.SetActive(true);  // Rendi visibile il pomodoro
-            isPomodoroVisible = true;
+            pomodoroSpiaccicato.gameObject.SetActive(true);  // Rendi visibile il pomodoro quando il nemico subisce danno
+            isPomodoroVisible = true;  // Segna il pomodoro come visibile
         }
 
         if (currentHealth <= 0)

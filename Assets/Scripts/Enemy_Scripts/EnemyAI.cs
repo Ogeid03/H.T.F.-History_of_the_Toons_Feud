@@ -11,6 +11,20 @@ public class EnemyMovement : MonoBehaviour
 
     // Riferimento al GameObject che contiene la grafica del nemico
     public Transform graphics;
+    private Transform pomodoro; // Riferimento al pomodoro
+    private Animator animator; // Riferimento all'Animator
+
+    void Start()
+    {
+        // Cerca il pomodoro tra i figli
+        pomodoro = transform.Find("pomodoro_spappolato");
+        if (pomodoro == null)
+        {
+            Debug.LogWarning("Pomodoro non trovato tra i figli di " + gameObject.name);
+        }
+        // Ottieni il componente Animator
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -23,6 +37,10 @@ public class EnemyMovement : MonoBehaviour
             Vector3 direction = (target.position - transform.position).normalized;
             transform.position += new Vector3(direction.x, 0, 0) * speed * Time.deltaTime;
 
+            // Aggiorna la velocità nell'animatore
+            animator.SetFloat("Speed", Mathf.Abs(direction.x) * speed); // Aggiorna il parametro Speed
+
+
             // Controlla la direzione e flippa il nemico se necessario
             if (direction.x > 0 && isFacingRight)
             {
@@ -32,6 +50,11 @@ public class EnemyMovement : MonoBehaviour
             {
                 Flip();
             }
+        }
+        else
+        {
+            // Se non ci sono movimenti, imposta Speed a 0
+            animator.SetFloat("Speed", 0);
         }
     }
 
@@ -63,9 +86,25 @@ public class EnemyMovement : MonoBehaviour
     {
         isFacingRight = !isFacingRight; // Inverti lo stato di direzione
         Vector3 theScale = graphics.localScale;
-        theScale.x *= -1; // Inverti l'asse X della scala della grafica
+        theScale.x *= -1; // Inverti l'asse X della scala della grafica del nemico
         graphics.localScale = theScale;
+
+        // Flippa anche il pomodoro
+        if (pomodoro != null)
+        {
+            Vector3 pomodoroScale = pomodoro.localScale;
+            pomodoroScale.x *= -1; // Inverti l'asse X della scala del pomodoro
+            pomodoro.localScale = pomodoroScale;
+
+            Vector3 offset = new Vector3(8f, 0, 0);
+            pomodoro.localPosition += offset;
+        }
     }
+
+    //Vector3 offset = new Vector3(0.5f, 0, 0);
+    //pomodoro.localPosition += offset;
+    
+
 
     // Metodo chiamato quando l'AttackHitBox entra in contatto con un oggetto
     private void OnTriggerEnter2D(Collider2D other)
