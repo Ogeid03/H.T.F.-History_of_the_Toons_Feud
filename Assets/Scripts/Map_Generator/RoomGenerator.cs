@@ -7,6 +7,7 @@ public class RoomGenerator : MonoBehaviour
     [SerializeField] private int numberOfSpawns = 5; // Numero di prefab da generare
     [SerializeField] private float spacing = 23.31f; // Spaziatura tra i prefab
     [SerializeField] private Transform initialSpawnPoint; // Punto di riferimento per lo spawn del primo prefab
+    [SerializeField] private GameObject finalRoomPrefab; // Prefab dell'ultima stanza
 
     void Start()
     {
@@ -44,6 +45,16 @@ public class RoomGenerator : MonoBehaviour
             // Imposta il livello da passare ai figli
             int livello = i + 1; // O qualsiasi logica tu voglia usare per il livello
             SetLevelToChildren(spawnedPrefab, livello);
+        }
+
+        // Genera l'ultima stanza
+        if (finalRoomPrefab != null)
+        {
+            Instantiate(finalRoomPrefab, lastPosition, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("Il prefab dell'ultima stanza non è stato impostato.");
         }
     }
 
