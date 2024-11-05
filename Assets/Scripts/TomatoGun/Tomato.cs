@@ -41,6 +41,14 @@ public class Projectile : MonoBehaviour
             return; // Ignora la collisione
         }
 
+        // Se colpisce il layer Ground, distruggi il proiettile
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            PlaySound(); // Riproduci suono prima di distruggere
+            Destroy(gameObject); // Distruggi il proiettile
+            return; // Esci per evitare ulteriori controlli
+        }
+
         // Se il proiettile colpisce un nemico, infliggi danno
         if (collision.gameObject.CompareTag("Enemy"))
         {

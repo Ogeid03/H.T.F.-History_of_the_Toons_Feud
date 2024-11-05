@@ -5,14 +5,13 @@ public class RandomMoveBetweenPoints : MonoBehaviour
 {
     private Transform startPoint;           // Riferimento all'oggetto "Start"
     private Transform endPoint;             // Riferimento all'oggetto "End"
-    private Transform targetPoint;          // Il punto di destinazione corrente
     public float speed = 3f;                // Velocità di movimento dell'oggetto
 
     // Intervallo minimo e massimo per il cambio casuale di direzione
     public float minRandomDirectionInterval = 1f;
-    public float maxRandomDirectionInterval = 5f;
+    public float maxRandomDirectionInterval = 3f;
 
-    private bool movingTowardsEnd = true;   // Direzione attuale (true: verso End, false: verso Start)
+    private bool movingRight = true;        // Direzione attuale (true: destra, false: sinistra)
 
     // Start viene chiamato una volta all'inizio
     void Start()
@@ -29,22 +28,35 @@ public class RandomMoveBetweenPoints : MonoBehaviour
             return;
         }
 
-        // Imposta il primo target verso "End" e avvia la routine per il cambio casuale
-        targetPoint = endPoint;
-        movingTowardsEnd = true;
+        // Avvia la routine per il cambio casuale
         StartCoroutine(ChangeDirectionRandomly());
     }
 
     // Update viene chiamato una volta per frame
     void Update()
     {
-        // Muovi l'oggetto verso il target point corrente
-        transform.position = Vector3.MoveTowards(transform.position, targetPoint.position, speed * Time.deltaTime);
-
-        // Se l'oggetto raggiunge uno dei punti, cambia direzione
-        if (Vector3.Distance(transform.position, targetPoint.position) < 0.01f)
+        // Muovi l'oggetto nella direzione attuale
+        if (movingRight)
         {
-            ChangeTargetPoint();
+            // Muovi a destra
+            transform.position += Vector3.right * speed * Time.deltaTime;
+
+            // Se l'oggetto raggiunge o supera "End", inverte la direzione
+            if (transform.position.x >= endPoint.position.x)
+            {
+                movingRight = false; // Cambia direzione a sinistra
+            }
+        }
+        else
+        {
+            // Muovi a sinistra
+            transform.position += Vector3.left * speed * Time.deltaTime;
+
+            // Se l'oggetto raggiunge o supera "Start", inverte la direzione
+            if (transform.position.x <= startPoint.position.x)
+            {
+                movingRight = true; // Cambia direzione a destra
+            }
         }
     }
 
@@ -57,27 +69,8 @@ public class RandomMoveBetweenPoints : MonoBehaviour
             float randomInterval = Random.Range(minRandomDirectionInterval, maxRandomDirectionInterval);
             yield return new WaitForSeconds(randomInterval);
 
-            // Cambia direzione casualmente solo se non è già vicinissimo a uno dei due punti
-            if (Vector3.Distance(transform.position, startPoint.position) > 0.1f &&
-                Vector3.Distance(transform.position, endPoint.position) > 0.1f)
-            {
-                ChangeTargetPoint();
-            }
-        }
-    }
-
-    // Cambia il target point tra Start e End
-    private void ChangeTargetPoint()
-    {
-        if (movingTowardsEnd)
-        {
-            targetPoint = startPoint;
-            movingTowardsEnd = false;
-        }
-        else
-        {
-            targetPoint = endPoint;
-            movingTowardsEnd = true;
+            // Cambia la direzione casualmente
+            movingRight = !movingRight; // Inverte la direzione
         }
     }
 }
