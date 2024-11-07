@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class DoorBoss : MonoBehaviour
 {
-    private Collider2D myCollider; // Riferimento al collider 2D dell'oggetto
-    private Transform player;        // Riferimento al Transform del giocatore
-    public float offset = 1f;       // Offset da aggiungere alla posizione X dell'oggetto
-    public float tolerance = 0.1f;   // Tolleranza per considerare che il giocatore sia nella posizione corretta
+    private Collider2D myCollider;        // Riferimento al collider 2D dell'oggetto
+    private Transform player;             // Riferimento al Transform del giocatore
+    public float offset = 1f;             // Offset da aggiungere alla posizione X dell'oggetto
+    public float tolerance = 0.1f;        // Tolleranza per considerare che il giocatore sia nella posizione corretta
 
-    // Riferimento al BossBattleManager
+    // Riferimento al BossBattleManager e alla Camera
     public BossBattleManager bossBattleManager;
+    public CameraZoomOut cameraZoomOut;   // Riferimento allo script della telecamera per l'allontanamento
 
     void Start()
     {
@@ -31,6 +32,20 @@ public class DoorBoss : MonoBehaviour
         {
             Debug.LogError("Nessun oggetto con tag 'Player' trovato nella scena.");
             return;
+        }
+
+        // Cerca la camera con il tag "MainCamera" se cameraZoomOut non è già assegnato
+        if (cameraZoomOut == null && Camera.main != null)
+        {
+            cameraZoomOut = Camera.main.GetComponent<CameraZoomOut>();
+            if (cameraZoomOut == null)
+            {
+                Debug.LogError("CameraZoomOut non trovato sul GameObject della telecamera principale.");
+            }
+            else
+            {
+                Debug.Log("CameraZoomOut assegnato automaticamente dalla telecamera principale.");
+            }
         }
 
         // Avvia la coroutine per monitorare la posizione del giocatore
@@ -56,11 +71,21 @@ public class DoorBoss : MonoBehaviour
             {
                 bossBattleManager.StartBossBattle();
                 Debug.Log("Battaglia boss attivata.");
+
+                // Attiva lo zoom out della telecamera
+                if (cameraZoomOut != null)
+                {
+                    cameraZoomOut.ZoomOut();
+                    Debug.Log("Zoom Out attivato dalla porta del boss");
+                }
+                else
+                {
+                    Debug.LogWarning("cameraZoomOut non è assegnato e non è stato trovato automaticamente.");
+                }
             }
         }
     }
 
-    // Metodo chiamato automaticamente quando un altro collider entra in contatto
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

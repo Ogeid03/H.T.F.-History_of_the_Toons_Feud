@@ -31,6 +31,8 @@ public class Projectile : MonoBehaviour
         {
             Debug.LogWarning("AudioSource non trovato sul proiettile!");
         }
+        // Autodistruggi il proiettile dopo 3 secondi
+        Destroy(gameObject, 3f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
