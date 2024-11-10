@@ -26,9 +26,13 @@ public class BossBattleManager : MonoBehaviour
     {
         while (isBattleActive)
         {
-            // Istanziamo un proiettile da ogni punto di spawn
+            // Istanziamo un proiettile da ogni punto di spawn con un lieve ritardo tra un colpo e l'altro
             foreach (Transform spawnPoint in projectileSpawnPoints)
             {
+                // Aggiungi un piccolo ritardo casuale tra i colpi
+                float randomDelay = Random.Range(0f, 0.5f); // Ritardo casuale tra 0 e 0.5 secondi (puoi modificare la durata)
+                yield return new WaitForSeconds(randomDelay);
+
                 GameObject projectile = Instantiate(bossProjectilePrefab, spawnPoint.position, Quaternion.identity);
                 Rigidbody rb = projectile.GetComponent<Rigidbody>();
 
@@ -42,9 +46,11 @@ public class BossBattleManager : MonoBehaviour
                 projectile.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f); // Tre volte più grande (esempio)
             }
 
-            yield return new WaitForSeconds(attackInterval); // Aspetta prima del prossimo attacco
+            // Aspetta prima del prossimo attacco
+            yield return new WaitForSeconds(attackInterval);
         }
     }
+
 
     private IEnumerator EnemySpawnRoutine()
     {
