@@ -34,8 +34,11 @@ public class PrefabSpawner : MonoBehaviour
             // Istanzia il prefab come figlio del sotto-oggetto "Corpo"
             GameObject instance = Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity, corpoTransform);
 
-            // Imposta la scala desiderata, forzandola a mantenere il valore del parametro scaleMultiplier
-            instance.transform.localScale = Vector3.one * scaleMultiplier;
+            // Ingrandisce il prefab
+            instance.transform.localScale = Vector3.one * scaleMultiplier; // Usa Vector3.one per ripristinare la scala originale
+
+            // Flippa il prefab in base alla direzione del genitore, senza alterare l'animazione
+            FlipPrefabBasedOnParentDirection(instance);
 
             // Distrugge il prefab al termine dell'animazione, se presente
             Animator prefabAnimator = instance.GetComponent<Animator>();
@@ -46,10 +49,28 @@ public class PrefabSpawner : MonoBehaviour
             }
             else
             {
-                Destroy(instance, 0.5f); // Distrugge dopo 2 secondi se non ha Animator
+                Destroy(instance, 2f); // Distrugge dopo 2 secondi se non ha Animator
             }
 
             Debug.Log("Prefab spawnato in posizione: " + spawnPosition);
+        }
+    }
+
+    // Gestisce il flipping del prefab in base alla direzione del genitore, senza alterare la scala
+    private void FlipPrefabBasedOnParentDirection(GameObject prefabInstance)
+    {
+        // Flippa il prefab ruotandolo, invece di cambiare la scala
+        if (corpoTransform != null)
+        {
+            // Se il genitore ha una scala negativa sull'asse X, ruota il prefab di 180 gradi
+            if (corpoTransform.localScale.x < 0)
+            {
+                prefabInstance.transform.rotation = Quaternion.Euler(0, 180, 0); // Ruota di 180 gradi
+            }
+            else
+            {
+                prefabInstance.transform.rotation = Quaternion.Euler(0, 0, 0); // Restituisci la rotazione originale
+            }
         }
     }
 
