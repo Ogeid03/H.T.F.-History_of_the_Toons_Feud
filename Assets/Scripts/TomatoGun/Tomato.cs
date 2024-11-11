@@ -70,10 +70,17 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject); // Distruggi il proiettile dopo l'impatto
         }
 
-        // Se il proiettile colpisce il giocatore, infliggi danno
-        else if (collision.gameObject.CompareTag("Player"))
+        // Per qualsiasi altro tipo di oggetto colpito, riproduci suono e distruggi
+        PlaySound();
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Se il proiettile entra in contatto con il giocatore, infliggi danno
+        if (other.CompareTag("Player"))
         {
-            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damageAmount); // Infliggi danno al giocatore
@@ -81,10 +88,6 @@ public class Projectile : MonoBehaviour
             PlaySound(); // Riproduci suono prima di distruggere
             Destroy(gameObject); // Distruggi il proiettile dopo l'impatto
         }
-
-        // Se colpisce altro, riproduci suono e distruggi
-        PlaySound(); // Riproduci suono prima di distruggere
-        Destroy(gameObject);
     }
 
     // Funzione per riprodurre il suono
