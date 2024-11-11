@@ -4832,3 +4832,1609 @@ Start importing Assets/Scripts/ROOMS/Ascenzore.cs using Guid(ada74411cbfef5049b8
  -> (artifact id: '8950af3e809ee8ac76484b8a9cdb328e') in 0.000741 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 681.096828 seconds.
+  path: Assets/Diego's Player/GUI/F.prefab
+  artifactKey: Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/GUI/F.prefab using Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd53a3265ad968d8907a1a54a180be3fa') in 0.000668 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 9.067170 seconds.
+  path: Assets/Diego's Player/GUI/F.prefab
+  artifactKey: Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/GUI/F.prefab using Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd53a3265ad968d8907a1a54a180be3fa') in 0.000567 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.669561 seconds.
+  path: Assets/Diego's Player/GUI/F.prefab
+  artifactKey: Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/GUI/F.prefab using Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd53a3265ad968d8907a1a54a180be3fa') in 0.000570 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 8.461628 seconds.
+  path: Assets/Diego's Player/GUI/F.prefab
+  artifactKey: Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/GUI/F.prefab using Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd53a3265ad968d8907a1a54a180be3fa') in 0.000573 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.508 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.184 seconds
+Domain Reload Profiling: 1687ms
+	BeginReloadAssembly (161ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (12ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (39ms)
+	LoadAllAssembliesAndSetupDomain (257ms)
+		LoadAssemblies (325ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (1184ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (494ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (28ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (72ms)
+			ProcessInitializeOnLoadAttributes (350ms)
+			ProcessInitializeOnLoadMethodAttributes (31ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 6.35 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3962 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (31.4 KB). Loaded Objects now: 4679.
+Memory consumption went from 143.5 MB to 143.4 MB.
+Total: 3.589300 ms (FindLiveObjects: 0.419100 ms CreateObjectMapping: 0.111400 ms MarkObjects: 3.000100 ms  DeleteObjects: 0.057500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 69.632350 seconds.
+  path: Assets/Diego's Player/GUI/F.prefab
+  artifactKey: Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/GUI/F.prefab using Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd53a3265ad968d8907a1a54a180be3fa') in 0.002416 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.977645 seconds.
+  path: Assets/Diego's Player/Rooms/Rooms/BossRoom.prefab
+  artifactKey: Guid(99bd568c315af95478a84ec01ca88e07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Rooms/Rooms/BossRoom.prefab using Guid(99bd568c315af95478a84ec01ca88e07) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3acc4c8b9a337ec16140994396330a19') in 0.000756 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 19.683837 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote 1.prefab
+  artifactKey: Guid(cb110054bcec0db40b554034bdd73f5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote 1.prefab using Guid(cb110054bcec0db40b554034bdd73f5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'af994d1aa603a152d09d89cb2bd092e2') in 0.000714 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.009535 seconds.
+  path: Assets/Diego's Player/Medikit.prefab
+  artifactKey: Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Medikit.prefab using Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2653e22bcc228b492cdb6016dd21dd3') in 0.000702 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck 1.prefab
+  artifactKey: Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck 1.prefab using Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cfab0202151eee2aeaaacdee70048c39') in 0.000487 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.004431 seconds.
+  path: Assets/Diego's Player/Micael Fawn.prefab
+  artifactKey: Guid(838838322dfd52241be6c37215107ecf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Micael Fawn.prefab using Guid(838838322dfd52241be6c37215107ecf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4b5c88c752659cc00246ebd30b58919c') in 0.000657 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 12.949257 seconds.
+  path: Assets/Diego's Player/GUI/F.prefab
+  artifactKey: Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/GUI/F.prefab using Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'aa42dc30ba755c48428a3c2c663c09f4') in 0.000645 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 17.013866 seconds.
+  path: Assets/Diego's Player/GUI/Up.prefab
+  artifactKey: Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/GUI/Up.prefab using Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a101dfc26403ba3f4112a6e9aa45bd3f') in 0.000796 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.527 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.252 seconds
+Domain Reload Profiling: 1774ms
+	BeginReloadAssembly (185ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (36ms)
+	LoadAllAssembliesAndSetupDomain (254ms)
+		LoadAssemblies (339ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (1252ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (534ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (29ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (77ms)
+			ProcessInitializeOnLoadAttributes (380ms)
+			ProcessInitializeOnLoadMethodAttributes (35ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 6.06 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3962 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (31.4 KB). Loaded Objects now: 4683.
+Memory consumption went from 143.5 MB to 143.4 MB.
+Total: 3.462900 ms (FindLiveObjects: 0.409700 ms CreateObjectMapping: 0.096200 ms MarkObjects: 2.900200 ms  DeleteObjects: 0.055800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 27.241670 seconds.
+  path: Assets/Diego's Player/GUI/Up.prefab
+  artifactKey: Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/GUI/Up.prefab using Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a101dfc26403ba3f4112a6e9aa45bd3f') in 0.002084 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.489 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.188 seconds
+Domain Reload Profiling: 1671ms
+	BeginReloadAssembly (163ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (244ms)
+		LoadAssemblies (316ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (8ms)
+	FinalizeReload (1188ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (507ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (27ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (76ms)
+			ProcessInitializeOnLoadAttributes (358ms)
+			ProcessInitializeOnLoadMethodAttributes (33ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 6.60 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3962 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (31.4 KB). Loaded Objects now: 4687.
+Memory consumption went from 143.5 MB to 143.4 MB.
+Total: 3.329100 ms (FindLiveObjects: 0.417600 ms CreateObjectMapping: 0.112200 ms MarkObjects: 2.740100 ms  DeleteObjects: 0.058200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 91.068365 seconds.
+  path: Assets/Diego's Player/GUI/Up.prefab
+  artifactKey: Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/GUI/Up.prefab using Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a101dfc26403ba3f4112a6e9aa45bd3f') in 0.002241 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.480 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.170 seconds
+Domain Reload Profiling: 1646ms
+	BeginReloadAssembly (157ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (34ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (238ms)
+		LoadAssemblies (302ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (1170ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (492ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (27ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (74ms)
+			ProcessInitializeOnLoadAttributes (347ms)
+			ProcessInitializeOnLoadMethodAttributes (31ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 5.23 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3962 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (31.4 KB). Loaded Objects now: 4691.
+Memory consumption went from 143.5 MB to 143.5 MB.
+Total: 3.615300 ms (FindLiveObjects: 0.413200 ms CreateObjectMapping: 0.108000 ms MarkObjects: 3.032200 ms  DeleteObjects: 0.061000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 60.089955 seconds.
+  path: Assets/Diego's Player/GUI/Up.prefab
+  artifactKey: Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/GUI/Up.prefab using Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a101dfc26403ba3f4112a6e9aa45bd3f') in 0.002246 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.496 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.189 seconds
+Domain Reload Profiling: 1682ms
+	BeginReloadAssembly (162ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (13ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (247ms)
+		LoadAssemblies (313ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (14ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (1190ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (498ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (28ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (76ms)
+			ProcessInitializeOnLoadAttributes (350ms)
+			ProcessInitializeOnLoadMethodAttributes (33ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 5.81 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3962 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (31.4 KB). Loaded Objects now: 4695.
+Memory consumption went from 143.5 MB to 143.5 MB.
+Total: 3.329100 ms (FindLiveObjects: 0.410000 ms CreateObjectMapping: 0.111000 ms MarkObjects: 2.752700 ms  DeleteObjects: 0.054700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 6.058835 seconds.
+  path: Assets/Diego's Player/GUI/Up.prefab
+  artifactKey: Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/GUI/Up.prefab using Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a101dfc26403ba3f4112a6e9aa45bd3f') in 0.002360 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 19.718156 seconds.
+  path: Assets/Diego's Player/Animation/Player/TopoAttacco.controller
+  artifactKey: Guid(e7b764f48774d5446b4a76488b34f30d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Animation/Player/TopoAttacco.controller using Guid(e7b764f48774d5446b4a76488b34f30d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2f6f7d981ad8a8bfc3a74d091330cd2') in 0.009356 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.489 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.187 seconds
+Domain Reload Profiling: 1672ms
+	BeginReloadAssembly (155ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (42ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (34ms)
+	LoadAllAssembliesAndSetupDomain (240ms)
+		LoadAssemblies (304ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (14ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (1188ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (502ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (33ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (75ms)
+			ProcessInitializeOnLoadAttributes (348ms)
+			ProcessInitializeOnLoadMethodAttributes (34ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 6.45 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3962 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (31.4 KB). Loaded Objects now: 4699.
+Memory consumption went from 143.5 MB to 143.5 MB.
+Total: 3.331500 ms (FindLiveObjects: 0.498400 ms CreateObjectMapping: 0.131100 ms MarkObjects: 2.653600 ms  DeleteObjects: 0.047200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 145.044726 seconds.
+  path: Assets/Diego's Player/GUI/Up.prefab
+  artifactKey: Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/GUI/Up.prefab using Guid(5831ff4c71899724b8588c592468e770) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a101dfc26403ba3f4112a6e9aa45bd3f') in 0.002416 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 5.761511 seconds.
+  path: Assets/Diego's Player/Rooms/Rooms/Ascenzore_u.prefab
+  artifactKey: Guid(571f0cc7a79e8a744b0cf44cb44ba941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Rooms/Rooms/Ascenzore_u.prefab using Guid(571f0cc7a79e8a744b0cf44cb44ba941) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7199da61e2776b081d81fbf61edde7f2') in 0.000861 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Diego's Player/Rooms/Rooms/TallRoom.prefab
+  artifactKey: Guid(50b7677133c9e9d4a832bbab3c7d1887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Rooms/Rooms/TallRoom.prefab using Guid(50b7677133c9e9d4a832bbab3c7d1887) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '788f956a019f71f8f15a418abe530687') in 0.000789 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 6.850911 seconds.
+  path: Assets/Diego's Player/Rooms/Rooms/Ascenzore_u.prefab
+  artifactKey: Guid(571f0cc7a79e8a744b0cf44cb44ba941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Rooms/Rooms/Ascenzore_u.prefab using Guid(571f0cc7a79e8a744b0cf44cb44ba941) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7199da61e2776b081d81fbf61edde7f2') in 0.000595 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Diego's Player/Rooms/Rooms/TallRoom.prefab
+  artifactKey: Guid(50b7677133c9e9d4a832bbab3c7d1887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Rooms/Rooms/TallRoom.prefab using Guid(50b7677133c9e9d4a832bbab3c7d1887) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '788f956a019f71f8f15a418abe530687') in 0.000476 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 23.765631 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000762 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck 1.prefab
+  artifactKey: Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck 1.prefab using Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cfab0202151eee2aeaaacdee70048c39') in 0.000635 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 18.095707 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000610 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000353 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.874742 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000590 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000364 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.422128 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000600 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000356 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.026723 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000884 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000469 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.435238 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000589 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000385 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 4.691932 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000606 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000358 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.206825 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000651 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000431 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 4.534270 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000603 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000569 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.599910 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000583 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000368 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.645966 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000589 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000411 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.805175 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000612 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck 1.prefab
+  artifactKey: Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck 1.prefab using Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cfab0202151eee2aeaaacdee70048c39') in 0.000589 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.250869 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000636 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck 1.prefab
+  artifactKey: Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck 1.prefab using Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cfab0202151eee2aeaaacdee70048c39') in 0.000585 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.819008 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000670 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000476 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.441468 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000620 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000388 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.613927 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000647 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000318 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000370 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.804804 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000838 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck 1.prefab
+  artifactKey: Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck 1.prefab using Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cfab0202151eee2aeaaacdee70048c39') in 0.000541 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.027606 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000589 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000373 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.210648 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000633 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000587 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.251623 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000679 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck 1.prefab
+  artifactKey: Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck 1.prefab using Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cfab0202151eee2aeaaacdee70048c39') in 0.000593 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.825453 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000573 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck 1.prefab
+  artifactKey: Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck 1.prefab using Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cfab0202151eee2aeaaacdee70048c39') in 0.000690 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 8.382127 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000689 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000115 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000604 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 4.026990 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000607 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000392 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 21.271543 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000603 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000367 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.853401 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000597 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000360 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 17.097624 seconds.
+  path: Assets/Diego's Player/Bullet/Ink_Bullet.prefab
+  artifactKey: Guid(ec0c9fbe679610544a28aff371670220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Bullet/Ink_Bullet.prefab using Guid(ec0c9fbe679610544a28aff371670220) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd024e8faddf53f3a41816d9fd32f2ba4') in 0.000780 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.318885 seconds.
+  path: Assets/Diego's Player/Bullet/Ink_Bullet.prefab
+  artifactKey: Guid(ec0c9fbe679610544a28aff371670220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Bullet/Ink_Bullet.prefab using Guid(ec0c9fbe679610544a28aff371670220) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd024e8faddf53f3a41816d9fd32f2ba4') in 0.000550 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 7.625974 seconds.
+  path: Assets/Diego's Player/Bullet/Ink_Bullet.prefab
+  artifactKey: Guid(ec0c9fbe679610544a28aff371670220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Bullet/Ink_Bullet.prefab using Guid(ec0c9fbe679610544a28aff371670220) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd024e8faddf53f3a41816d9fd32f2ba4') in 0.000529 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 11.211711 seconds.
+  path: Assets/Diego's Player/Medikit.prefab
+  artifactKey: Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Medikit.prefab using Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2653e22bcc228b492cdb6016dd21dd3') in 0.000756 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.437231 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000608 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000504 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 13.464128 seconds.
+  path: Assets/Diego's Player/Medikit.prefab
+  artifactKey: Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Medikit.prefab using Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2653e22bcc228b492cdb6016dd21dd3') in 0.000714 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.666742 seconds.
+  path: Assets/Diego's Player/Medikit.prefab
+  artifactKey: Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Medikit.prefab using Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2653e22bcc228b492cdb6016dd21dd3') in 0.000597 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.257826 seconds.
+  path: Assets/Diego's Player/Medikit.prefab
+  artifactKey: Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Medikit.prefab using Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2653e22bcc228b492cdb6016dd21dd3') in 0.000593 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.651214 seconds.
+  path: Assets/Diego's Player/Medikit.prefab
+  artifactKey: Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Medikit.prefab using Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2653e22bcc228b492cdb6016dd21dd3') in 0.000576 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.862938 seconds.
+  path: Assets/Diego's Player/Medikit.prefab
+  artifactKey: Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Medikit.prefab using Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2653e22bcc228b492cdb6016dd21dd3') in 0.000577 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.787729 seconds.
+  path: Assets/Diego's Player/Medikit.prefab
+  artifactKey: Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Medikit.prefab using Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2653e22bcc228b492cdb6016dd21dd3') in 0.000570 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 4.456681 seconds.
+  path: Assets/Diego's Player/Medikit.prefab
+  artifactKey: Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Medikit.prefab using Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2653e22bcc228b492cdb6016dd21dd3') in 0.000637 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.050422 seconds.
+  path: Assets/Diego's Player/Medikit.prefab
+  artifactKey: Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Medikit.prefab using Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2653e22bcc228b492cdb6016dd21dd3') in 0.000588 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.011496 seconds.
+  path: Assets/Diego's Player/Medikit.prefab
+  artifactKey: Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Medikit.prefab using Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2653e22bcc228b492cdb6016dd21dd3') in 0.000605 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 4.121806 seconds.
+  path: Assets/Diego's Player/Medikit.prefab
+  artifactKey: Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Medikit.prefab using Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2653e22bcc228b492cdb6016dd21dd3') in 0.000572 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.501 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.291 seconds
+Domain Reload Profiling: 1787ms
+	BeginReloadAssembly (167ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (12ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (251ms)
+		LoadAssemblies (322ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (1291ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (507ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (28ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (76ms)
+			ProcessInitializeOnLoadAttributes (356ms)
+			ProcessInitializeOnLoadMethodAttributes (34ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 6.50 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3962 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (31.4 KB). Loaded Objects now: 4703.
+Memory consumption went from 143.5 MB to 143.5 MB.
+Total: 4.349200 ms (FindLiveObjects: 0.591400 ms CreateObjectMapping: 0.315600 ms MarkObjects: 3.358400 ms  DeleteObjects: 0.082300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 77.578015 seconds.
+  path: Assets/Diego's Player/Medikit.prefab
+  artifactKey: Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Medikit.prefab using Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2653e22bcc228b492cdb6016dd21dd3') in 0.003652 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 96.818892 seconds.
+  path: Assets/Diego's Player/Rooms/Rooms/Ascenzore_u.prefab
+  artifactKey: Guid(571f0cc7a79e8a744b0cf44cb44ba941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Rooms/Rooms/Ascenzore_u.prefab using Guid(571f0cc7a79e8a744b0cf44cb44ba941) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7199da61e2776b081d81fbf61edde7f2') in 0.000686 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Diego's Player/Rooms/Rooms/TallRoom.prefab
+  artifactKey: Guid(50b7677133c9e9d4a832bbab3c7d1887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Rooms/Rooms/TallRoom.prefab using Guid(50b7677133c9e9d4a832bbab3c7d1887) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '788f956a019f71f8f15a418abe530687') in 0.000346 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 9.505216 seconds.
+  path: Assets/Diego's Player/Bullet/Ink_Bullet.prefab
+  artifactKey: Guid(ec0c9fbe679610544a28aff371670220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Bullet/Ink_Bullet.prefab using Guid(ec0c9fbe679610544a28aff371670220) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd024e8faddf53f3a41816d9fd32f2ba4') in 0.000891 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.696818 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000771 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000567 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck 1.prefab
+  artifactKey: Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck 1.prefab using Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cfab0202151eee2aeaaacdee70048c39') in 0.000543 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 4.813212 seconds.
+  path: Assets/Diego's Player/Medikit.prefab
+  artifactKey: Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Medikit.prefab using Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2653e22bcc228b492cdb6016dd21dd3') in 0.000584 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.116192 seconds.
+  path: Assets/Diego's Player/Medikit.prefab
+  artifactKey: Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Medikit.prefab using Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2653e22bcc228b492cdb6016dd21dd3') in 0.000557 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.817463 seconds.
+  path: Assets/Diego's Player/Medikit.prefab
+  artifactKey: Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Medikit.prefab using Guid(a8a58a894f55dc048a122a02183ed0fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b2653e22bcc228b492cdb6016dd21dd3') in 0.000575 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 11.826182 seconds.
+  path: Assets/Diego's Player/Rooms/Ascenzore.prefab
+  artifactKey: Guid(08993f944ed89d348924d0801dc24a4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Rooms/Ascenzore.prefab using Guid(08993f944ed89d348924d0801dc24a4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3463e035a33fe0fa41b758ee96cd76cc') in 0.000720 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.494308 seconds.
+  path: Assets/Diego's Player/Rooms/Rooms/Ascenzore_m Variant.prefab
+  artifactKey: Guid(1261e40fb934ea647a6dc0fb63478777) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Rooms/Rooms/Ascenzore_m Variant.prefab using Guid(1261e40fb934ea647a6dc0fb63478777) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fdc7d3a316bc07459d383427e7a18133') in 0.000649 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Diego's Player/Rooms/Rooms/BossRoom.prefab
+  artifactKey: Guid(99bd568c315af95478a84ec01ca88e07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Rooms/Rooms/BossRoom.prefab using Guid(99bd568c315af95478a84ec01ca88e07) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ca81104f6781667b5de729d317963d20') in 0.000495 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 15.419758 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000762 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000404 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 4.462534 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000606 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000513 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.590437 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000590 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000378 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.038893 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000612 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000398 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.848028 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000593 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000367 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.036812 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000589 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000369 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 6.988414 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000637 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000121 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000381 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 4.105580 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote.prefab
+  artifactKey: Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote.prefab using Guid(b5eb8f4cb8ffb794ea6cd8904ae8496a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0a32fca28ccadf0ae95576797b02f422') in 0.000656 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000486 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 13.623722 seconds.
+  path: Assets/Diego's Player/Rooms/Rooms/Ascenzore_m Variant.prefab
+  artifactKey: Guid(1261e40fb934ea647a6dc0fb63478777) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Rooms/Rooms/Ascenzore_m Variant.prefab using Guid(1261e40fb934ea647a6dc0fb63478777) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fdc7d3a316bc07459d383427e7a18133') in 0.000649 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.008475 seconds.
+  path: Assets/Diego's Player/Rooms/Rooms/LongRoom.prefab
+  artifactKey: Guid(e24e3072ba8d270409c35416152d6248) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Rooms/Rooms/LongRoom.prefab using Guid(e24e3072ba8d270409c35416152d6248) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '147f01a8a82805fb7e59948a8bfab0d4') in 0.001057 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Diego's Player/Rooms/Rooms/TallRoom.prefab
+  artifactKey: Guid(50b7677133c9e9d4a832bbab3c7d1887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Rooms/Rooms/TallRoom.prefab using Guid(50b7677133c9e9d4a832bbab3c7d1887) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '788f956a019f71f8f15a418abe530687') in 0.000764 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 11.970305 seconds.
+  path: Assets/Diego's Player/Entity/CerreCoyote 1.prefab
+  artifactKey: Guid(cb110054bcec0db40b554034bdd73f5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/CerreCoyote 1.prefab using Guid(cb110054bcec0db40b554034bdd73f5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'af994d1aa603a152d09d89cb2bd092e2') in 0.000739 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000320 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck 1.prefab
+  artifactKey: Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck 1.prefab using Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cfab0202151eee2aeaaacdee70048c39') in 0.000526 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.064463 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck.prefab
+  artifactKey: Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck.prefab using Guid(d6b0f44ae6473504bb109f00ab6b3e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '419631cb937ed289b06ab486743f4bf5') in 0.000992 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.864247 seconds.
+  path: Assets/Diego's Player/Entity/iOgeidDuck 1.prefab
+  artifactKey: Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Entity/iOgeidDuck 1.prefab using Guid(061e037c726714e45b02af270ee64488) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cfab0202151eee2aeaaacdee70048c39') in 0.000935 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 5.504897 seconds.
+  path: Assets/Diego's Player/Rooms/Rooms/Ascenzore_u.prefab
+  artifactKey: Guid(571f0cc7a79e8a744b0cf44cb44ba941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Rooms/Rooms/Ascenzore_u.prefab using Guid(571f0cc7a79e8a744b0cf44cb44ba941) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7199da61e2776b081d81fbf61edde7f2') in 0.000783 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Diego's Player/Rooms/Rooms/TallRoom.prefab
+  artifactKey: Guid(50b7677133c9e9d4a832bbab3c7d1887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Diego's Player/Rooms/Rooms/TallRoom.prefab using Guid(50b7677133c9e9d4a832bbab3c7d1887) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '788f956a019f71f8f15a418abe530687') in 0.000356 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: Operazione di I/O terminata a causa dell'uscita dal thread oppure della richiesta di un'applicazione.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

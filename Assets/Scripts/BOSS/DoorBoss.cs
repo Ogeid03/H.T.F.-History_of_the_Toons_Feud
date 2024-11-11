@@ -11,6 +11,7 @@ public class DoorBoss : MonoBehaviour
     // Riferimento al BossBattleManager e alla Camera
     public BossBattleManager bossBattleManager;
     public CameraZoomOut cameraZoomOut;   // Riferimento allo script della telecamera per l'allontanamento
+    public ButtonSpawner bs;
 
     void Start()
     {
@@ -69,6 +70,7 @@ public class DoorBoss : MonoBehaviour
             // Attiva la battaglia
             if (bossBattleManager != null)
             {
+                bs.SetActive(true);
                 bossBattleManager.StartBossBattle();
                 Debug.Log("Battaglia boss attivata.");
 
