@@ -3,10 +3,7 @@ using UnityEngine;
 
 public class EnemyLauncherAI : MonoBehaviour
 {
-    public float moveSpeed = 3f;              // Velocità di movimento del nemico
-    public float retreatSpeed = 6f;           // Velocità di allontanamento rapido
     public float attackRange = 5f;            // Distanza alla quale il nemico può lanciare
-    public float minDistanceToPlayer = 2f;    // Distanza minima per l'allontanamento
     public float attackInterval = 2f;         // Intervallo tra i lanci
     public GameObject projectilePrefab;       // Prefab del proiettile
     public float projectileSpeed = 10f;       // Velocità del proiettile
@@ -15,8 +12,6 @@ public class EnemyLauncherAI : MonoBehaviour
 
     private Transform player;                 // Riferimento al giocatore
     private bool facingRight = true;          // Controlla la direzione in cui il nemico sta affrontando
-    private bool isRetreating = false;        // Flag per controllare se il nemico si sta ritirando
-    public float retreatDuration = 1f;        // Durata della ritirata rapida
 
     void Start()
     {
@@ -27,20 +22,12 @@ public class EnemyLauncherAI : MonoBehaviour
 
     void Update()
     {
-        if (player != null && !isRetreating)
+        if (player != null)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-            // Se il nemico è troppo vicino, inizia la ritirata
-            if (distanceToPlayer < minDistanceToPlayer)
-            {
-                StartCoroutine(RetreatAndAttack());
-            }
-            // Se il nemico è troppo lontano, avvicinati al giocatore
-            else if (distanceToPlayer > attackRange)
-            {
-                MoveTowardsPlayer();
-            }
+            // Flip del nemico in base alla posizione del giocatore
+            Flip((player.position - transform.position).x);
         }
     }
 
@@ -62,36 +49,6 @@ public class EnemyLauncherAI : MonoBehaviour
         }
     }
 
-    void MoveTowardsPlayer()
-    {
-        // Muovi il nemico verso il giocatore
-        Vector2 direction = (player.position - transform.position).normalized;
-        transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-
-        // Flip del nemico in base alla posizione del giocatore
-        Flip(direction.x);
-    }
-
-    private IEnumerator RetreatAndAttack()
-    {
-        isRetreating = true;
-
-        // Muovi il nemico rapidamente nella direzione opposta al giocatore
-        Vector2 direction = (transform.position - player.position).normalized;
-        float retreatStartTime = Time.time;
-
-        while (Time.time < retreatStartTime + retreatDuration)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, transform.position + (Vector3)direction, retreatSpeed * Time.deltaTime);
-            Flip(direction.x);
-            yield return null;
-        }
-
-        // Dopo la ritirata, lancia il proiettile
-        Launch();
-        isRetreating = false;
-    }
-
     private void Launch()
     {
         Debug.Log("Creazione proiettile..."); // Log per confermare la creazione
@@ -102,6 +59,9 @@ public class EnemyLauncherAI : MonoBehaviour
         if (projectile != null)
         {
             Debug.Log("Proiettile creato!"); // Log di successo
+
+            // Scala il proiettile di 8 volte
+            projectile.transform.localScale *= 8;
         }
         else
         {
@@ -121,25 +81,42 @@ public class EnemyLauncherAI : MonoBehaviour
         {
             Debug.LogError("Errore: Rigidbody2D mancante nel proiettile!");
         }
-
-        // Flip del nemico in base alla direzione verso il giocatore
-        Flip(direction.x);
     }
 
     private void Flip(float direction)
     {
         // Flip del nemico in base alla direzione
-        if (direction > 0 && !facingRight)
+        if (direction < 0 && !facingRight)
         {
             // Ruota di 180 gradi sull'asse Z
             transform.Rotate(0f, 180f, 0f);
             facingRight = true;
         }
-        else if (direction < 0 && facingRight)
+        else if (direction > 0 && facingRight)
         {
             // Ruota di 180 gradi sull'asse Z
             transform.Rotate(0f, 180f, 0f);
             facingRight = false;
         }
     }
+
+    // Funzione di ritirata disabilitata come richiesto
+    /*
+    private IEnumerator RetreatAndAttack()
+    {
+        isRetreating = true;
+        Vector2 direction = (transform.position - player.position).normalized;
+        float retreatStartTime = Time.time;
+
+        while (Time.time < retreatStartTime + retreatDuration)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, transform.position + (Vector3)direction, retreatSpeed * Time.deltaTime);
+            Flip(direction.x);
+            yield return null;
+        }
+
+        Launch();
+        isRetreating = false;
+    }
+    */
 }
