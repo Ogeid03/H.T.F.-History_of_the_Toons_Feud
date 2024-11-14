@@ -9,8 +9,10 @@ public class ButtonSpawner : MonoBehaviour
     private Transform guiCanvasTransform; // Canvas "GUI" dove posizionare il prefab
 
     public BossHealth bossHealth; // Riferimento al BossHealth per ridurre la vita
+    public PlayerHealth playerHealth;
     public float spawnInterval = 5f; // Tempo in secondi tra ogni generazione del prefab
     public float despawnInterval = 3f; // Tempo in secondi dopo il quale il prefab viene distrutto
+    public float pressDamage = 5f;
     private bool isActive = false; // Variabile che determina se è attivo il meccanismo di spawn
 
     // Lista di frasi preconfigurate che vogliamo mostrare nel testo del bottone
@@ -45,7 +47,8 @@ public class ButtonSpawner : MonoBehaviour
     {
         while (true)
         {
-            if (isActive)
+            //yield return new WaitForSeconds(10f);
+            if (isActive && bossHealth.GetCurrentHealth() > 0 && playerHealth.GetCurrentHealth() > 0)
             {
                 // Crea un nuovo prefab contenente il bottone all'interno del Canvas GUI
                 GameObject newPrefab = Instantiate(prefabWithButton, guiCanvasTransform);
@@ -104,7 +107,7 @@ public class ButtonSpawner : MonoBehaviour
         // Se il boss esiste e ha la funzione TakeDamage, riduciamo la vita del boss di 5
         if (bossHealth != null)
         {
-            bossHealth.TakeDamage(5f); // Riduci la vita del boss di 5
+            bossHealth.TakeDamage(pressDamage); // Riduci la vita del boss di 5
         }
 
         // Cerca tra tutti i figli del prefab per trovare un componente TextMeshProUGUI il cui nome contiene "Parole"
@@ -129,7 +132,7 @@ public class ButtonSpawner : MonoBehaviour
             Debug.Log("Testo del bottone cambiato su: " + targetText.text);
 
             // Aggiungi una rotazione casuale al testo (solo il testo, non il RectTransform)
-            float randomRotation = Random.Range(-21f, 21f); // Rotazione casuale tra -21 e 21 gradi
+            float randomRotation = Random.Range(-11f, 11f); // Rotazione casuale tra -21 e 21 gradi
 
             // Ruota solo il componente TextMeshProUGUI (non il RectTransform)
             targetText.transform.rotation = Quaternion.Euler(0f, 0f, randomRotation);

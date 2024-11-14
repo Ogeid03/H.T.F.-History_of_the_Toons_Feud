@@ -1,78 +1,84 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
-    public float maxHealth = 100f; // Vita massima del boss
-    private float currentHealth; // Vita corrente del boss
+    public float maxHealth = 100f;       // Vita massima del boss
+    private float currentHealth;         // Vita corrente del boss
 
-    public Animator animator; // Riferimento all'animatore del boss (opzionale)
-    public AudioSource hurtSound; // Suono di danno (opzionale)
-
-    public GameObject deathEffect; // Effetto visivo alla morte del boss (opzionale)
+    public Animator animator;            // Riferimento all'animatore del boss
+    public AudioSource hurtSound;        // Suono di danno
+    public GameObject deathEffect;       // Effetto visivo alla morte del boss
+    private GameOverManager gameOverManager;
 
     void Start()
     {
-        // Imposta la vita iniziale del boss
-        currentHealth = maxHealth;
+        currentHealth = maxHealth;       // Imposta la vita iniziale del boss
+
+        // Trova GameOverManager automaticamente se non è stato assegnato
+        gameOverManager = FindObjectOfType<GameOverManager>();
+        if (gameOverManager == null)
+        {
+            Debug.LogError("GameOverManager non trovato nella scena!");
+        }
     }
 
     // Funzione per danneggiare il boss
     public void TakeDamage(float damageAmount)
     {
-        currentHealth -= damageAmount;
+        currentHealth -= damageAmount;    // Riduce la salute
+        Debug.Log("BossHealth health:" + currentHealth);
 
-        // Se il boss ha ancora vita, esegui le azioni di danno
+        // Se la salute del boss è ancora maggiore di zero
         if (currentHealth > 0)
         {
-            // Puoi aggiungere un'animazione o un suono quando il boss prende danno
             if (animator != null)
             {
-                animator.SetTrigger("Hurt"); // Imposta un trigger di animazione "Hurt" se esiste
+                animator.SetTrigger("Hurt"); // Imposta l'animazione di danno
             }
 
             if (hurtSound != null)
             {
-                hurtSound.Play(); // Esegui il suono di danno, se disponibile
+                hurtSound.Play(); // Esegui il suono di danno
             }
         }
         else
         {
-            Die(); // Se la vita arriva a 0 o meno, il boss muore
+            Die();  // Se la vita è 0 o meno, il boss muore
         }
     }
 
     // Funzione per la morte del boss
     private void Die()
     {
-        // Imposta la vita del boss a 0 e fa scomparire il boss
-        currentHealth = 0;
+        currentHealth = 0;   // La vita del boss è ora zero
 
-        // Esegui l'animazione di morte, se disponibile
         if (animator != null)
         {
-            animator.SetTrigger("Die"); // Imposta un trigger di animazione "Die" se esiste
+            animator.SetTrigger("Die");  // Imposta l'animazione di morte
         }
 
-        // Crea un effetto di morte, se disponibile
         if (deathEffect != null)
         {
-            Instantiate(deathEffect, transform.position, Quaternion.identity); // Crea un effetto di morte
+            Instantiate(deathEffect, transform.position, Quaternion.identity); // Crea l'effetto visivo alla morte
         }
 
-        // Disabilita il boss (o distruggilo)
-        gameObject.SetActive(false); // Disabilita il boss, oppure usa Destroy(gameObject) se vuoi distruggerlo
         Debug.Log("Il boss è morto!");
+
+        // Avvia la funzione per mostrare la schermata di Game Over
+        if (gameOverManager != null)
+        {
+            gameOverManager.TriggerGameOverScreen(); // Chiama la funzione pubblica nel GameOverManager
+        }
     }
 
     // Funzione per recuperare la vita del boss
     public void Heal(float healAmount)
     {
-        currentHealth = Mathf.Min(currentHealth + healAmount, maxHealth); // Evita di superare la vita massima
+        currentHealth += healAmount;  // Aumenta la salute
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Limita la salute tra 0 e max
     }
 
-    // Funzione per ottenere la vita corrente
+    // Funzione per ottenere la vita corrente del boss
     public float GetCurrentHealth()
     {
         return currentHealth;

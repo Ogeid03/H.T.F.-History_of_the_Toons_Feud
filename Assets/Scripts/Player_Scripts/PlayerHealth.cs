@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;  // Necessario per le coroutine
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -16,28 +17,44 @@ public class PlayerHealth : MonoBehaviour
     public Sprite healthAbove25;
     public Sprite healthAbove0;
 
-    public GameObject gameOverScreen;      // Riferimento alla schermata di Game Over
-
     public Camera mainCamera;              // Riferimento alla camera principale
+    private Animator playerAnimator;       // Riferimento all'animator del giocatore
+    private bool isDead = false;           // Flag per verificare se il giocatore è morto
+    private GameOverManager gameOverManager;
 
     void Start()
     {
         currentHealth = maxHealth;         // Inizializza la salute al massimo
         UpdateHealthUI();                  // Aggiorna l'interfaccia della salute
-        gameOverScreen.SetActive(false);   // Nasconde la schermata di Game Over all'inizio
+
+        // Trova GameOverManager automaticamente se non è stato assegnato
+        gameOverManager = FindObjectOfType<GameOverManager>();
+        if (gameOverManager == null)
+        {
+            Debug.LogError("GameOverManager non trovato nella scena!");
+        }
 
         // Assicurati che la velocità di gioco sia normale all'inizio
         Time.timeScale = 1;
+
+        // Trova l'animator del giocatore
+        playerAnimator = GetComponent<Animator>();
+        if (playerAnimator == null)
+        {
+            Debug.LogError("Animator non trovato sul giocatore!");
+        }
     }
 
     public void TakeDamage(int damage)
     {
+        if (isDead) return; // Se il giocatore è già morto, non fa nulla
+
         currentHealth -= damage;           // Riduce la salute in base al danno
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Limita la salute tra 0 e il massimo
         Debug.Log("Giocatore ha subito danno! Salute attuale: " + currentHealth);
         UpdateHealthUI();                  // Aggiorna la UI
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDead)
         {
             Die();                         // Chiama la funzione di morte se la salute è zero
         }
@@ -47,17 +64,26 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Il giocatore è morto!");
 
+        // Imposta il trigger "Die" nell'Animator per avviare l'animazione di morte
+        if (playerAnimator != null)
+        {
+            playerAnimator.SetBool("die", true);  // Imposta il parametro booleano "die" su true
+        }
+
+        // Segna il giocatore come morto
+        isDead = true;
+
         // Scollega la camera dal giocatore
         if (mainCamera != null)
         {
             mainCamera.transform.parent = null;
         }
 
-        // Mostra la schermata di Game Over
-        gameOverScreen.SetActive(true);
-
-        // Ferma completamente il gioco
-        Time.timeScale = 0;
+        // Attiva la schermata di Game Over attraverso GameOverManager
+        if (gameOverManager != null)
+        {
+            gameOverManager.TriggerGameOverScreen();
+        }
     }
 
     private void UpdateHealthUI()
