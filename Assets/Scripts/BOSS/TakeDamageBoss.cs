@@ -48,7 +48,7 @@ public class ButtonSpawner : MonoBehaviour
         while (true)
         {
             //yield return new WaitForSeconds(10f);
-            if (isActive && bossHealth.GetCurrentHealth() > 0 && playerHealth.GetCurrentHealth() > 0)
+            if (isActive && bossHealth.GetCurrentHealth() > 0 /*&& playerHealth.GetCurrentHealth() > 0*/)
             {
                 // Crea un nuovo prefab contenente il bottone all'interno del Canvas GUI
                 GameObject newPrefab = Instantiate(prefabWithButton, guiCanvasTransform);
