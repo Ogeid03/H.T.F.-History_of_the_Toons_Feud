@@ -45,3 +45,4 @@ Logs/AssetImportWorker1.log
 .vs/Topo_Crisi/FileContentIndex/ba26e114-02e7-470b-9d3a-e481d7d78f95.vsidx
 .vs/Topo_Crisi/FileContentIndex/33b75fce-b196-437f-bd4a-be811742e337.vsidx
 .vs/Topo_Crisi/FileContentIndex/45709c89-aac8-4ae6-9cde-52adf1428ccc.vsidx
+*.log
