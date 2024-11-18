@@ -88,6 +88,25 @@ public class Projectile : MonoBehaviour
             PlaySound(); // Riproduci suono prima di distruggere
             Destroy(gameObject); // Distruggi il proiettile dopo l'impatto
         }
+
+        // Se il proiettile entra in contatto con un nemico, infliggi danno
+        if (other.CompareTag("Enemy"))
+        {
+            // Evita che il proiettile danneggi un nemico se è stato lanciato da un altro nemico
+            if (launcher.CompareTag("Enemy"))
+            {
+                return; // Ignora se è lo stesso team
+            }
+
+            // Infliggi danno al nemico
+            EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(damageAmount); // Infliggi danno
+            }
+            PlaySound(); // Riproduci suono prima di distruggere
+            Destroy(gameObject); // Distruggi il proiettile
+        }
     }
 
     // Funzione per riprodurre il suono

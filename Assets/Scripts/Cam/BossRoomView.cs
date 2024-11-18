@@ -17,7 +17,7 @@ public class CameraZoomOut : MonoBehaviour
         cam = GetComponent<Camera>();
         originalSize = cam.orthographicSize;
         originalPosition = transform.position;  // Salva la posizione originale della telecamera
-        Debug.Log("CameraZoomOut Start - OriginalSize: " + originalSize + ", OriginalPosition: " + originalPosition);
+        //#Debug.Log("CameraZoomOut Start - OriginalSize: " + originalSize + ", OriginalPosition: " + originalPosition);
     }
 
     private void Update()
@@ -32,7 +32,7 @@ public class CameraZoomOut : MonoBehaviour
             Vector3 targetPosition = new Vector3(player.position.x, originalPosition.y + zoomedOutHeight, transform.position.z);
             transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * zoomSpeed);
 
-            Debug.Log("Zooming Out - Current Orthographic Size: " + cam.orthographicSize + ", Position: " + transform.position);
+            //#Debug.Log("Zooming Out - Current Orthographic Size: " + cam.orthographicSize + ", Position: " + transform.position);
         }
         else
         {
@@ -42,7 +42,7 @@ public class CameraZoomOut : MonoBehaviour
             // Ripristina gradualmente la posizione originale della telecamera
             transform.position = Vector3.Lerp(transform.position, originalPosition, Time.deltaTime * zoomSpeed);
 
-            Debug.Log("Zooming In - Current Orthographic Size: " + cam.orthographicSize + ", Position: " + transform.position);
+            //#Debug.Log("Zooming In - Current Orthographic Size: " + cam.orthographicSize + ", Position: " + transform.position);
         }
 
         // Segui la posizione del player (in X) se lo zoom non è attivo
@@ -56,13 +56,13 @@ public class CameraZoomOut : MonoBehaviour
     public void ZoomOut()
     {
         isZoomedOut = true;
-        Debug.Log("ZoomOut() called - Zoom Out Activated");
+        //#Debug.Log("ZoomOut() called - Zoom Out Activated");
     }
 
     // Metodo per resettare lo zoom
     public void ResetZoom()
     {
         isZoomedOut = false;
-        Debug.Log("ResetZoom() called - Zoom Out Deactivated");
+        //#Debug.Log("ResetZoom() called - Zoom Out Deactivated");
     }
 }

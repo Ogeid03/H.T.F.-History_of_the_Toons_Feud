@@ -70,7 +70,7 @@ public class DoorBoss : MonoBehaviour
             // Attiva la battaglia
             if (bossBattleManager != null)
             {
-                bs.SetActive(true);
+                
                 bossBattleManager.StartBossBattle();
                 Debug.Log("Battaglia boss attivata.");
 
@@ -84,6 +84,8 @@ public class DoorBoss : MonoBehaviour
                 {
                     Debug.LogWarning("cameraZoomOut non è assegnato e non è stato trovato automaticamente.");
                 }
+                yield return new WaitForSeconds(20f); // 2 secondi di ritardo
+                bs.SetActive(true);
             }
         }
     }

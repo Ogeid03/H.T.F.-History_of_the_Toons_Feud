@@ -5,31 +5,34 @@ Update da fare:
     - Sviluppare altre tipologie di nemici (Tank) e il boss con caratteristiche ambientali per la boss battle
     - migliorare il combattimento
     - impostare le animazioni e le nuove skin di Martina (Done: Tomato, Micael Faws, Enemies - To Do: PitcherEnemies, Boss, Ambienti?, Ink)
-    - sistemare le varie stanze
-    - grafica per GUI (pulsanti)
-    - gestione dei due livelli
-    - gestione dei caricamenti
+    ✅ - sistemare le varie stanze
+    ✅ - grafica per GUI (pulsanti)
     ✅ - gestione del medikit
     ✅ - aggiungere dei veri ascensori
     - aggiungere un ambiente esterno (portale Warner SIS)
     - aggiunta di suoni ed effetti (Gli effetti sono dentro Imports)
+    - introduzione della "leva" per aprire le porte di ogni livello
     
 Fixes:
     - animazioni
-    - morte
+    ✅ - morte
     - intro
     - hitted by tomatoes
     - spawn medikit
-    - adattamento GUI
-    - fix animazione vivrante dell'ascensore
+    ✅ - adattamento GUI
+    - fix animazione vibrante dell'ascensore e 2x
     ✅ - cambiare il player con la texture HD di Martina
     - far ittare l'inchiostro sulla testa
-    - allontana i tasti per evitare di premerne due 
-    - sistemare la GUI troppo piccola
+    - fix i tasti per evitare di saltare e sparare
+    ✅ - sistemare la GUI troppo piccola
     - bloccare la GUI
+    - fixare vita boss
+    - danieleSgerro non può colpire oltre il ground
 
 Extras:
-    - Schermata iniziale
+    ✅ - Schermata iniziale
     - Salvataggi
     - Multiplayer
+    - gestione dei due livelli
+    - gestione dei caricamenti
 */

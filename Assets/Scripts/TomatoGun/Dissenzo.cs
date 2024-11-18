@@ -11,7 +11,9 @@ public class EnemyAttack : MonoBehaviour
 
     public float attackCooldown = 2f;       // Tempo di attesa tra un attacco e l'altro
     private bool canAttack = true;          // Flag per controllare se l'attacco è possibile
+    private bool jumped = false;
     public Button attackButton;             // Riferimento al pulsante UI
+    public Button jumpButton;
 
     void Start()
     {
@@ -20,12 +22,18 @@ public class EnemyAttack : MonoBehaviour
         {
             attackButton.onClick.AddListener(OnAttackButtonClicked);
         }
+
+        if (jumpButton != null)
+        {
+            jumpButton.onClick.AddListener(OnjumpButtonClicked);
+            
+        }
     }
 
     void Update()
     {
         // Puoi ancora controllare il lancio con il mouse, se lo desideri
-        if (Input.GetMouseButtonDown(1) && canAttack)
+        if (Input.GetMouseButtonDown(1) && canAttack && !jumped)
         {
             LaunchProjectile();
             StartCoroutine(AttackCooldown());
@@ -77,5 +85,10 @@ public class EnemyAttack : MonoBehaviour
     private void OnAttackButtonClicked()
     {
         LaunchProjectile(); // Chiama il metodo per lanciare il proiettile
+    }
+
+    private void OnjumpButtonClicked()
+    {
+        jumped = true;
     }
 }

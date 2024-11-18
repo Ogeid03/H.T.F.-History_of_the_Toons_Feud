@@ -45,10 +45,10 @@ public class ButtonSpawner : MonoBehaviour
     // Coroutine che genera il prefab ogni intervallo
     IEnumerator SpawnPrefab()
     {
-        while (true)
+        while (true && bossHealth.GetCurrentHealth() > 0 && playerHealth.GetCurrentHealth() > 0)
         {
             //yield return new WaitForSeconds(10f);
-            if (isActive && bossHealth.GetCurrentHealth() > 0 /*&& playerHealth.GetCurrentHealth() > 0*/)
+            if (isActive)
             {
                 // Crea un nuovo prefab contenente il bottone all'interno del Canvas GUI
                 GameObject newPrefab = Instantiate(prefabWithButton, guiCanvasTransform);

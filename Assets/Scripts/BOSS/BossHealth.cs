@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
-    public float maxHealth = 100f;       // Vita massima del boss
+    public float maxHealth = 250f;       // Vita massima del boss
     private float currentHealth;         // Vita corrente del boss
 
     public Animator animator;            // Riferimento all'animatore del boss
