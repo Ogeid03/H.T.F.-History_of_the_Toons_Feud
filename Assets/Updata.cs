@@ -18,16 +18,17 @@ Fixes:
     ✅ - morte
     - intro
     - hitted by tomatoes
-    - spawn medikit
+    ✅ - spawn medikit
     ✅ - adattamento GUI
     - fix animazione vibrante dell'ascensore e 2x
     ✅ - cambiare il player con la texture HD di Martina
     - far ittare l'inchiostro sulla testa
-    - fix i tasti per evitare di saltare e sparare
+    ✅ - fix i tasti per evitare di saltare e sparare
     ✅ - sistemare la GUI troppo piccola
     - bloccare la GUI
-    - fixare vita boss
+    ✅- fixare vita boss
     - danieleSgerro non può colpire oltre il ground
+    - danieleSgerroRespawn deve fare danno
 
 Extras:
     ✅ - Schermata iniziale

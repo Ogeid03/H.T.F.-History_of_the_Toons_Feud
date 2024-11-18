@@ -11,6 +11,8 @@ public class EnemyHealth : MonoBehaviour
     private Transform pomodoroSpiaccicato;  // Riferimento al figlio "pomodoro_spappolato"
     private bool isPomodoroVisible = false; // Verifica se il pomodoro è già visibile
 
+    private Respawn respawnScript; // Riferimento allo script Respawn
+
     void Start()
     {
         currentHealth = maxHealth; // Inizializza la salute corrente a quella massima
@@ -28,8 +30,22 @@ public class EnemyHealth : MonoBehaviour
         {
             Debug.LogWarning("pomodoro_spappolato non trovato come figlio del GameObject con EnemyHealth!");
         }
-    }
 
+        // Cerca automaticamente lo script Respawn sul GameObject "G:O:D"
+        GameObject respawnObject = GameObject.Find("G:O:D");
+        if (respawnObject != null)
+        {
+            respawnScript = respawnObject.GetComponent<Respawn>();
+            if (respawnScript == null)
+            {
+                Debug.LogError("Lo script Respawn non è stato trovato su G:O:D.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Non è stato trovato un oggetto con il nome G:O:D nella scena.");
+        }
+    }
 
     public void TakeDamage(int damage)
     {
@@ -45,6 +61,14 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            // Verifica se il componente "EnemyLauncherAI" è presente
+            EnemyLauncherAI launcherAI = GetComponent<EnemyLauncherAI>();
+            if (launcherAI != null && respawnScript != null)
+            {
+                // Passa la posizione e la rotazione dell'oggetto che sta per morire (il nemico) come parametro
+                respawnScript.RespawnPrefab(transform.position, transform.rotation);
+            }
+
             Die();  // Chiama la funzione per gestire la morte del nemico
         }
     }

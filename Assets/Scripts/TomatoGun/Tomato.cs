@@ -55,7 +55,7 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             // Se il proiettile è stato lanciato da un nemico, attraversa l'altro nemico
-            if (launcher.CompareTag("Enemy"))
+            if (launcher != null && launcher.CompareTag("Enemy"))
             {
                 return; // Ignora la collisione con un altro nemico
             }
@@ -77,6 +77,13 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // Verifica se il launcher è stato inizializzato prima di usarlo
+        if (launcher == null)
+        {
+            Debug.LogWarning("Launcher non è stato impostato!");
+            return;
+        }
+
         // Se il proiettile entra in contatto con il giocatore, infliggi danno
         if (other.CompareTag("Player"))
         {
@@ -117,6 +124,10 @@ public class Projectile : MonoBehaviour
             audioSource.enabled = true; // Assicurati che l'AudioSource sia abilitato
             audioSource.Play(); // Riproduci il suono
             Destroy(gameObject, audioSource.clip.length); // Distruggi dopo la durata del clip
+        }
+        else
+        {
+            Debug.LogWarning("AudioSource non è stato trovato, suono non riprodotto.");
         }
     }
 }

@@ -38,6 +38,24 @@ public class ButtonSpawner : MonoBehaviour
             return;
         }
 
+        // Cerca il GameObject con il tag "Player" e ottieni il componente PlayerHealth
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            playerHealth = playerObject.GetComponent<PlayerHealth>();
+            if (playerHealth == null)
+            {
+                Debug.LogError("Il GameObject con tag 'Player' non ha il componente PlayerHealth.");
+                return;
+            }
+        }
+        else
+        {
+            Debug.LogError("Nessun GameObject con tag 'Player' trovato nella scena.");
+            return;
+        }
+
+
         // Avvia la coroutine per generare il prefab ogni tot secondi
         StartCoroutine(SpawnPrefab());
     }
