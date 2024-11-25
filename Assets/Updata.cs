@@ -29,6 +29,7 @@ Fixes:
     ✅- fixare vita boss
     - danieleSgerro non può colpire oltre il ground
     - danieleSgerroRespawn deve fare danno
+    - visuale stanze alte
 
 Extras:
     ✅ - Schermata iniziale
