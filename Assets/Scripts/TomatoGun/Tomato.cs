@@ -70,51 +70,88 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject); // Distruggi il proiettile dopo l'impatto
         }
 
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Proiettile colpisce il giocatore!");
+
+            // Ottieni il componente PlayerHealth sul giocatore
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damageAmount); // Infliggi danno al giocatore
+                Debug.Log("Danno inflitto al giocatore!");
+            }
+            else
+            {
+                Debug.LogWarning("PlayerHealth non trovato!");
+            }
+
+            // Riproduci il suono
+            PlaySound();
+
+            // Distruggi il proiettile dopo la collisione
+            Destroy(gameObject);
+        }
+
         // Per qualsiasi altro tipo di oggetto colpito, riproduci suono e distruggi
         PlaySound();
         Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
+{
+    // Verifica se il launcher è stato inizializzato prima di usarlo
+    if (launcher == null)
     {
-        // Verifica se il launcher è stato inizializzato prima di usarlo
-        if (launcher == null)
-        {
-            Debug.LogWarning("Launcher non è stato impostato!");
-            return;
-        }
-
-        // Se il proiettile entra in contatto con il giocatore, infliggi danno
-        if (other.CompareTag("Player"))
-        {
-            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damageAmount); // Infliggi danno al giocatore
-            }
-            PlaySound(); // Riproduci suono prima di distruggere
-            Destroy(gameObject); // Distruggi il proiettile dopo l'impatto
-        }
-
-        // Se il proiettile entra in contatto con un nemico, infliggi danno
-        if (other.CompareTag("Enemy"))
-        {
-            // Evita che il proiettile danneggi un nemico se è stato lanciato da un altro nemico
-            if (launcher.CompareTag("Enemy"))
-            {
-                return; // Ignora se è lo stesso team
-            }
-
-            // Infliggi danno al nemico
-            EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
-            if (enemyHealth != null)
-            {
-                enemyHealth.TakeDamage(damageAmount); // Infliggi danno
-            }
-            PlaySound(); // Riproduci suono prima di distruggere
-            Destroy(gameObject); // Distruggi il proiettile
-        }
+        Debug.LogWarning("Launcher non è stato impostato!");
+        return;
     }
+
+    // Se il proiettile entra in contatto con il giocatore, infliggi danno
+    if (other.CompareTag("Player"))
+    {
+        Debug.Log("Proiettile colpisce il giocatore!");
+
+        // Ottieni il componente PlayerHealth sul giocatore
+        PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damageAmount); // Infliggi danno al giocatore
+            Debug.Log("Danno inflitto al giocatore!");
+        }
+        else
+        {
+            Debug.LogWarning("PlayerHealth non trovato!");
+        }
+
+        // Riproduci il suono
+        PlaySound();
+
+        // Distruggi il proiettile dopo la collisione
+        Destroy(gameObject);
+    }
+
+    // Se il proiettile entra in contatto con un nemico, infliggi danno
+    if (other.CompareTag("Enemy"))
+    {
+        // Evita che il proiettile danneggi un nemico se è stato lanciato da un altro nemico
+        if (launcher.CompareTag("Enemy") || launcher == null)
+        {
+            return; // Ignora se è lo stesso team
+        }
+
+        // Infliggi danno al nemico
+        EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+        if (enemyHealth != null)
+        {
+            enemyHealth.TakeDamage(damageAmount); // Infliggi danno
+        }
+
+        PlaySound(); // Riproduci suono prima di distruggere
+        Destroy(gameObject); // Distruggi il proiettile
+    }
+}
+
 
     // Funzione per riprodurre il suono
     private void PlaySound()

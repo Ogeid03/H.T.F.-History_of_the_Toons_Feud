@@ -17,8 +17,8 @@ public class ButtonSpawner : MonoBehaviour
 
     // Lista di frasi preconfigurate che vogliamo mostrare nel testo del bottone
     public string[] buttonTexts = {
-        "Sono un Tortellino Muhaha",
-        "A Terroneee",
+        "Maledettooo",
+        "Ouchhh",
         "Ma poooo",
         "Daje Roma",
         "yahoooo"
@@ -150,7 +150,7 @@ public class ButtonSpawner : MonoBehaviour
             Debug.Log("Testo del bottone cambiato su: " + targetText.text);
 
             // Aggiungi una rotazione casuale al testo (solo il testo, non il RectTransform)
-            float randomRotation = Random.Range(-11f, 11f); // Rotazione casuale tra -21 e 21 gradi
+            float randomRotation = Random.Range(-9f, 9f); // Rotazione casuale tra -21 e 21 gradi
 
             // Ruota solo il componente TextMeshProUGUI (non il RectTransform)
             targetText.transform.rotation = Quaternion.Euler(0f, 0f, randomRotation);
