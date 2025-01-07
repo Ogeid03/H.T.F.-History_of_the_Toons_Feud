@@ -9,14 +9,14 @@ Update da fare:
     ✅ - aggiungere dei veri ascensori   
     ✅ - aggiungere un ambiente esterno (portale Warner SIS)
     aggiunta di suoni ed effetti (Gli effetti sono dentro Imports)
-    ✅colorare GUI
+    ✅ - colorare GUI
 
 Fixes:   
     movement
     animazioni
     ✅ - morte
     intro (se premuti i tasti di movimento, aggiunta testi "clicca per continuare", riquadri per evidenziare i tasti)
-    porte con nasto pellicola
+    ✅ - porte con nasto pellicola
     
 intro
     hitted by tomatoes, far ittare l'inchiostro sulla testa
