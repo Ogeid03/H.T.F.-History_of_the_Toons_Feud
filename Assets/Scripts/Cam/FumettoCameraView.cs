@@ -89,30 +89,26 @@ public class CameraMovement : MonoBehaviour
 
     void MoveCameraToNextPosition()
     {
-        // Passa alla posizione successiva
-        currentStep++;
-        if (currentStep >= positions.Length)
+        // Passa alla posizione successiva solo se non sei all'ultima posizione
+        if (currentStep < positions.Length - 1)
         {
-            currentStep = 0;
+            currentStep++;
+            // Muovi la telecamera
+            StopAllCoroutines();
+            StartCoroutine(MoveToPosition(positions[currentStep]));
         }
-
-        // Muovi la telecamera
-        StopAllCoroutines();
-        StartCoroutine(MoveToPosition(positions[currentStep]));
     }
 
     void MoveCameraToPreviousPosition()
     {
-        // Passa alla posizione precedente
-        currentStep--;
-        if (currentStep < 0)
+        // Passa alla posizione precedente solo se non sei alla prima posizione
+        if (currentStep > 0)
         {
-            currentStep = positions.Length - 1;
+            currentStep--;
+            // Muovi la telecamera
+            StopAllCoroutines();
+            StartCoroutine(MoveToPosition(positions[currentStep]));
         }
-
-        // Muovi la telecamera
-        StopAllCoroutines();
-        StartCoroutine(MoveToPosition(positions[currentStep]));
     }
 
     // Coroutine per spostare la telecamera verso una posizione specifica

@@ -22,6 +22,7 @@ public class GameOverManager : MonoBehaviour
     public void TriggerGameOverScreen()
     {
         scoreManager.SaveScore(); // Salva il punteggio prima di visualizzare la schermata
+        scoreManager.AddScore(100);
         StartCoroutine(ShowGameOverScreen());
     }
 

@@ -10,16 +10,21 @@ Update da fare:
     ✅ - aggiungere un ambiente esterno (portale Warner SIS)
     aggiunta di suoni ed effetti (Gli effetti sono dentro Imports)
     ✅ - colorare GUI
+    Cambio scritte tutorial, 
+    aggiunta medikit nel tutorial
+    fine scene Last attempts
 
 Fixes:   
     movement
     animazioni
+    modifica seconda vignetta
     ✅ - morte
     intro (se premuti i tasti di movimento, aggiunta testi "clicca per continuare", riquadri per evidenziare i tasti)
     ✅ - porte con nasto pellicola
+    movement enemy 2nd piano
     
 intro
-    hitted by tomatoes, far ittare l'inchiostro sulla testa
+    
     ✅ - spawn medikit
     ✅ - adattamento GUI
     ✅ - fix animazione vibrante dell'ascensore e 2x
@@ -41,4 +46,5 @@ Extras:
 
 DISMISSED:
     introduzione della "leva" per aprire le porte di qualche livello
+    hitted by tomatoes, far ittare l'inchiostro sulla testa
 */
