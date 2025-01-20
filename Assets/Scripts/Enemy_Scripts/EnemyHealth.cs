@@ -47,15 +47,15 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool isProjectile)
     {
         currentHealth -= damage;
         Debug.Log("Enemy health: " + currentHealth);
 
-        // Se è presente il pomodoro e non è già stato reso visibile
-        if (pomodoroSpiaccicato != null && !isPomodoroVisible)
+        // Se è presente il pomodoro e il danno è causato da un proiettile, lo rendi visibile
+        if (isProjectile && pomodoroSpiaccicato != null && !isPomodoroVisible)
         {
-            pomodoroSpiaccicato.gameObject.SetActive(true);  // Rendi visibile il pomodoro quando il nemico subisce danno
+            pomodoroSpiaccicato.gameObject.SetActive(true);  // Rendi visibile il pomodoro
             isPomodoroVisible = true;  // Segna il pomodoro come visibile
         }
 
@@ -72,6 +72,15 @@ public class EnemyHealth : MonoBehaviour
             Die();  // Chiama la funzione per gestire la morte del nemico
         }
     }
+
+
+    // Metodo originale per compatibilità
+    public void TakeDamage(int damage)
+    {
+        TakeDamage(damage, false); // Assume che il danno non sia da proiettile
+    }
+
+
 
     public string GetPrefabName()
     {

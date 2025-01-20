@@ -144,7 +144,7 @@ public class Projectile : MonoBehaviour
         EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
         if (enemyHealth != null)
         {
-            enemyHealth.TakeDamage(damageAmount); // Infliggi danno
+            enemyHealth.TakeDamage(damageAmount,true); // Infliggi danno
         }
 
         PlaySound(); // Riproduci suono prima di distruggere

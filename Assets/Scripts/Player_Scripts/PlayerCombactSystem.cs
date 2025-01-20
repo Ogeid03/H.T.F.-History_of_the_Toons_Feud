@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public float attackDuration = 1.5f;    // Durata dell'attacco (tempo di animazione)
-    public float attackRange = 3f;          // Raggio dell'attacco
+    public float attackRange = 5f;          // Raggio dell'attacco
     public LayerMask enemyLayer;            // Layer per i nemici
     public int damageAmount = 10;           // Danno inflitto ai nemici
 
