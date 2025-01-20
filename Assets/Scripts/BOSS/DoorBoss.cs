@@ -13,11 +13,6 @@ public class DoorBoss : MonoBehaviour
     public CameraZoomOut cameraZoomOut;   // Riferimento allo script della telecamera per l'allontanamento
     public ButtonSpawner bs;
 
-    // Variabile booleana per lo zoom modificabile dall'Inspector
-    public bool isZoomedIn = false;       // Se true, zoom in; se false, zoom out
-    public float zoomInSize = 5f;         // Valore di zoom in
-    public float zoomOutSize = 10f;       // Valore di zoom out
-
     void Start()
     {
         myCollider = GetComponent<Collider2D>();
@@ -54,25 +49,8 @@ public class DoorBoss : MonoBehaviour
             }
         }
 
-        // Imposta lo zoom iniziale
-        UpdateCameraZoom();
-
         // Avvia la coroutine per monitorare la posizione del giocatore
         StartCoroutine(WaitForPlayerPosition());
-    }
-
-    void Update()
-    {
-        // Aggiorna lo zoom dinamicamente
-        UpdateCameraZoom();
-    }
-
-    private void UpdateCameraZoom()
-    {
-        if (cameraZoomOut != null)
-        {
-            cameraZoomOut.GetComponent<Camera>().orthographicSize = isZoomedIn ? zoomInSize : zoomOutSize;
-        }
     }
 
     private IEnumerator WaitForPlayerPosition()

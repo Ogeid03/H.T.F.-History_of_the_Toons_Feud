@@ -11,7 +11,7 @@ public class CameraZoomOut : MonoBehaviour
     public float maxY = 10f;                // Limite superiore per l'asse Y
 
     private Camera cam;
-    private float originalSize;
+    private float originalSize = 5f;        // Imposta la dimensione originale a 5 (prima di qualsiasi zoom)
     private Vector3 originalPosition;
     private bool isZoomedOut = false;       // Controlla se è attivo lo zoom
 
@@ -19,7 +19,7 @@ public class CameraZoomOut : MonoBehaviour
     {
         // Ottieni il componente Camera e salva la dimensione originale
         cam = GetComponent<Camera>();
-        originalSize = cam.orthographicSize;
+        cam.orthographicSize = originalSize; // Imposta subito la telecamera a dimensione 5
         originalPosition = transform.position;  // Salva la posizione originale della telecamera
     }
 

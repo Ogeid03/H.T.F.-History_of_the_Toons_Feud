@@ -1,70 +1,136 @@
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
-public class MoveCameraThroughObjects : MonoBehaviour
+public class CameraMovement : MonoBehaviour
 {
-    public List<GameObject> targetObjects; // Lista di GameObject da passare nell'Inspector
-    public float moveSpeed = 5f;          // Velocità dello spostamento (0 per movimento istantaneo)
+    // Posizioni specifiche in cui la telecamera deve spostarsi, compresa la posizione iniziale
+    private Vector3[] positions = new Vector3[5];
+    private int currentStep = 0; // Tieni traccia del passo corrente
 
-    private int currentIndex = 0;         // Indice attuale nella lista
-    private Vector3 targetPosition;      // Posizione verso cui si sposta la telecamera
-    private bool isMoving = false;       // Indica se la telecamera è in movimento
+    // Velocità del movimento della telecamera
+    public float moveSpeed = 5f;
+
+    // Variabili per rilevare lo swipe
+    private Vector2 startTouchPosition;
+    private Vector2 endTouchPosition;
+    public float minSwipeDistance = 50f; // Distanza minima per considerare uno swipe
 
     void Start()
     {
-        // Imposta la posizione iniziale della telecamera come il primo oggetto nella lista
-        if (targetObjects.Count > 0)
-        {
-            targetPosition = targetObjects[currentIndex].transform.position;
-            transform.position = targetPosition;
-        }
-        else
-        {
-            Debug.LogWarning("La lista targetObjects è vuota! Aggiungi almeno un GameObject.");
-        }
+        // Definisci le posizioni di movimento della telecamera
+        positions[0] = transform.position;
+        positions[1] = new Vector3(8f, transform.position.y, transform.position.z);
+        positions[2] = new Vector3(22f, transform.position.y, transform.position.z);
+        positions[3] = new Vector3(46f, transform.position.y, transform.position.z);
+        positions[4] = new Vector3(66f, transform.position.y, transform.position.z);
+
+        // Imposta la posizione iniziale della telecamera
+        transform.position = positions[0];
     }
 
     void Update()
     {
-        // Controlla se il tasto "D" viene premuto e la telecamera non è già in movimento
-        if (Input.GetKeyDown(KeyCode.D) && !isMoving)
+        // Gestione dello swipe
+        DetectSwipe();
+
+        // Per debugging o uso su PC, mantieni i tasti "D" e "A"
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            MoveToNextObject();
+            MoveCameraToNextPosition();
         }
-
-        // Movimento graduale della telecamera verso la posizione target
-        if (isMoving)
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            MoveCameraToPreviousPosition();
+        }
+    }
 
-            // Controlla se la telecamera ha raggiunto la destinazione
-            if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
+    void DetectSwipe()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Began)
             {
-                transform.position = targetPosition; // Correggi la posizione per evitare oscillazioni
-                isMoving = false; // Movimento completato
+                startTouchPosition = touch.position;
+            }
+            else if (touch.phase == TouchPhase.Ended)
+            {
+                endTouchPosition = touch.position;
+                HandleSwipe();
             }
         }
     }
 
-    private void MoveToNextObject()
+    void HandleSwipe()
     {
-        if (targetObjects.Count == 0)
+        Vector2 swipeDelta = endTouchPosition - startTouchPosition;
+
+        // Controlla se lo swipe è lungo abbastanza
+        if (swipeDelta.magnitude > minSwipeDistance)
         {
-            Debug.LogWarning("La lista targetObjects è vuota. Non ci sono oggetti verso cui muoversi.");
-            return;
+            // Controlla la direzione dello swipe
+            if (Mathf.Abs(swipeDelta.x) > Mathf.Abs(swipeDelta.y))
+            {
+                // Swipe orizzontale
+                if (swipeDelta.x > 0)
+                {
+                    // Swipe verso destra
+                    MoveCameraToPreviousPosition();
+                }
+                else
+                {
+                    // Swipe verso sinistra
+                    MoveCameraToNextPosition();
+                }
+            }
+        }
+    }
+
+    void MoveCameraToNextPosition()
+    {
+        // Passa alla posizione successiva
+        currentStep++;
+        if (currentStep >= positions.Length)
+        {
+            currentStep = 0;
         }
 
-        // Incrementa l'indice e torna al primo oggetto se si supera la lista
-        currentIndex = (currentIndex + 1) % targetObjects.Count;
+        // Muovi la telecamera
+        StopAllCoroutines();
+        StartCoroutine(MoveToPosition(positions[currentStep]));
+    }
 
-        // Imposta la posizione target come la posizione del prossimo oggetto
-        targetPosition = targetObjects[currentIndex].transform.position;
-        isMoving = moveSpeed > 0; // Se la velocità è 0, il movimento sarà istantaneo
-
-        // Movimento istantaneo (se la velocità è 0)
-        if (!isMoving)
+    void MoveCameraToPreviousPosition()
+    {
+        // Passa alla posizione precedente
+        currentStep--;
+        if (currentStep < 0)
         {
-            transform.position = targetPosition;
+            currentStep = positions.Length - 1;
         }
+
+        // Muovi la telecamera
+        StopAllCoroutines();
+        StartCoroutine(MoveToPosition(positions[currentStep]));
+    }
+
+    // Coroutine per spostare la telecamera verso una posizione specifica
+    private IEnumerator MoveToPosition(Vector3 targetPosition)
+    {
+        float timeElapsed = 0f;
+        Vector3 startPosition = transform.position;
+
+        while (timeElapsed < 1f)
+        {
+            // Calcola il movimento
+            transform.position = Vector3.Lerp(startPosition, targetPosition, timeElapsed);
+
+            timeElapsed += Time.deltaTime * moveSpeed; // Aggiorna il tempo trascorso
+            yield return null; // Attendi il prossimo frame
+        }
+
+        // Assicurati che la telecamera arrivi esattamente alla destinazione
+        transform.position = targetPosition;
     }
 }
