@@ -64,7 +64,7 @@ public class Projectile : MonoBehaviour
             EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(damageAmount); // Infliggi danno al nemico
+                enemyHealth.TakeDamage(damageAmount,true); // Infliggi danno al nemico
             }
             PlaySound(); // Riproduci suono prima di distruggere
             Destroy(gameObject); // Distruggi il proiettile dopo l'impatto
