@@ -16,7 +16,7 @@ public class Respawn : MonoBehaviour
     private System.Collections.IEnumerator RespawnCoroutine(Vector3 spawnPosition, Quaternion spawnRotation)
     {
         // Attendi 5 secondi prima di spawnare il prefab
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(7f);
 
         // Istanzia il prefab del nemico alla posizione specificata con la stessa rotazione
         if (enemyPrefab != null)

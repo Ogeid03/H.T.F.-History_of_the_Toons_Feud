@@ -5,6 +5,7 @@ using System.Collections;
 public class GameOverManager : MonoBehaviour
 { 
     public GameObject gameOverScreen;
+    public EnemyScoreManager scoreManager; // Riferimento al gestore del punteggio
 
     void Start()
     {
@@ -14,12 +15,13 @@ public class GameOverManager : MonoBehaviour
     public void ReturnToMenu()
     {
         Time.timeScale = 1;               
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("PostMortemMenu");
     }
 
     // Metodo pubblico per avviare la coroutine di Game Over
     public void TriggerGameOverScreen()
     {
+        scoreManager.SaveScore(); // Salva il punteggio prima di visualizzare la schermata
         StartCoroutine(ShowGameOverScreen());
     }
 

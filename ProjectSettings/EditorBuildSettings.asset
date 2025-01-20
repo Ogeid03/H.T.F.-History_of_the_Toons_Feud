@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroScene.unity
     guid: babdb211ea25b9343a15f9389804cf63
   - enabled: 1
+    path: Assets/Scenes/FumettoScene.unity
+    guid: 47bedc63adf0ecb47a1d16a22667b2ad
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/PostMortemMenu.unity
+    guid: 8dd52d0af6235d042925ef0ba1d59197
   m_configObjects: {}

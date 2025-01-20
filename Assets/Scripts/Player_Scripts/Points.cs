@@ -26,4 +26,12 @@ public class EnemyScoreManager : MonoBehaviour
         // Se usi TextMeshPro, usa:
         // scoreText.text = "Punteggio: " + score.ToString();
     }
+
+    public void SaveScore()
+    {
+        // Salva il punteggio dell'ultima partita nei PlayerPrefs
+        PlayerPrefs.SetInt("LastScore", score);
+        PlayerPrefs.Save();
+    }
 }
+
