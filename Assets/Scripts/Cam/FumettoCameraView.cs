@@ -19,7 +19,7 @@ public class CameraMovement : MonoBehaviour
     {
         // Definisci le posizioni di movimento della telecamera
         positions[0] = transform.position;
-        positions[1] = new Vector3(8f, transform.position.y, transform.position.z);
+        positions[1] = new Vector3(6f, transform.position.y, transform.position.z);
         positions[2] = new Vector3(22f, transform.position.y, transform.position.z);
         positions[3] = new Vector3(46f, transform.position.y, transform.position.z);
         positions[4] = new Vector3(66f, transform.position.y, transform.position.z);
