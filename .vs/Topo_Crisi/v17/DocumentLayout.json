@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|c:\\users\\matte\\onedrive\\documenti\\github\\topo_crisi\\assets\\scripts\\player_scripts\\bounceoff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player_scripts\\bounceoff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|c:\\users\\matte\\onedrive\\documenti\\github\\topo_crisi\\assets\\scripts\\player_scripts\\playerhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player_scripts\\playerhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,12 +23,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "BounceOff.cs",
+              "DocumentMoniker": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\Player_Scripts\\BounceOff.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Scripts\\BounceOff.cs",
+              "ToolTip": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\Player_Scripts\\BounceOff.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player_Scripts\\BounceOff.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAIwEAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T10:53:12.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "PlayerHealth.cs",
               "DocumentMoniker": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\Player_Scripts\\PlayerHealth.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Scripts\\PlayerHealth.cs",
               "ToolTip": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\Player_Scripts\\PlayerHealth.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player_Scripts\\PlayerHealth.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAA9wHIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAowHIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T09:52:17.397Z",
               "EditorCaption": ""
