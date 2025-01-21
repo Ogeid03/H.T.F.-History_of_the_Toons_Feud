@@ -9,8 +9,8 @@ public class ObjectSwitcher : MonoBehaviour
     // Il Button che attiverà la funzione
     public Button switchButton;
 
-    // Riferimento al Canvas (se necessario per altre interazioni future)
-    public Transform canvasTransform;
+    // Canvas scelto dall'Inspector
+    public Canvas targetCanvas;
 
     // Posizione in cui generare il nuovo prefab (da settare tramite l'Inspector)
     public Vector3 spawnPosition;
@@ -28,15 +28,20 @@ public class ObjectSwitcher : MonoBehaviour
             Debug.LogError("Il bottone non è stato assegnato!");
         }
 
-        // Trova il Canvas chiamato "GUI" se non è stato assegnato manualmente
-        if (canvasTransform == null)
+        // Se il Canvas non è stato assegnato, cerca uno con il nome "GUI"
+        if (targetCanvas == null)
         {
-            canvasTransform = GameObject.Find("GUI")?.transform;
+            targetCanvas = GameObject.Find("GUI")?.GetComponent<Canvas>();
         }
 
-        if (canvasTransform == null)
+        // Se ancora non è stato trovato, mostra un errore
+        if (targetCanvas == null)
         {
-            Debug.LogError("Il Canvas chiamato 'GUI' non è stato trovato nella scena.");
+            Debug.LogError("Il Canvas non è stato assegnato e non è stato trovato un Canvas chiamato 'GUI'.");
+        }
+        else
+        {
+            Debug.Log($"Canvas utilizzato: {targetCanvas.name}");
         }
     }
 
@@ -55,9 +60,9 @@ public class ObjectSwitcher : MonoBehaviour
             GameObject newObject = Instantiate(newPrefab, spawnPosition, Quaternion.identity);
 
             // Imposta il nuovo oggetto come figlio del Canvas
-            if (canvasTransform != null)
+            if (targetCanvas != null)
             {
-                newObject.transform.SetParent(canvasTransform, false);
+                newObject.transform.SetParent(targetCanvas.transform, false);
 
                 // Log per confermare che il nuovo prefab è stato creato
                 Debug.Log($"Nuovo prefab creato: {newObject.name} e posizionato a {spawnPosition}");
