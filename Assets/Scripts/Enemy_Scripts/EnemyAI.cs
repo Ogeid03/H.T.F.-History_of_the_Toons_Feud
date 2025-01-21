@@ -18,6 +18,12 @@ public class EnemyMovement : MonoBehaviour
     private Animator animator; // Riferimento all'Animator
     private Rigidbody2D rb; // Riferimento al Rigidbody2D
 
+    // Distanza per rilevare un "buco"
+    public float holeDetectionDistance = 10f; // Distanza di ricerca del buco
+    private GameObject hole; // Riferimento al buco più vicino
+
+    public float heightDifferenceThreshold = 3f; // Differenza di altezza per attivare la ricerca del buco
+
     void Start()
     {
         // Cerca il pomodoro tra i figli
@@ -37,23 +43,18 @@ public class EnemyMovement : MonoBehaviour
         // Trova il giocatore più vicino
         FindClosestPlayer();
 
-        if (target != null && !isPlayerInRange)
+        if (target != null)
         {
-            // Muovi il nemico verso il giocatore lungo l'asse X
-            Vector3 direction = (target.position - transform.position).normalized;
-            transform.position += new Vector3(direction.x, 0, 0) * speed * Time.deltaTime;
-
-            // Aggiorna la velocità nell'animatore
-            animator.SetFloat("Speed", Mathf.Abs(direction.x) * speed);
-
-            // Controlla la direzione e flippa il nemico se necessario
-            if (direction.x > 0 && isFacingRight)
+            // Se la differenza di altezza tra il nemico e il giocatore è maggiore di heightDifferenceThreshold
+            if (transform.position.y > target.position.y + heightDifferenceThreshold)
             {
-                Flip();
+                // Cerca il buco più vicino e muoviti verso di esso
+                MoveTowardsHole();
             }
-            else if (direction.x < 0 && !isFacingRight)
+            else
             {
-                Flip();
+                // Comportamento normale del nemico quando sulla stessa Y o sotto il giocatore
+                MoveTowardsPlayer();
             }
         }
         else
@@ -82,6 +83,73 @@ public class EnemyMovement : MonoBehaviour
         if (closestPlayer != null)
         {
             target = closestPlayer.transform;
+        }
+    }
+
+    // Metodo per muovere il nemico verso il giocatore
+    void MoveTowardsPlayer()
+    {
+        if (!isPlayerInRange)
+        {
+            // Muovi il nemico verso il giocatore lungo l'asse X
+            Vector3 direction = (target.position - transform.position).normalized;
+            transform.position += new Vector3(direction.x, 0, 0) * speed * Time.deltaTime;
+
+            // Aggiorna la velocità nell'animatore
+            animator.SetFloat("Speed", Mathf.Abs(direction.x) * speed);
+
+            // Controlla la direzione e flippa il nemico se necessario
+            if (direction.x > 0 && isFacingRight)
+            {
+                Flip();
+            }
+            else if (direction.x < 0 && !isFacingRight)
+            {
+                Flip();
+            }
+        }
+        else
+        {
+            animator.SetFloat("Speed", 0);
+        }
+    }
+
+    // Metodo per muoversi verso il buco più vicino
+    void MoveTowardsHole()
+    {
+        // Cerca il buco più vicino
+        GameObject[] holes = GameObject.FindGameObjectsWithTag("Hole");
+        float closestDistance = Mathf.Infinity;
+
+        // Trova il buco più vicino
+        foreach (GameObject currentHole in holes)
+        {
+            float distance = Vector3.Distance(transform.position, currentHole.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                hole = currentHole; // Salva il buco più vicino
+            }
+        }
+
+        // Se è stato trovato un buco, muovi verso di esso
+        if (hole != null)
+        {
+            Vector3 direction = (hole.transform.position - transform.position).normalized;
+            transform.position += new Vector3(direction.x, 0, 0) * speed * Time.deltaTime;
+
+            // Aggiorna la velocità nell'animatore
+            animator.SetFloat("Speed", Mathf.Abs(direction.x) * speed);
+
+            // Controlla la direzione e flippa il nemico se necessario
+            if (direction.x > 0 && isFacingRight)
+            {
+                Flip();
+            }
+            else if (direction.x < 0 && !isFacingRight)
+            {
+                Flip();
+            }
         }
     }
 
