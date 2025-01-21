@@ -3,12 +3,12 @@ using UnityEngine;
 public class CameraZoomOut : MonoBehaviour
 {
     public Transform player;                // Riferimento al player
-    public float zoomedOutSize = 10f;       // Dimensione della telecamera quando è allontanata
+    public float zoomedOutSize = 15f;       // Dimensione della telecamera quando è allontanata
     public float zoomSpeed = 0.5f;          // Velocità con cui la telecamera si allontana (modificato per essere più lento)
     public float zoomedOutHeight = 5f;      // Altezza della telecamera quando è allontanata
 
     public float minY = -5f;                // Limite inferiore per l'asse Y
-    public float maxY = 10f;                // Limite superiore per l'asse Y
+    public float maxY = 50f;                // Limite superiore per l'asse Y
 
     private Camera cam;
     private float originalSize = 5f;        // Imposta la dimensione originale a 5 (prima di qualsiasi zoom)

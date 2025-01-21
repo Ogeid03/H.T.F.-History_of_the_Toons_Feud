@@ -10,6 +10,7 @@ TagManager:
   - Medikit
   - F
   - Obstacle
+  - Hole
   layers:
   - Default
   - TransparentFX

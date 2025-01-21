@@ -27,13 +27,15 @@ public class InteractionTrigger : MonoBehaviour
             Debug.LogError("Oggetto con tag 'Player' non trovato!");
         }
 
-        // Trova il Canvas nella scena
-        canvas = FindObjectOfType<Canvas>();
-
-        // Controlla se il Canvas è stato trovato
-        if (canvas == null)
+        // Trova il Canvas chiamato "GUI"
+        GameObject canvasObject = GameObject.Find("GUI");
+        if (canvasObject != null)
         {
-            Debug.LogError("Canvas non trovato nella scena! Assicurati di avere un Canvas nella gerarchia.");
+            canvas = canvasObject.GetComponent<Canvas>();
+        }
+        else
+        {
+            Debug.LogError("Canvas chiamato 'GUI' non trovato nella scena! Assicurati che esista e che abbia il nome corretto.");
         }
     }
 
@@ -46,7 +48,7 @@ public class InteractionTrigger : MonoBehaviour
             float distance = Vector2.Distance(player.transform.position, transform.position);
 
             // Se la distanza è inferiore a interactionDistance, istanzia il bottone
-            if (distance <= interactionDistance && instantiatedButton == null)
+            if (distance <= interactionDistance && instantiatedButton == null && canvas != null)
             {
                 // Istanzia il prefab del bottone come figlio del canvas
                 instantiatedButton = Instantiate(buttonPrefab, canvas.transform);
