@@ -1,66 +1,56 @@
 using UnityEngine;
 
-public class ObjectDisappearSwitcher : MonoBehaviour
+public class PrefabVisibilitySwitcher : MonoBehaviour
 {
-    // Prefab da creare quando l'oggetto scompare
-    public GameObject newPrefab;
+    // Prefab da rendere visibile quando questo GameObject scompare
+    public GameObject targetPrefab;
 
-    // Nome del GameObject a cui il nuovo prefab sarà aggiunto come figlio
-    public string targetObjectName = "TopoPensieroView (1)";
-
-    // Posizione in cui generare il nuovo prefab (opzionale, da settare tramite l'Inspector)
-    public Vector3 spawnPosition = Vector3.zero;
-
-    private GameObject targetObject;  // Riferimento al GameObject target
+    // Indica se il prefab è stato già reso visibile
+    private bool isPrefabVisible = false;
 
     void Start()
     {
-        // Cerca il GameObject con il nome specificato
-        targetObject = GameObject.Find(targetObjectName);
-
-        // Verifica se il GameObject è stato trovato
-        if (targetObject == null)
+        // Verifica se il prefab è stato assegnato
+        if (targetPrefab != null)
         {
-            Debug.LogError($"Il GameObject con il nome '{targetObjectName}' non è stato trovato nella scena.");
+            // Nasconde il prefab allo start
+            targetPrefab.SetActive(false);
+            Debug.Log($"Prefab '{targetPrefab.name}' è stato inizialmente nascosto.");
+        }
+        else
+        {
+            Debug.LogError("Prefab non assegnato! Assicurati di trascinare un GameObject nel campo 'Target Prefab' nell'Inspector.");
         }
     }
 
     void Update()
     {
-        // Controlla se questo GameObject è disabilitato (è scomparso)
-        if (!gameObject.activeSelf)
+        // Controlla se il GameObject è disabilitato e il prefab non è ancora visibile
+        if (!gameObject.activeSelf && !isPrefabVisible)
         {
-            // Se il GameObject è disabilitato, crea il nuovo prefab
-            CreateNewPrefab();
+            // Rende visibile il prefab
+            ShowTargetPrefab();
         }
     }
 
-    void CreateNewPrefab()
+    void ShowTargetPrefab()
     {
-        // Verifica se il prefab è stato assegnato e se il targetObject è valido
-        if (newPrefab != null && targetObject != null)
+        // Verifica se il prefab è stato assegnato
+        if (targetPrefab != null)
         {
-            // Instanzia il nuovo prefab alla posizione specificata
-            GameObject newObject = Instantiate(newPrefab, spawnPosition, Quaternion.identity);
+            // Assicurati che il prefab esista e sia disattivato prima di attivarlo
+            if (!targetPrefab.activeSelf)
+            {
+                targetPrefab.SetActive(true); // Rendi il prefab visibile
+                Debug.Log($"Prefab '{targetPrefab.name}' è stato reso visibile.");
+            }
 
-            // Imposta il nuovo oggetto come figlio del GameObject target
-            newObject.transform.SetParent(targetObject.transform, false);
-
-            // Log per confermare che il nuovo prefab è stato creato
-            Debug.Log($"Nuovo prefab creato: {newObject.name} e posizionato nel GameObject '{targetObjectName}'");
+            // Segna che il prefab è stato reso visibile per evitare chiamate multiple
+            isPrefabVisible = true;
         }
         else
         {
-            // Se il prefab non è stato assegnato o il targetObject non è trovato
-            if (newPrefab == null)
-            {
-                Debug.LogError("Prefab non assegnato. Assicurati di aver assegnato il prefab nell'Inspector.");
-            }
-
-            if (targetObject == null)
-            {
-                Debug.LogError($"Il GameObject '{targetObjectName}' non è stato trovato nella scena.");
-            }
+            Debug.LogError("Il prefab non è assegnato o non esiste nella scena. Assicurati di averlo configurato correttamente.");
         }
     }
 }
