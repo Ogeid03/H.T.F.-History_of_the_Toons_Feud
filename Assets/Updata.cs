@@ -1,8 +1,8 @@
 ﻿/*
 Update da fare:
     ✅ - sviluppare una stanza finale per ogni livello
-    migliorare il combattimento e ✅ caratteristiche nemici
-    🦒 - impostare le animazioni e le nuove skin di Martina (Done: Tomato, Micael Faws, Enemies, PitcherEnemies - To Do: Boss, Ink)
+    ✅ - migliorare il combattimento e ✅ caratteristiche nemici
+    🦒 - impostare le nuove skin di Martina (Done: Tomato, Micael Faws, Enemies, PitcherEnemies - To Do: Boss, Ink)
     ✅ - sistemare le varie stanze
     ✅ - grafica per GUI (pulsanti)  
     ✅ - gestione del medikit
@@ -10,7 +10,7 @@ Update da fare:
     ✅ - aggiungere un ambiente esterno (portale Warner SIS)
     aggiunta di suoni ed effetti (Gli effetti sono dentro Imports)
     ✅ - colorare GUI
-    🦒 - Cambio scritte tutorial
+    ✅ - Cambio scritte tutorial
     ✅ - aggiunta medikit nel tutorial
     fine scene Last attempts
     aggiunta peark colpi rapidi dropptati da enemy (minigun)
@@ -21,9 +21,9 @@ Fixes:
     🦒 - animazioni combattimento
     🦒 - modifica seconda vignetta, scritta wornersis sul portale esterno
     ✅ - morte
-    🦒 - intro (se premuti i tasti di movimento, aggiunta testi "clicca per continuare", riquadri per evidenziare i tasti)
+    🦒 - intro (riquadri per evidenziare i tasti,✅ se premuti i tasti di movimento,✅aggiunta testi "clicca per continuare")
     ✅ - porte con nasto pellicola
-    movement enemy 2nd piano
+    ✅ - movement enemy 2nd piano
     
 intro
     
