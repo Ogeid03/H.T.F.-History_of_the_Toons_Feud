@@ -13,11 +13,12 @@ Update da fare:
     Cambio scritte tutorial, 
     aggiunta medikit nel tutorial
     fine scene Last attempts
+    aggiunta peark colpi rapidi dropptati da enemy (minigun)
 
 Fixes:   
     movement
     animazioni
-    modifica seconda vignetta
+    modifica seconda vignetta, scritta wornersis sul portale esterno
     ✅ - morte
     intro (se premuti i tasti di movimento, aggiunta testi "clicca per continuare", riquadri per evidenziare i tasti)
     ✅ - porte con nasto pellicola
