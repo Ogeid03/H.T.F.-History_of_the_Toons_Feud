@@ -11,12 +11,13 @@ Update da fare:
     aggiunta di suoni ed effetti (Gli effetti sono dentro Imports)
     ✅ - colorare GUI
     🦒 - Cambio scritte tutorial
-    🦒 - aggiunta medikit nel tutorial
+    ✅ - aggiunta medikit nel tutorial
     fine scene Last attempts
     aggiunta peark colpi rapidi dropptati da enemy (minigun)
+    🦒 - Schermata di win
 
 Fixes:   
-    🦒 - movement slide sulle pareti
+    ✅ - movement slide sulle pareti
     🦒 - animazioni combattimento
     🦒 - modifica seconda vignetta, scritta wornersis sul portale esterno
     ✅ - morte

@@ -9,11 +9,13 @@ public class ObjectSwitcher : MonoBehaviour
     // Il Button che attiverà la funzione
     public Button switchButton;
 
-    // Canvas scelto dall'Inspector
-    public Canvas targetCanvas;
+    // Nome del Canvas (da impostare tramite l'Inspector)
+    public string canvasName = "GUI";  // Impostato a "GUI" di default
 
     // Posizione in cui generare il nuovo prefab (da settare tramite l'Inspector)
     public Vector3 spawnPosition;
+
+    private Canvas targetCanvas;  // Riferimento al Canvas
 
     void Start()
     {
@@ -25,19 +27,16 @@ public class ObjectSwitcher : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Il bottone non è stato assegnato!");
+            Debug.LogWarning("Il bottone non è stato assegnato!");
         }
 
-        // Se il Canvas non è stato assegnato, cerca uno con il nome "GUI"
-        if (targetCanvas == null)
-        {
-            targetCanvas = GameObject.Find("GUI")?.GetComponent<Canvas>();
-        }
+        // Cerca il Canvas con il nome specificato nell'Inspector
+        targetCanvas = GameObject.Find(canvasName)?.GetComponent<Canvas>();
 
-        // Se ancora non è stato trovato, mostra un errore
+        // Se il Canvas non è stato trovato, mostra un errore
         if (targetCanvas == null)
         {
-            Debug.LogError("Il Canvas non è stato assegnato e non è stato trovato un Canvas chiamato 'GUI'.");
+            Debug.LogError($"Il Canvas con il nome '{canvasName}' non è stato trovato nella scena.");
         }
         else
         {
@@ -53,19 +52,20 @@ public class ObjectSwitcher : MonoBehaviour
         // Log per confermare che l'oggetto è stato disabilitato
         Debug.Log($"L'oggetto {gameObject.name} è stato disabilitato.");
 
-        // Attiva il nuovo prefab se è stato assegnato
+        // Verifica se il prefab è stato assegnato
         if (newPrefab != null)
         {
             // Instanzia il nuovo prefab alla posizione specificata da spawnPosition
             GameObject newObject = Instantiate(newPrefab, spawnPosition, Quaternion.identity);
 
-            // Imposta il nuovo oggetto come figlio del Canvas
+            // Verifica che targetCanvas sia valido e che il nuovo prefab venga creato nel Canvas corretto
             if (targetCanvas != null)
             {
+                // Imposta il nuovo oggetto come figlio del Canvas trovato
                 newObject.transform.SetParent(targetCanvas.transform, false);
 
                 // Log per confermare che il nuovo prefab è stato creato
-                Debug.Log($"Nuovo prefab creato: {newObject.name} e posizionato a {spawnPosition}");
+                Debug.Log($"Nuovo prefab creato: {newObject.name} e posizionato a {spawnPosition} nel Canvas: {targetCanvas.name}");
 
                 // Verifica che l'oggetto abbia un Renderer abilitato
                 if (newObject.GetComponent<Renderer>() != null && newObject.GetComponent<Renderer>().enabled)
@@ -82,9 +82,10 @@ public class ObjectSwitcher : MonoBehaviour
                 Debug.LogError("Canvas non assegnato correttamente. L'oggetto non sarà figlio di nessun Canvas.");
             }
         }
-        /*else
+        else
         {
-            Debug.LogError("Prefab dell'oggetto da attivare non assegnato!");
-        }*/
+            // Invece di mostrare un errore, facciamo solo un log informativo
+            Debug.LogWarning("Prefab dell'oggetto da attivare non assegnato. Nessun nuovo oggetto sarà creato.");
+        }
     }
 }
