@@ -2,7 +2,7 @@
 Update da fare:
     ✅ - sviluppare una stanza finale per ogni livello
     ✅ - migliorare il combattimento e ✅ caratteristiche nemici
-    🦒 - impostare le nuove skin di Martina (Done: Tomato, Micael Faws, Enemies, PitcherEnemies - To Do: Boss, Ink)
+    ✅ - impostare le nuove skin di Martina (Done: Tomato, Micael Faws, Enemies, PitcherEnemies - To Do: Boss, Ink)
     ✅ - sistemare le varie stanze
     ✅ - grafica per GUI (pulsanti)  
     ✅ - gestione del medikit
@@ -24,9 +24,8 @@ Fixes:
     🦒 - intro (riquadri per evidenziare i tasti,✅ se premuti i tasti di movimento,✅aggiunta testi "clicca per continuare")
     ✅ - porte con nasto pellicola
     ✅ - movement enemy 2nd piano
-    
-intro
-    
+    🦒 - Boss hitbox
+    🦒 - Boss life spawn width    
     ✅ - spawn medikit
     ✅ - adattamento GUI
     ✅ - fix animazione vibrante dell'ascensore e 2x

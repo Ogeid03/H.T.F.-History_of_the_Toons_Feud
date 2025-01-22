@@ -10,6 +10,9 @@ public class BossHealth : MonoBehaviour
     public GameObject deathEffect;       // Effetto visivo alla morte del boss
     private GameOverManager gameOverManager;
 
+    public SpriteRenderer spriteRenderer; // Riferimento allo SpriteRenderer
+    public Sprite hurtSprite;             // Nuovo sprite da usare quando la vita è sotto il 50%
+
     void Start()
     {
         currentHealth = maxHealth;       // Imposta la vita iniziale del boss
@@ -39,6 +42,12 @@ public class BossHealth : MonoBehaviour
             if (hurtSound != null)
             {
                 hurtSound.Play(); // Esegui il suono di danno
+            }
+
+            // Cambia lo sprite se la vita è sotto il 50%
+            if (currentHealth <= maxHealth * 0.5f && spriteRenderer != null && hurtSprite != null)
+            {
+                spriteRenderer.sprite = hurtSprite; // Cambia lo sprite
             }
         }
         else
@@ -76,6 +85,12 @@ public class BossHealth : MonoBehaviour
     {
         currentHealth += healAmount;  // Aumenta la salute
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Limita la salute tra 0 e max
+
+        // Se la salute torna sopra il 50%, ripristina lo sprite originale
+        if (currentHealth > maxHealth * 0.5f && spriteRenderer != null)
+        {
+            spriteRenderer.sprite = null; // Imposta lo sprite originale (se necessario)
+        }
     }
 
     // Funzione per ottenere la vita corrente del boss

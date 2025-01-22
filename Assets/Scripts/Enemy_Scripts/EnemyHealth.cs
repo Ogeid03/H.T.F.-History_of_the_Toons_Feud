@@ -11,7 +11,11 @@ public class EnemyHealth : MonoBehaviour
     private Transform pomodoroSpiaccicato;  // Riferimento al figlio "pomodoro_spappolato"
     private bool isPomodoroVisible = false; // Verifica se il pomodoro è già visibile
 
-    private Respawn respawnScript; // Riferimento allo script Respawn
+    private Respawn respawnScript;          // Riferimento allo script Respawn
+
+    // Variabili per il suono
+    public AudioClip damageSound;           // Suono da riprodurre quando il nemico subisce danno
+    private AudioSource customAudioSource;  // AudioSource che verrà recuperato dal GameObject
 
     void Start()
     {
@@ -45,12 +49,33 @@ public class EnemyHealth : MonoBehaviour
         {
             Debug.LogError("Non è stato trovato un oggetto con il nome G:O:D nella scena.");
         }
+
+        // Cerca il GameObject con il nome "DamageSound" e recupera il componente AudioSource
+        GameObject audioSourceObject = GameObject.Find("DamageSound");
+        if (audioSourceObject != null)
+        {
+            customAudioSource = audioSourceObject.GetComponent<AudioSource>();
+            if (customAudioSource == null)
+            {
+                Debug.LogError("Il GameObject 'DamageSound' non contiene un componente AudioSource!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Non è stato trovato un oggetto chiamato 'DamageSound' nella scena.");
+        }
     }
 
     public void TakeDamage(int damage, bool isProjectile)
     {
         currentHealth -= damage;
         Debug.Log("Enemy health: " + currentHealth);
+
+        // Riproduci il suono del danno usando l'AudioSource assegnato
+        if (customAudioSource != null && damageSound != null)
+        {
+            customAudioSource.PlayOneShot(damageSound);
+        }
 
         // Se è presente il pomodoro e il danno è causato da un proiettile, lo rendi visibile
         if (isProjectile && pomodoroSpiaccicato != null && !isPomodoroVisible)
@@ -73,14 +98,11 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-
     // Metodo originale per compatibilità
     public void TakeDamage(int damage)
     {
         TakeDamage(damage, false); // Assume che il danno non sia da proiettile
     }
-
-
 
     public string GetPrefabName()
     {
@@ -95,6 +117,12 @@ public class EnemyHealth : MonoBehaviour
         if (scoreManager != null)
         {
             scoreManager.AddScore(scoreValue);
+        }
+
+        // Riproduci il suono della morte usando l'AudioSource assegnato
+        if (customAudioSource != null && damageSound != null)
+        {
+            customAudioSource.PlayOneShot(damageSound);
         }
 
         // Inizia la coroutine per ritardare la distruzione di 0.5 secondi
