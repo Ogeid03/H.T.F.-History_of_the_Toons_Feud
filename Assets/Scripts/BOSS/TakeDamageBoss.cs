@@ -17,11 +17,11 @@ public class ButtonSpawner : MonoBehaviour
 
     // Lista di frasi preconfigurate che vogliamo mostrare nel testo del bottone
     public string[] buttonTexts = {
-        "Maledettooo",
+        "You can't win",
         "Ouchhh",
-        "Ma poooo",
-        "Daje Roma",
-        "yahoooo"
+        "Come on",
+        "Damn",
+        "Heck, are you still here"
     };
 
     void Start()

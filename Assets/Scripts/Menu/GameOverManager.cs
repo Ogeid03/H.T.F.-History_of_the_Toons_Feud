@@ -16,6 +16,7 @@ public class GameOverManager : MonoBehaviour
 
         if (youWonScreen != null)
             youWonScreen.SetActive(false);
+        
     }
 
     public void ReturnToMenu()
@@ -45,7 +46,10 @@ public class GameOverManager : MonoBehaviour
     public void TriggerYouWonScreen()
     {
         if (scoreManager != null)
+        {
             scoreManager.SaveScore(); // Salva il punteggio anche quando il giocatore vince
+            
+        }
 
         StartCoroutine(ShowYouWonScreen());
     }
@@ -53,8 +57,11 @@ public class GameOverManager : MonoBehaviour
     private IEnumerator ShowYouWonScreen()
     {
         yield return new WaitForSeconds(1f);
-        if (youWonScreen != null)
+        
+        if (youWonScreen != null) { 
+            
             youWonScreen.SetActive(true);
+        }
         Time.timeScale = 0;
     }
 }

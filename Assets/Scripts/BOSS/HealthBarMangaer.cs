@@ -5,6 +5,8 @@ public class HealthBarManager : MonoBehaviour
     public BossHealth bossHealth;    // Riferimento alla salute del boss
     public Transform healthBar;      // Transform dell'oggetto della barra della salute (un oggetto 2D)
 
+    private GameOverManager gameOverManager;
+
     void Start()
     {
         // Verifica che il riferimento alla salute del boss sia assegnato
@@ -19,6 +21,13 @@ public class HealthBarManager : MonoBehaviour
 
         // Inizializza la barra della salute
         UpdateHealthBar();
+
+        // Trova GameOverManager automaticamente se non è stato assegnato
+        gameOverManager = FindObjectOfType<GameOverManager>();
+        if (gameOverManager == null)
+        {
+            Debug.LogError("GameOverManager non trovato nella scena!");
+        }
     }
 
     void Update()
@@ -43,6 +52,7 @@ public class HealthBarManager : MonoBehaviour
         if (healthPercentage <= 0)
         {
             healthBar.gameObject.SetActive(false);  // Nasconde la barra della salute (opzionale)
+
         }
         else
         {
