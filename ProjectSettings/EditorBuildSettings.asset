@@ -20,7 +20,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PostMortemMenu.unity
     guid: 8dd52d0af6235d042925ef0ba1d59197
-  - enabled: 1
-    path: Assets/LastAttemptScene.unity
-    guid: 129eff115b8570646ba341b91201dcec
   m_configObjects: {}

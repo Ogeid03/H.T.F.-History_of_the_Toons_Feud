@@ -8,24 +8,23 @@ Update da fare:
     ✅ - gestione del medikit
     ✅ - aggiungere dei veri ascensori   
     ✅ - aggiungere un ambiente esterno (portale Warner SIS)
-    aggiunta di suoni ed effetti (Gli effetti sono dentro Imports)
+    🦒 - aggiunta di suoni (MF, Boss)
     ✅ - colorare GUI
     ✅ - Cambio scritte tutorial
     ✅ - aggiunta medikit nel tutorial
-    fine scene Last attempts
-    aggiunta peark colpi rapidi dropptati da enemy (minigun)
-    🦒 - Schermata di win
+    ✅ - Schermata di win
 
 Fixes:   
     ✅ - movement slide sulle pareti
+    🦒 - frasi del boss e png morte
     🦒 - animazioni combattimento
-    🦒 - modifica seconda vignetta, scritta wornersis sul portale esterno
+    🦒 - modifica seconda vignetta, scritta Ants Terrace. sul portale esterno
     ✅ - morte
-    🦒 - intro (riquadri per evidenziare i tasti,✅ se premuti i tasti di movimento,✅aggiunta testi "clicca per continuare")
+    ✅ - intro (riquadri per evidenziare i tasti,✅ se premuti i tasti di movimento,✅aggiunta testi "clicca per continuare")
     ✅ - porte con nasto pellicola
     ✅ - movement enemy 2nd piano
-    🦒 - Boss hitbox
-    🦒 - Boss life spawn width    
+    ✅ - Boss hitbox
+    ✅ - Boss life spawn width    
     ✅ - spawn medikit
     ✅ - adattamento GUI
     ✅ - fix animazione vibrante dell'ascensore e 2x
@@ -36,16 +35,19 @@ Fixes:
     ✅ - fixare vita boss
     ✅ - danieleSgerro non può colpire oltre il ground
     ✅ - danieleSgerroRespawn deve fare danno
-    visuale stanze alte
+    ✅ - visuale stanze alte
 
 Extras:
     ✅ - Schermata iniziale
-    Salvataggi
-    Multiplayer
-    gestione dei due livelli
-    gestione dei caricamenti
+    
 
 DISMISSED:
     introduzione della "leva" per aprire le porte di qualche livello
     hitted by tomatoes, far ittare l'inchiostro sulla testa
+    Salvataggi
+    Multiplayer
+    gestione dei due livelli
+    gestione dei caricamenti
+    fine scene Last attempts
+    aggiunta peark colpi rapidi dropptati da enemy (minigun)
 */
