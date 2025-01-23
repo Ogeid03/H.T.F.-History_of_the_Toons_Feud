@@ -28,11 +28,17 @@ public class EnemyScoreManager : MonoBehaviour
     {
         if (scoreFileManager != null)
         {
-            scoreFileManager.AddScore(score);
+            Debug.Log("Salvataggio del punteggio: " + score);
+            scoreFileManager.AddScore(score); // Salva nella classifica
         }
         else
         {
-            Debug.LogWarning("ScoreFileManager non trovato!");
+            Debug.LogWarning("ScoreFileManager non trovato! Salvataggio saltato.");
         }
+
+        // Salva il punteggio nei PlayerPrefs per il recupero nell'ultima partita
+        PlayerPrefs.SetInt("LastScore", score);
+        PlayerPrefs.Save(); // Salva i dati su disco
+        Debug.Log("Ultimo punteggio salvato nei PlayerPrefs: " + score);
     }
 }
