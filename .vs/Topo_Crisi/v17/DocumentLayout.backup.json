@@ -7,11 +7,11 @@
       "RelativeMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|solutionrelative:assets\\updata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|c:\\users\\matte\\onedrive\\documenti\\github\\topo_crisi\\assets\\scripts\\intro\\istruzioni.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\assets\\scripts\\intro\\istruzioni.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\intro\\istruzioni.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|c:\\users\\matte\\onedrive\\documenti\\github\\topo_crisi\\assets\\scripts\\player_scripts\\bounceoff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\assets\\scripts\\player_scripts\\bounceoff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player_scripts\\bounceoff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -51,8 +51,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Intro\\Istruzioni.cs",
               "ViewState": "AgIAAEEAAAAAAAAAAAAIwFsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-21T15:00:40.66Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-21T15:00:40.66Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player_Scripts\\BounceOff.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAIwEAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-21T10:53:12.433Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-21T10:53:12.433Z"
             },
             {
               "$type": "Document",
