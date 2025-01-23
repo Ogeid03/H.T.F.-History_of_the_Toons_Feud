@@ -19,6 +19,8 @@ public class ObjectSwitcherWithDynamicJumpButton : MonoBehaviour
     private Canvas targetCanvas;      // Riferimento al Canvas
     private Button jumpButton;        // Riferimento al JumpButton
 
+    private bool hasActionOccurred = false; // Controlla se l'azione è già avvenuta
+
     void Start()
     {
         // Cerca il Canvas con il nome specificato
@@ -77,6 +79,16 @@ public class ObjectSwitcherWithDynamicJumpButton : MonoBehaviour
 
     void SwitchObject()
     {
+        // Controlla se l'azione è già avvenuta
+        if (hasActionOccurred)
+        {
+            Debug.Log("L'azione è già stata effettuata. Ignorando ulteriori pressioni.");
+            return;
+        }
+
+        // Imposta il flag per indicare che l'azione è stata eseguita
+        hasActionOccurred = true;
+
         // Disabilita l'oggetto a cui è associato questo script
         gameObject.SetActive(false);
 
