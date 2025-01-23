@@ -76,7 +76,7 @@ public class BossHealth : MonoBehaviour
         // Avvia la funzione per mostrare la schermata di Game Over
         if (gameOverManager != null)
         {
-            gameOverManager.TriggerGameOverScreen(); // Chiama la funzione pubblica nel GameOverManager
+            gameOverManager.TriggerYouWonScreen(); // Chiama la funzione pubblica nel GameOverManager
         }
     }
 
