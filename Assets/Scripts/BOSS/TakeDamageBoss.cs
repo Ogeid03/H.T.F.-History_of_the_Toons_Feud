@@ -21,7 +21,7 @@ public class ButtonSpawner : MonoBehaviour
         "Ouchhh",
         "Come on",
         "Damn",
-        "Heck, are you still here"
+        "Heck, are you still here?"
     };
 
     void Start()
