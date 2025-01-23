@@ -15,7 +15,7 @@ public class HealthBarManager : MonoBehaviour
         }
 
         // Inizializza la barra della salute con una scala iniziale di 3.2 sull'asse X
-        healthBar.localScale = new Vector3(3.2f, healthBar.localScale.y, healthBar.localScale.z);
+        healthBar.localScale = new Vector3(5.9f, healthBar.localScale.y, healthBar.localScale.z);
 
         // Inizializza la barra della salute
         UpdateHealthBar();
@@ -37,7 +37,7 @@ public class HealthBarManager : MonoBehaviour
         float healthPercentage = currentHealth / bossHealth.maxHealth;
 
         // Aggiorna la larghezza della barra della salute in base alla percentuale
-        healthBar.localScale = new Vector3(healthPercentage * 3.2f, healthBar.localScale.y, healthBar.localScale.z);
+        healthBar.localScale = new Vector3(healthPercentage * 5.9f, healthBar.localScale.y, healthBar.localScale.z);
 
         // Nascondi la barra se la vita è 0
         if (healthPercentage <= 0)

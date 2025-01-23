@@ -43,7 +43,7 @@ public class BossBattleManager : MonoBehaviour
                 }
 
                 // Imposta la scala del proiettile per renderlo molto più grande
-                projectile.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f); // Tre volte più grande (esempio)
+                projectile.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f); // Tre volte più grande (esempio)
             }
 
             // Aspetta prima del prossimo attacco
