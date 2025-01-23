@@ -15,7 +15,8 @@ Update da fare:
     ✅ - Schermata di win
 
 Fixes:   
-       - pomodori buggati
+        - test e fix generali
+    ✅  - pomodori buggati
     ✅ - movement slide sulle pareti
     ✅ - frasi del boss e png morte
     🦒 - animazioni combattimento
