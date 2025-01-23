@@ -15,10 +15,11 @@ Update da fare:
     ✅ - Schermata di win
 
 Fixes:   
+       - pomodori buggati
     ✅ - movement slide sulle pareti
-    🦒 - frasi del boss e png morte
+    ✅ - frasi del boss e png morte
     🦒 - animazioni combattimento
-    🦒 - modifica seconda vignetta, scritta Ants Terrace. sul portale esterno
+    ✅ - modifica seconda vignetta, scritta Ants Terrace. sul portale esterno
     ✅ - morte
     ✅ - intro (riquadri per evidenziare i tasti,✅ se premuti i tasti di movimento,✅aggiunta testi "clicca per continuare")
     ✅ - porte con nasto pellicola
