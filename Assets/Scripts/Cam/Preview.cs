@@ -1,95 +1,138 @@
 using UnityEngine;
 
-public class MapPreview : MonoBehaviour
+public class MoveToTargetXWithControl : MonoBehaviour
 {
-    public Transform[] cameraPath;   // Percorso lungo cui la telecamera si sposterà
-    public float moveSpeed = 2f;     // Velocità di movimento della telecamera
-    public float freezeTime = 3f;    // Tempo in cui la telecamera rimane ferma per la preview
-    private Camera mainCamera;       // Riferimento alla telecamera principale
-    private bool isPreviewing = false; // Indica se la telecamera è in modalità preview
-    private int pathIndex = 0;       // Indice del punto corrente nel percorso della telecamera
+    public string targetObjectName = "Target(Clone)"; // Nome (o parte del nome) dell'oggetto target
+    public float moveSpeed = 2f;                      // Velocità di movimento
 
-    private Vector3 playerInitialPosition; // Posizione iniziale del giocatore
-    private bool isPlayerControlEnabled = true; // Controllo del giocatore abilitato o disabilitato
+    public string[] prefabTags = { "Enemy", "Ally", "Obstacle" }; // Tag dei prefab da disabilitare
+    private Transform target;                         // Riferimento alla posizione del target
+    private bool isMoving = false;                    // Indica se il movimento è attivo
+
+    public Camera mainCamera;    // Telecamera principale
+    public Camera targetCamera;  // Telecamera target che deve essere visualizzata alla fine del movimento
 
     void Start()
     {
-        mainCamera = Camera.main; // Ottieni la telecamera principale
-        playerInitialPosition = transform.position; // Posizione iniziale del giocatore
+        // Trova dinamicamente l'oggetto target nella scena
+        GameObject targetObject = FindTargetObject();
+        if (targetObject != null)
+        {
+            target = targetObject.transform;
+
+            // Disabilita il movimento dei prefab specificati ed avvia il movimento
+            DisablePrefabMovement();
+            isMoving = true;
+        }
+        else
+        {
+            Debug.LogError($"Oggetto con nome '{targetObjectName}' non trovato nella scena!");
+        }
+
+        // Inizialmente, la telecamera target deve essere disabilitata
+        if (targetCamera != null)
+        {
+            targetCamera.enabled = false;
+        }
     }
 
     void Update()
     {
-        if (isPreviewing)
+        // Se il target è stato trovato e il movimento è attivo
+        if (isMoving && target != null)
         {
-            // La telecamera si muove lungo il percorso definito
-            MoveCameraAlongPath();
-
-            // Dopo aver finito il movimento, congeliamo la telecamera per un po'
-            if (pathIndex >= cameraPath.Length)
-            {
-                Invoke("EndPreview", freezeTime); // Congeliamo la telecamera per un po'
-                isPreviewing = false;
-            }
-        }
-        else
-        {
-            // Restituiamo il controllo al giocatore (se desiderato)
-            if (!isPlayerControlEnabled)
-            {
-                EnablePlayerControls();
-            }
+            MoveTowardsTargetX();
         }
     }
 
-    // Funzione per avviare la preview della mappa
-    public void StartPreview()
+    // Funzione per trovare dinamicamente l'oggetto target
+    GameObject FindTargetObject()
     {
-        isPreviewing = true;
-        isPlayerControlEnabled = false; // Disabilita il controllo del giocatore
-        pathIndex = 0;
-        transform.position = cameraPath[pathIndex].position; // Posiziona la telecamera al primo punto
+        GameObject[] allObjects = FindObjectsOfType<GameObject>();
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.name.Contains(targetObjectName)) // Controlla se il nome contiene il nome specificato
+            {
+                return obj; // Restituisce il primo oggetto trovato
+            }
+        }
+        return null; // Nessun oggetto trovato
     }
 
-    // Funzione per muovere la telecamera lungo il percorso
-    void MoveCameraAlongPath()
+    // Funzione per muovere l'oggetto solo sull'asse X
+    void MoveTowardsTargetX()
     {
-        if (pathIndex < cameraPath.Length)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, cameraPath[pathIndex].position, moveSpeed * Time.deltaTime);
+        // Calcola la posizione target limitata all'asse X
+        Vector3 currentPosition = transform.position;
+        Vector3 targetPosition = new Vector3(target.position.x+20f, currentPosition.y, currentPosition.z);
 
-            // Quando la telecamera arriva al prossimo punto, passa al successivo
-            if (transform.position == cameraPath[pathIndex].position)
-            {
-                pathIndex++;
-            }
+        // Sposta l'oggetto gradualmente verso la posizione target
+        transform.position = Vector3.MoveTowards(currentPosition, targetPosition, moveSpeed * Time.deltaTime);
+
+        // Debug per verificare il movimento
+        Debug.Log($"Posizione corrente: {transform.position.x}, Target: {targetPosition.x}");
+
+        // Controlla se l'oggetto ha raggiunto il target
+        if (Mathf.Approximately(transform.position.x, target.position.x))
+        {
+            isMoving = false; // Ferma il movimento
+            EnablePrefabMovement(); // Riabilita il movimento dei prefab
+            Debug.Log("Raggiunto il target! Movimento dei prefab riabilitato.");
+
+            // Cambia la telecamera, passa dalla mainCamera alla targetCamera
+            SwitchCamera();
         }
     }
 
-    // Funzione per congelare la telecamera alla fine della preview
-    void EndPreview()
+    // Funzione per disabilitare il movimento dei prefab specificati
+    void DisablePrefabMovement()
     {
-        // Congela la telecamera per un po'
-        // Dopo il tempo di freeze, puoi riattivare il controllo del giocatore
-        Invoke("EnablePlayerControls", freezeTime);
+        foreach (string tag in prefabTags)
+        {
+            GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
+            foreach (GameObject obj in objects)
+            {
+                // Disabilita gli script di movimento (se presenti)
+                MonoBehaviour[] scripts = obj.GetComponents<MonoBehaviour>();
+                foreach (MonoBehaviour script in scripts)
+                {
+                    script.enabled = false; // Disabilita lo script
+                }
+            }
+        }
+        Debug.Log("Movimento prefab disabilitato.");
     }
 
-    // Funzione per abilitare i controlli del giocatore
-    void EnablePlayerControls()
+    // Funzione per riabilitare il movimento dei prefab specificati
+    void EnablePrefabMovement()
     {
-        isPlayerControlEnabled = true;
-        // Se hai un altro script che gestisce i controlli della telecamera del giocatore, abilitalo
-        // Esempio:
-        // playerControlScript.enabled = true;
-        // Se la telecamera ha un sistema di controllo, riabilita i controlli qui
+        foreach (string tag in prefabTags)
+        {
+            GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
+            foreach (GameObject obj in objects)
+            {
+                // Riabilita gli script di movimento (se presenti)
+                MonoBehaviour[] scripts = obj.GetComponents<MonoBehaviour>();
+                foreach (MonoBehaviour script in scripts)
+                {
+                    script.enabled = true; // Riabilita lo script
+                }
+            }
+        }
+        Debug.Log("Movimento prefab riabilitato.");
     }
 
-    // Funzione per disabilitare i controlli del giocatore
-    void DisablePlayerControls()
+    // Funzione per cambiare la telecamera
+    void SwitchCamera()
     {
-        isPlayerControlEnabled = false;
-        // Se hai un altro script che gestisce i controlli della telecamera del giocatore, disabilitalo
-        // Esempio:
-        // playerControlScript.enabled = false;
+        if (mainCamera != null)
+        {
+            mainCamera.enabled = false;  // Disabilita la telecamera principale
+        }
+        if (targetCamera != null)
+        {
+            targetCamera.enabled = true;  // Abilita la telecamera target
+        }
+        Debug.Log("Telecamera cambiata!");
     }
 }
