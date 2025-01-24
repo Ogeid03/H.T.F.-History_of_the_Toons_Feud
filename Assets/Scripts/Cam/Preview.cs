@@ -121,7 +121,7 @@ public class MoveToTargetXWithControl : MonoBehaviour
     // Funzione per cambiare telecamera
     void SwitchToTargetCamera()
     {
-        if (mainCamera != null) mainCamera.enabled = false; // Disabilita la telecamera principale
         if (targetCamera != null) targetCamera.enabled = true; // Abilita la telecamera target
+        if (mainCamera != null) mainCamera.enabled = false; // Disabilita la telecamera principale
     }
 }

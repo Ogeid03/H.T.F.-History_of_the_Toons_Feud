@@ -8,15 +8,15 @@ public class MainMenuManager : MonoBehaviour
     {
         Debug.Log("PlayGame button pressed");
         // Carica la scena di gioco, sostituisci "GameScene" con il nome della tua scena di gioco
-        SceneManager.LoadScene("IntroScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("SpiegazioneScene", LoadSceneMode.Single);
     }
 
-    public void LastGames()
+    /*public void LastGames()
     {
         Debug.Log("LastGames button pressed");
         // Carica la scena di gioco, sostituisci "GameScene" con il nome della tua scena di gioco
         SceneManager.LoadScene("LastAttemptScene", LoadSceneMode.Single);
-    }
+    }*/
 
     // Metodo per uscire dal gioco 
     /*public void QuitGame()
