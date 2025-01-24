@@ -6,11 +6,11 @@ public class MoveToTargetXWithControl : MonoBehaviour
     public float moveSpeed = 2f;                      // Velocità di movimento
 
     public string[] prefabTags = { "Enemy", "Ally", "Obstacle" }; // Tag dei prefab da disabilitare
-    private Transform target;                         // Riferimento alla posizione del target
-    private bool isMoving = false;                    // Indica se il movimento è attivo
+    public Camera mainCamera;                        // La telecamera principale attuale
+    public Camera targetCamera;                      // La telecamera che prenderà il controllo alla fine
 
-    public Camera mainCamera;    // Telecamera principale
-    public Camera targetCamera;  // Telecamera target che deve essere visualizzata alla fine del movimento
+    private Transform target;                        // Riferimento alla posizione del target
+    private bool isMoving = false;                   // Indica se il movimento è attivo
 
     void Start()
     {
@@ -23,16 +23,14 @@ public class MoveToTargetXWithControl : MonoBehaviour
             // Disabilita il movimento dei prefab specificati ed avvia il movimento
             DisablePrefabMovement();
             isMoving = true;
+
+            // Assicurati che solo la mainCamera sia attiva all'inizio
+            if (mainCamera != null) mainCamera.enabled = true;
+            if (targetCamera != null) targetCamera.enabled = false;
         }
         else
         {
             Debug.LogError($"Oggetto con nome '{targetObjectName}' non trovato nella scena!");
-        }
-
-        // Inizialmente, la telecamera target deve essere disabilitata
-        if (targetCamera != null)
-        {
-            targetCamera.enabled = false;
         }
     }
 
@@ -64,7 +62,7 @@ public class MoveToTargetXWithControl : MonoBehaviour
     {
         // Calcola la posizione target limitata all'asse X
         Vector3 currentPosition = transform.position;
-        Vector3 targetPosition = new Vector3(target.position.x+20f, currentPosition.y, currentPosition.z);
+        Vector3 targetPosition = new Vector3(target.position.x, currentPosition.y, currentPosition.z);
 
         // Sposta l'oggetto gradualmente verso la posizione target
         transform.position = Vector3.MoveTowards(currentPosition, targetPosition, moveSpeed * Time.deltaTime);
@@ -77,10 +75,8 @@ public class MoveToTargetXWithControl : MonoBehaviour
         {
             isMoving = false; // Ferma il movimento
             EnablePrefabMovement(); // Riabilita il movimento dei prefab
-            Debug.Log("Raggiunto il target! Movimento dei prefab riabilitato.");
-
-            // Cambia la telecamera, passa dalla mainCamera alla targetCamera
-            SwitchCamera();
+            SwitchToTargetCamera(); // Cambia telecamera
+            Debug.Log("Raggiunto il target! Movimento dei prefab riabilitato e visuale passata.");
         }
     }
 
@@ -122,17 +118,10 @@ public class MoveToTargetXWithControl : MonoBehaviour
         Debug.Log("Movimento prefab riabilitato.");
     }
 
-    // Funzione per cambiare la telecamera
-    void SwitchCamera()
+    // Funzione per cambiare telecamera
+    void SwitchToTargetCamera()
     {
-        if (mainCamera != null)
-        {
-            mainCamera.enabled = false;  // Disabilita la telecamera principale
-        }
-        if (targetCamera != null)
-        {
-            targetCamera.enabled = true;  // Abilita la telecamera target
-        }
-        Debug.Log("Telecamera cambiata!");
+        if (mainCamera != null) mainCamera.enabled = false; // Disabilita la telecamera principale
+        if (targetCamera != null) targetCamera.enabled = true; // Abilita la telecamera target
     }
 }

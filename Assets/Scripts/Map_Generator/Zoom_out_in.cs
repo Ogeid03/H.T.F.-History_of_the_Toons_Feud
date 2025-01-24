@@ -38,17 +38,23 @@ public class Door : MonoBehaviour
             return;
         }
 
-        // Trova la telecamera principale
-        mainCamera = Camera.main;
+        // Trova la telecamera principale utilizzando il tag personalizzato
+        GameObject cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
+        if (cameraObject != null)
+        {
+            mainCamera = cameraObject.GetComponent<Camera>();
+        }
+
         if (mainCamera == null)
         {
-            Debug.LogError("Telecamera principale non trovata nella scena.");
+            Debug.LogError("Telecamera principale con tag 'MainCamera' non trovata nella scena.");
             return;
         }
 
         // Avvia la coroutine per monitorare la posizione del giocatore
         StartCoroutine(WaitForPlayerPosition());
     }
+
 
     private IEnumerator WaitForPlayerPosition()
     {
