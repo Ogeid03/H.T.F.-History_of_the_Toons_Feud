@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|c:\\users\\matte\\onedrive\\documenti\\github\\topo_crisi\\assets\\scripts\\intro\\jumpswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\intro\\jumpswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|c:\\users\\matte\\onedrive\\documenti\\github\\topo_crisi\\assets\\scripts\\cam\\preview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cam\\preview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|c:\\users\\matte\\onedrive\\documenti\\github\\topo_crisi\\assets\\scripts\\map_generator\\zoom_out_in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\map_generator\\zoom_out_in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "JumpSwitcher.cs",
-              "DocumentMoniker": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\Intro\\JumpSwitcher.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Intro\\JumpSwitcher.cs",
-              "ToolTip": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\Intro\\JumpSwitcher.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Intro\\JumpSwitcher.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAQwHgAAAAAAAAAAAAAAA==",
+              "Title": "Preview.cs",
+              "DocumentMoniker": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\Cam\\Preview.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Cam\\Preview.cs",
+              "ToolTip": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\Cam\\Preview.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Cam\\Preview.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAwwH8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T09:38:57.371Z",
+              "WhenOpened": "2025-01-24T13:44:04.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Zoom_out_in.cs",
+              "DocumentMoniker": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\Map_Generator\\Zoom_out_in.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Map_Generator\\Zoom_out_in.cs",
+              "ToolTip": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\Map_Generator\\Zoom_out_in.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Map_Generator\\Zoom_out_in.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAywDEAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-24T13:28:43.336Z",
               "EditorCaption": ""
             }
           ]

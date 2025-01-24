@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|c:\\users\\matte\\onedrive\\documenti\\github\\topo_crisi\\assets\\updata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|solutionrelative:assets\\updata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|c:\\users\\matte\\onedrive\\documenti\\github\\topo_crisi\\assets\\scripts\\cam\\enablemultidisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cam\\enablemultidisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|c:\\users\\matte\\onedrive\\documenti\\github\\topo_crisi\\assets\\scripts\\boss\\takedamageboss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\boss\\takedamageboss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|c:\\users\\matte\\onedrive\\documenti\\github\\topo_crisi\\assets\\scripts\\cam\\preview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cam\\preview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|c:\\users\\matte\\onedrive\\documenti\\github\\topo_crisi\\assets\\scripts\\newbehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\newbehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|c:\\users\\matte\\onedrive\\documenti\\github\\topo_crisi\\assets\\scripts\\boss\\bosshealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\boss\\bosshealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|c:\\users\\matte\\onedrive\\documenti\\github\\topo_crisi\\assets\\scripts\\boss\\bossscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\boss\\bossscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\assets\\scripts\\map_generator\\zoom_out_in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE806D5F-89B1-6501-4028-4DCC9C6FF3D8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\map_generator\\zoom_out_in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,67 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Updata.cs",
-              "DocumentMoniker": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Updata.cs",
-              "RelativeDocumentMoniker": "Assets\\Updata.cs",
-              "ToolTip": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Updata.cs",
-              "RelativeToolTip": "Assets\\Updata.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAZAAAAAAAAAA==",
+              "Title": "EnableMultiDisplay.cs",
+              "DocumentMoniker": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\Cam\\EnableMultiDisplay.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Cam\\EnableMultiDisplay.cs",
+              "ToolTip": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\Cam\\EnableMultiDisplay.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Cam\\EnableMultiDisplay.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T17:08:54.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NewBehaviourScript.cs",
-              "DocumentMoniker": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\NewBehaviourScript.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\NewBehaviourScript.cs",
-              "ToolTip": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\NewBehaviourScript.cs",
-              "RelativeToolTip": "Assets\\Scripts\\NewBehaviourScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T17:01:57.657Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BossHealth.cs",
-              "DocumentMoniker": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\BOSS\\BossHealth.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\BOSS\\BossHealth.cs",
-              "ToolTip": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\BOSS\\BossHealth.cs",
-              "RelativeToolTip": "Assets\\Scripts\\BOSS\\BossHealth.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T16:59:57.122Z",
+              "WhenOpened": "2025-01-24T13:52:01.5Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TakeDamageBoss.cs",
-              "DocumentMoniker": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\BOSS\\TakeDamageBoss.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\BOSS\\TakeDamageBoss.cs",
-              "ToolTip": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\BOSS\\TakeDamageBoss.cs",
-              "RelativeToolTip": "Assets\\Scripts\\BOSS\\TakeDamageBoss.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAKIAAAAFAAAAAAAAAA==",
+              "Title": "Preview.cs",
+              "DocumentMoniker": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\Cam\\Preview.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Cam\\Preview.cs",
+              "ToolTip": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\Cam\\Preview.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Cam\\Preview.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAA/wH8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T16:35:41.145Z",
+              "WhenOpened": "2025-01-24T13:44:04.665Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BossScript.cs",
-              "DocumentMoniker": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\BOSS\\BossScript.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\BOSS\\BossScript.cs",
-              "ToolTip": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\BOSS\\BossScript.cs",
-              "RelativeToolTip": "Assets\\Scripts\\BOSS\\BossScript.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAgwB4AAAANAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Zoom_out_in.cs",
+              "DocumentMoniker": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\Map_Generator\\Zoom_out_in.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Map_Generator\\Zoom_out_in.cs",
+              "ToolTip": "C:\\Users\\matte\\OneDrive\\Documenti\\GitHub\\Topo_Crisi\\Assets\\Scripts\\Map_Generator\\Zoom_out_in.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Map_Generator\\Zoom_out_in.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAywDEAAABiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T15:59:48.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T13:28:43.336Z"
             }
           ]
         }
