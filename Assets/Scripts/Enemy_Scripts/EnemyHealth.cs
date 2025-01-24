@@ -72,9 +72,20 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log("Enemy health: " + currentHealth);
 
         // Riproduci il suono del danno usando l'AudioSource assegnato
-        if (customAudioSource != null && damageSound != null)
+        if (customAudioSource != null)
         {
-            customAudioSource.PlayOneShot(damageSound);
+            if (damageSound != null)
+            {
+                customAudioSource.PlayOneShot(damageSound); // Suono riprodotto
+            }
+            else
+            {
+                Debug.LogWarning("Damage sound is not assigned!"); // Avviso se non c'è un suono
+            }
+        }
+        else
+        {
+            Debug.LogError("No AudioSource assigned to the 'DamageSound' GameObject!");
         }
 
         // Se è presente il pomodoro e il danno è causato da un proiettile, lo rendi visibile
