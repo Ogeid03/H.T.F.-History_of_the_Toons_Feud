@@ -5,7 +5,7 @@ public class PrefabSpawner : MonoBehaviour
 {
     public GameObject prefabToSpawn; // Il prefab che vuoi istanziare
     public Vector3 spawnOffset = Vector3.zero; // Offset opzionale per la posizione dello spawn
-    public float scaleMultiplier = 5f; // Fattore di scala per ingrandire il prefab
+    public float scaleMultiplier = 4f; // Fattore di scala per ingrandire il prefab
 
     private Transform corpoTransform; // Riferimento al sotto-oggetto "Corpo"
 
@@ -49,7 +49,7 @@ public class PrefabSpawner : MonoBehaviour
             }
             else
             {
-                Destroy(instance, 2f); // Distrugge dopo 2 secondi se non ha Animator
+                Destroy(instance, 1f); // Distrugge dopo 2 secondi se non ha Animator
             }
 
             Debug.Log("Prefab spawnato in posizione: " + spawnPosition);

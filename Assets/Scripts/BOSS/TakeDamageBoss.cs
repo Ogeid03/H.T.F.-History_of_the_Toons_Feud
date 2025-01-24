@@ -15,6 +15,9 @@ public class ButtonSpawner : MonoBehaviour
     public float pressDamage = 5f;
     private bool isActive = false; // Variabile che determina se è attivo il meccanismo di spawn
 
+    public AudioSource buttonClickSound; // AudioSource per il suono
+    public AudioClip damageSoundClip;    // AudioClip da riprodurre quando si fa danno
+
     // Lista di frasi preconfigurate che vogliamo mostrare nel testo del bottone
     public string[] buttonTexts = {
         "You can't win",
@@ -128,6 +131,17 @@ public class ButtonSpawner : MonoBehaviour
             bossHealth.TakeDamage(pressDamage); // Riduci la vita del boss di 5
         }
 
+        // Riproduce il suono del danno, se l'AudioSource e l'AudioClip sono impostati
+        if (buttonClickSound != null && damageSoundClip != null)
+        {
+            buttonClickSound.PlayOneShot(damageSoundClip);
+            Debug.Log("Suono di danno riprodotto.");
+        }
+        else
+        {
+            Debug.LogWarning("AudioSource o AudioClip mancante.");
+        }
+
         // Cerca tra tutti i figli del prefab per trovare un componente TextMeshProUGUI il cui nome contiene "Parole"
         TextMeshProUGUI[] allTextComponents = clickedPrefab.GetComponentsInChildren<TextMeshProUGUI>();
 
@@ -161,6 +175,7 @@ public class ButtonSpawner : MonoBehaviour
             Debug.LogError("Non è stato trovato un componente 'TextMeshProUGUI' con il nome che contiene 'Parole' nel prefab.");
         }
     }
+
 
     // Funzione per attivare o disattivare lo spawn del prefab
     public void SetActive(bool active)

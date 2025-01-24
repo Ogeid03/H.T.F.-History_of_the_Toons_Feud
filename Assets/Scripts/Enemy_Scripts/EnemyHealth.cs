@@ -15,7 +15,9 @@ public class EnemyHealth : MonoBehaviour
 
     // Variabili per il suono
     public AudioClip damageSound;           // Suono da riprodurre quando il nemico subisce danno
+    public AudioClip damageSoundT;           // Suono da riprodurre quando il nemico subisce danno
     private AudioSource customAudioSource;  // AudioSource che verrà recuperato dal GameObject
+    private AudioSource customAudioSourceT;
 
     void Start()
     {
@@ -64,6 +66,20 @@ public class EnemyHealth : MonoBehaviour
         {
             Debug.LogError("Non è stato trovato un oggetto chiamato 'DamageSound' nella scena.");
         }
+
+        GameObject audioSourceTObject = GameObject.Find("TomatoSound");
+        if (audioSourceTObject != null)
+        {
+            customAudioSourceT = audioSourceTObject.GetComponent<AudioSource>();
+            if (customAudioSourceT == null)
+            {
+                Debug.LogError("Il GameObject 'DamageSound' non contiene un componente AudioSource!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Non è stato trovato un oggetto chiamato 'DamageSound' nella scena.");
+        }
     }
 
     public void TakeDamage(int damage, bool isProjectile)
@@ -93,6 +109,22 @@ public class EnemyHealth : MonoBehaviour
         {
             pomodoroSpiaccicato.gameObject.SetActive(true);  // Rendi visibile il pomodoro
             isPomodoroVisible = true;  // Segna il pomodoro come visibile
+
+            if (customAudioSource != null)
+            {
+                if (damageSound != null)
+                {
+                    customAudioSource.PlayOneShot(damageSound); // Suono riprodotto
+                }
+                else
+                {
+                    Debug.LogWarning("Damage sound is not assigned!"); // Avviso se non c'è un suono
+                }
+            }
+            else
+            {
+                Debug.LogError("No AudioSource assigned to the 'DamageSound' GameObject!");
+            }
         }
 
         if (currentHealth <= 0)

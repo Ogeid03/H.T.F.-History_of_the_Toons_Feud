@@ -7,6 +7,7 @@ public class BossHealth : MonoBehaviour
 
     public Animator animator;            // Riferimento all'animatore del boss
     public AudioSource hurtSound;        // Suono di danno
+    public AudioClip damageClip;         // Clip audio da riprodurre quando il boss subisce danno
     public GameObject deathEffect;       // Effetto visivo alla morte del boss
     private GameOverManager gameOverManager;
 
@@ -40,8 +41,9 @@ public class BossHealth : MonoBehaviour
                 animator.SetTrigger("Hurt"); // Imposta l'animazione di danno
             }
 
-            if (hurtSound != null)
+            if (hurtSound != null && damageClip != null)
             {
+                hurtSound.clip = damageClip;  // Imposta il clip audio
                 hurtSound.Play(); // Esegui il suono di danno
             }
 
