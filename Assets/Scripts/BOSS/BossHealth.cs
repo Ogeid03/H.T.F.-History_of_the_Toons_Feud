@@ -13,7 +13,7 @@ public class BossHealth : MonoBehaviour
 
     public SpriteRenderer spriteRenderer; // Riferimento allo SpriteRenderer
     public Sprite hurtSprite;             // Nuovo sprite da usare quando la vita è sotto il 50%
-    public Sprite criticalSprite;         // Nuovo sprite da usare quando la vita è sotto il 10%
+    //public Sprite criticalSprite;         // Nuovo sprite da usare quando la vita è sotto il 10%
 
     void Start()
     {
@@ -27,6 +27,7 @@ public class BossHealth : MonoBehaviour
         }
     }
 
+    // Funzione per danneggiare il boss
     // Funzione per danneggiare il boss
     public void TakeDamage(float damageAmount)
     {
@@ -51,19 +52,25 @@ public class BossHealth : MonoBehaviour
             if (currentHealth <= maxHealth * 0.5f && spriteRenderer != null && hurtSprite != null)
             {
                 spriteRenderer.sprite = hurtSprite; // Cambia lo sprite
+                spriteRenderer.transform.localScale = Vector3.one; // Ripristina la scala originale
             }
 
-            // Cambia lo sprite se la vita è sotto il 10%
+            /*// Cambia lo sprite se la vita è sotto il 10%
             if (currentHealth <= maxHealth * 0.1f && spriteRenderer != null && criticalSprite != null)
             {
                 spriteRenderer.sprite = criticalSprite; // Cambia lo sprite critico
-            }
+
+                // Scala lo sprite critico di 3 volte
+                spriteRenderer.transform.localScale = new Vector3(3f, 3f, 1f);
+                Debug.Log("Scala del Critical Sprite impostata a 3x.");
+            }*/
         }
         else
         {
             Die();  // Se la vita è 0 o meno, il boss muore
         }
     }
+
 
     // Funzione per la morte del boss
     private void Die()

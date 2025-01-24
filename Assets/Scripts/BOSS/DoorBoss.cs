@@ -15,8 +15,8 @@ public class DoorBoss : MonoBehaviour
 
     void Start()
     {
+        // Ottieni il collider dell'oggetto
         myCollider = GetComponent<Collider2D>();
-
         if (myCollider == null)
         {
             myCollider = GetComponentInChildren<Collider2D>();
@@ -28,6 +28,7 @@ public class DoorBoss : MonoBehaviour
             return;
         }
 
+        // Trova il giocatore
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         if (player == null)
         {
@@ -35,23 +36,29 @@ public class DoorBoss : MonoBehaviour
             return;
         }
 
-        // Cerca la camera con il tag "MainCamera" se cameraZoomOut non è già assegnato
-        if (cameraZoomOut == null && Camera.main != null)
+        // Cerca la camera con il tag "MainCamera"
+        GameObject mainCameraObject = GameObject.FindGameObjectWithTag("MainCamera");
+        if (mainCameraObject != null)
         {
-            cameraZoomOut = Camera.main.GetComponent<CameraZoomOut>();
-            if (cameraZoomOut == null)
-            {
-                Debug.LogError("CameraZoomOut non trovato sul GameObject della telecamera principale.");
-            }
-            else
+            cameraZoomOut = mainCameraObject.GetComponent<CameraZoomOut>();
+            if (cameraZoomOut != null)
             {
                 Debug.Log("CameraZoomOut assegnato automaticamente dalla telecamera principale.");
             }
+            else
+            {
+                Debug.LogWarning("La telecamera principale non ha uno script CameraZoomOut assegnato.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Nessuna telecamera trovata con il tag 'MainCamera'.");
         }
 
         // Avvia la coroutine per monitorare la posizione del giocatore
         StartCoroutine(WaitForPlayerPosition());
     }
+
 
     private IEnumerator WaitForPlayerPosition()
     {
