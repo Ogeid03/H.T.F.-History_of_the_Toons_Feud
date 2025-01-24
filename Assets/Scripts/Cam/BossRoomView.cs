@@ -49,12 +49,19 @@ public class CameraZoomOut : MonoBehaviour
 
             // Segui la posizione del player su X e Y (applica limiti opzionali su Y)
             float clampedY = Mathf.Clamp(player.position.y, minY, maxY);
-            transform.position = Vector3.Lerp(
-                transform.position,
-                new Vector3(player.position.x, clampedY, transform.position.z),
-                Time.deltaTime * zoomSpeed
-            );
+
+            // Quando la telecamera è zoomata indietro, mantieni la posizione Y più vicina a quella originale.
+            // Evita di avere una Y troppo bassa a causa dell'altezza della telecamera precedente.
+            if (!isZoomedOut)
+            {
+                transform.position = Vector3.Lerp(
+                    transform.position,
+                    new Vector3(player.position.x, Mathf.Max(clampedY, originalPosition.y), transform.position.z), // Usa originalPosition.y per evitare scivolamenti
+                    Time.deltaTime * zoomSpeed
+                );
+            }
         }
+
     }
 
     // Metodo per attivare lo zoom out
