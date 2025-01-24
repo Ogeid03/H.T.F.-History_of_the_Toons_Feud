@@ -22,6 +22,10 @@ public class PlayerHealth : MonoBehaviour
     private bool isDead = false;           // Flag per verificare se il giocatore è morto
     private GameOverManager gameOverManager;
 
+    // Variabili per il suono
+    public AudioClip damageSound;          // Suono da riprodurre quando il giocatore subisce danno
+    private AudioSource customAudioSource; // AudioSource che verrà recuperato dal GameObject
+
     void Start()
     {
         currentHealth = maxHealth;         // Inizializza la salute al massimo
@@ -43,6 +47,21 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.LogError("Animator non trovato sul giocatore!");
         }
+
+        // Cerca il GameObject con il nome "HittedSound" e recupera il componente AudioSource
+        GameObject audioSourceObject = GameObject.Find("HittedSound");
+        if (audioSourceObject != null)
+        {
+            customAudioSource = audioSourceObject.GetComponent<AudioSource>();
+            if (customAudioSource == null)
+            {
+                Debug.LogError("Il GameObject 'HittedSound' non contiene un componente AudioSource!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Non è stato trovato un oggetto chiamato 'HittedSound' nella scena.");
+        }
     }
 
     public void TakeDamage(int damage)
@@ -52,6 +71,13 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;           // Riduce la salute in base al danno
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Limita la salute tra 0 e il massimo
         Debug.Log("Giocatore ha subito danno! Salute attuale: " + currentHealth);
+
+        // Riproduci il suono del danno usando l'AudioSource assegnato
+        if (customAudioSource != null && damageSound != null)
+        {
+            customAudioSource.PlayOneShot(damageSound);
+        }
+
         UpdateHealthUI();                  // Aggiorna la UI
 
         if (currentHealth <= 0 && !isDead)
