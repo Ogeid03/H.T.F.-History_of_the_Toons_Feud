@@ -8,15 +8,15 @@ Update da fare:
     ✅ - gestione del medikit
     ✅ - aggiungere dei veri ascensori   
     ✅ - aggiungere un ambiente esterno (portale Warner SIS)
-    🦒 - aggiunta di suoni (MF, Boss)
+    🦒 - aggiunta di suoni (MF, Boss, Enemy)
     ✅ - colorare GUI
     ✅ - Cambio scritte tutorial
     ✅ - aggiunta medikit nel tutorial
     ✅ - Schermata di win
 
 Fixes:   
-        - test e fix generali
-    ✅  - pomodori buggati
+    🦒 - test e fix generali
+    ✅ - pomodori buggati
     ✅ - movement slide sulle pareti
     ✅ - frasi del boss e png morte
     🦒 - animazioni combattimento
@@ -35,8 +35,8 @@ Fixes:
     ✅ - sistemare la GUI troppo piccola
     ✅ - bloccare la GUI
     ✅ - fixare vita boss
-    ✅ - danieleSgerro non può colpire oltre il ground
-    ✅ - danieleSgerroRespawn deve fare danno
+    ✅ - danieleSgherro non può colpire oltre il ground
+    ✅ - danieleSgherroRespawn deve fare danno
     ✅ - visuale stanze alte
 
 Extras:
