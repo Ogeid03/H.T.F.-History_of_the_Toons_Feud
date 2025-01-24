@@ -12,6 +12,7 @@ public class BossHealth : MonoBehaviour
 
     public SpriteRenderer spriteRenderer; // Riferimento allo SpriteRenderer
     public Sprite hurtSprite;             // Nuovo sprite da usare quando la vita è sotto il 50%
+    public Sprite criticalSprite;         // Nuovo sprite da usare quando la vita è sotto il 10%
 
     void Start()
     {
@@ -48,6 +49,12 @@ public class BossHealth : MonoBehaviour
             if (currentHealth <= maxHealth * 0.5f && spriteRenderer != null && hurtSprite != null)
             {
                 spriteRenderer.sprite = hurtSprite; // Cambia lo sprite
+            }
+
+            // Cambia lo sprite se la vita è sotto il 10%
+            if (currentHealth <= maxHealth * 0.1f && spriteRenderer != null && criticalSprite != null)
+            {
+                spriteRenderer.sprite = criticalSprite; // Cambia lo sprite critico
             }
         }
         else
@@ -90,6 +97,12 @@ public class BossHealth : MonoBehaviour
         if (currentHealth > maxHealth * 0.5f && spriteRenderer != null)
         {
             spriteRenderer.sprite = null; // Imposta lo sprite originale (se necessario)
+        }
+
+        // Se la salute torna sopra il 10%, ripristina lo sprite originale o lo sprite di danno
+        if (currentHealth > maxHealth * 0.1f && spriteRenderer != null)
+        {
+            spriteRenderer.sprite = hurtSprite; // Puoi scegliere di ripristinare l'altro sprite se necessario
         }
     }
 

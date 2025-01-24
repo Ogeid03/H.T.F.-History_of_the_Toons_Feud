@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
 
     public Text healthText;                // Riferimento all'elemento UI Text
     public Image healthHeadImage;          // Riferimento all'elemento Image per la salute del giocatore
+    public GameObject damageEffect;        // Riferimento al GameObject "Damage"
 
     // Sprite della salute in base alla percentuale di vita
     public Sprite healthAbove75;
@@ -30,6 +31,16 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;         // Inizializza la salute al massimo
         UpdateHealthUI();                  // Aggiorna l'interfaccia della salute
+
+
+        if (damageEffect != null)
+        {
+            damageEffect.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("GameObject 'Damage' non assegnato!");
+        }
 
         // Trova GameOverManager automaticamente se non è stato assegnato
         gameOverManager = FindObjectOfType<GameOverManager>();
@@ -72,6 +83,12 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Limita la salute tra 0 e il massimo
         Debug.Log("Giocatore ha subito danno! Salute attuale: " + currentHealth);
 
+        // Mostra l'effetto "Damage"
+        if (damageEffect != null)
+        {
+            StartCoroutine(ShowDamageEffect());
+        }
+
         // Riproduci il suono del danno usando l'AudioSource assegnato
         if (customAudioSource != null && damageSound != null)
         {
@@ -84,6 +101,13 @@ public class PlayerHealth : MonoBehaviour
         {
             Die();                         // Chiama la funzione di morte se la salute è zero
         }
+    }
+
+    private IEnumerator ShowDamageEffect()
+    {
+        damageEffect.SetActive(true);  // Attiva l'effetto
+        yield return new WaitForSeconds(0.25f);  // Aspetta per 0,5 secondi
+        damageEffect.SetActive(false); // Disattiva l'effetto
     }
 
     private void Die()
